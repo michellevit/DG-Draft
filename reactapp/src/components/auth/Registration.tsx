@@ -3,11 +3,9 @@ import axios from "axios";
 import "./Registration.css";
 
 const Registration: React.FC = () => {
-  const [registered, setRegistered] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
-  const [registrationErrors, setRegistrationErrors] = useState("");
   const [successfulSubmission, setSuccessfulSubmission] = useState<boolean>(false);
   const [confirmationMessage, setConfirmationMessage] = useState("");
 
