@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Bets from "./pages/Bets";
 import Profile from "./pages/Profile";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="app">
       <Navbar />

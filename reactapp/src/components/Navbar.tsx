@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 
-function Navbar() {
+const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav>

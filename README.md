@@ -45,6 +45,8 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 - When deploying to an actual website (and not just personal domain for demo):
   - Change the origin allowed in config/initializers/cors.rb
   - Change the cookie domain specified in config/initializers/session_store.rb
+  - logo 192 + logo 152
+
 
 ## Troubleshooting<a name="troubleshooting"></a>
 

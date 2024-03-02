@@ -55,13 +55,13 @@ nav ul li a:not(.active):hover {
         flex-direction: column;
         justify-content: space-between;
         width: 2.25rem;
-        height: 2rem;
+        height: 1.5rem;
         margin: 1rem;
-        padding: 0.2rem;
+        padding: 0.5rem;
     }
     
     nav .menu span {
-        height: 0.4rem;
+        height: 0.3rem;
         width: 100%;
         background-color: white;
         border-radius: 0.2rem;
@@ -69,7 +69,7 @@ nav ul li a:not(.active):hover {
     }
 
     nav .menu.icon-open span:nth-child(1) {
-        transform: rotate(45deg) translate(13px, 13px); 
+        transform: rotate(45deg) translate(8px, 8px); 
     }
     
     nav .menu.icon-open span:nth-child(2) {
@@ -81,7 +81,7 @@ nav ul li a:not(.active):hover {
     }
 
     nav .menu span:not(:last-child) {
-        margin-bottom: 0.4rem; 
+        margin-bottom: 0.3rem; 
     }
 
     nav {
