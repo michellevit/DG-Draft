@@ -7,9 +7,9 @@
 <!-- ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)
 ![Heroku](https://img.shields.io/badge/Platform-Heroku-lightgrey.svg) -->
 
-This project is a website.
+This project is a website for making bets (non-monetary) on disc golf tournament standings.
 
-<!-- <!-- <a href="https://dg-bets.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a> -->
+<a href="https://dg-bets.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a>
 
 
 ## Table of Contents
