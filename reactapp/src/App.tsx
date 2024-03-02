@@ -20,8 +20,9 @@ const App: React.FC = () => {
           <Route path="/" element={<Home loggedIn={loggedIn}/>} /> 
           <Route path="home" element={<Home loggedIn={loggedIn}/>} />
           <Route path="bets" element={<Bets  loggedIn={loggedIn}/>} />
-          <Route path="profile" element={<Profile loggedIn={loggedIn}/>} />
-          <Route path="signup" element={<Signup loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
+          <Route path="profile" element={<Profile loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
+          <Route path="login" element={<Profile loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
+          <Route path="signup" element={<Signup loggedIn={loggedIn}/>} />
         </Routes>
       </div>
     </div>

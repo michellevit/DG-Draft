@@ -5,8 +5,8 @@ import { LoggedInProps } from "../types/interfaces";
 
 const Home: React.FC<LoggedInProps> = ({ loggedIn }) => {
   return <div className="home-container">
-    <h1>Home</h1>
-    <div>Status: {loggedIn ? "Logged In" : "Not Logged In"}</div>
+    <h2>Home</h2>
+    <p>Status: {loggedIn ? "Logged In" : "Not Logged In"}</p>
     <Leaderboard />
   </div>;
 }

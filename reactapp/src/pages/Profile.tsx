@@ -1,13 +1,13 @@
 import React from "react";
 import { LoggedInProps } from "../types/interfaces";
 import UserDashboard from "../components/UserDashboard";
-import Login from "../components/Login";
 
 
-const Profile: React.FC<LoggedInProps> = ({ loggedIn }) => {
+const Profile: React.FC<LoggedInProps> = ({ loggedIn, setLoggedIn }) => {
   return <div className="profile-container">
-    Logged in? {loggedIn}
-    {loggedIn ? <UserDashboard /> : <Login /> }
+    <h2>Profile</h2>
+    <p>Status: {loggedIn ? "Logged In" : "Not Logged In"}</p>
+    <UserDashboard />
   </div>;
 }
 
