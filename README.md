@@ -9,8 +9,7 @@
 
 This project is a website.
 
-<!-- <a href="https://gr-demo.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Demo-Backend-red?style=for-the-badge&logo=ruby"></a>
-<a href="https://gr-demo.michellef.dev/" target="_blank"><img src="https://img.shields.io/badge/Demo-Frontend-blue?style=for-the-badge&logo=react"></a> -->
+<!-- <!-- <a href="https://dg-bets.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a> -->
 
 
 ## Table of Contents
