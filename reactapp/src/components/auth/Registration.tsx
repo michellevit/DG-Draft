@@ -1,8 +1,9 @@
 import React, { useState, FormEvent } from "react";
 import axios from "axios";
 import "./Registration.css";
+import { LoggedInProps } from "../../types/interfaces";
 
-const Registration: React.FC = () => {
+const Registration: React.FC<LoggedInProps> = ({ loggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -22,26 +23,18 @@ const Registration: React.FC = () => {
     },
     { withCredentials: true }
     ).then(response => {
-      console.log("registration res", response);
+      if (response.data.status === "created") {
+        setEmail("");
+        setPassword("");
+        setPasswordConfirmation("");
+        setSuccessfulSubmission(true);
+        setConfirmationMessage("You have been registered successfully.")
+      }
     }).catch(error => {
       console.log("registration error", error);
-    })
-
-    console.log("Email: ", email);
-    console.log("Password: ", password);
-    console.log("Password Confirmation: ", passwordConfirmation);
-    console.log('Form Submitted');
-    if (password === passwordConfirmation) {
-      setEmail("");
-      setPassword("");
-      setPasswordConfirmation("");
-      setSuccessfulSubmission(true);
-      setConfirmationMessage("You have been registered successfully.")
-    }
-    else {
       setSuccessfulSubmission(false);
       setConfirmationMessage("The passwords do not match.")
-    }
+    })
   }
 
   return (

@@ -5,6 +5,8 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Bets from "./pages/Bets";
 import Profile from "./pages/Profile";
+import Signup from "./pages/Signup";
+
 
 
 const App: React.FC = () => {
@@ -18,7 +20,8 @@ const App: React.FC = () => {
           <Route path="/" element={<Home loggedIn={loggedIn}/>} /> 
           <Route path="home" element={<Home loggedIn={loggedIn}/>} />
           <Route path="bets" element={<Bets  loggedIn={loggedIn}/>} />
-          <Route path="profile" element={<Profile  loggedIn={loggedIn}/>} />
+          <Route path="login" element={<Profile loggedIn={loggedIn}/>} />
+          <Route path="signup" element={<Signup loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
         </Routes>
       </div>
     </div>

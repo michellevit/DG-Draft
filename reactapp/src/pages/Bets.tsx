@@ -1,5 +1,4 @@
 import React from "react";
-import "./Bets.css";
 import { LoggedInProps } from "../types/interfaces";
 
 
