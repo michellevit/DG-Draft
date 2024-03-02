@@ -15,9 +15,9 @@ const Navbar: React.FC<LoggedInProps> = ({ loggedIn }) => {
         <span></span>
       </div>
       <ul className={menuOpen ? "open" : ""}>
-        <li><NavLink to="/bets">Bets</NavLink></li>
+        {loggedIn && <li><NavLink to="/bets">Bets</NavLink></li>}
         <li><NavLink to="/profile">{loggedIn ? "Profile" : "Log In"}</NavLink></li>
-        <li><NavLink to="/signup">{loggedIn ? "" : "Sign Up"}</NavLink></li>
+        {!loggedIn && <li><NavLink to="/signup">Sign Up</NavLink></li>}
       </ul>
     </nav>
   )
