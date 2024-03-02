@@ -41,9 +41,15 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 
 ## Basic Usage<a name="basic-usage"></a>
 
+## M Instructions <a name="features-to-add"></a>
+- When deploying to an actual website (and not just personal domain for demo):
+  - Change the origin allowed in config/initializers/cors.rb
+  - Change the cookie domain specified in config/initializers/session_store.rb
+
 ## Troubleshooting<a name="troubleshooting"></a>
 
 ## Features To Add <a name="features-to-add"></a>
+
 
 ## Credits <a name="credits"></a>
 Michelle Flandin
