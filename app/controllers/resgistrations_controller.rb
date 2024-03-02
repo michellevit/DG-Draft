@@ -1,18 +1,22 @@
 class RegistrationsController < ApplicationController
     def create
-        user = User.create!(
+        user = User.new(
             email: params['user']['email'],
             password: params['user']['password'],
             password_confirmation: params['user']['password_confirmation']
         )
-        if user
+
+        if user.save
             session[:user_id] = user.id
             render json: {
                 status: :created,
                 user: user
             }
         else
-            render json: { status: 500 }
+            render json: {
+                status: 500,
+                errors: user.errors.full_messages
+            }
         end
     end
 end
