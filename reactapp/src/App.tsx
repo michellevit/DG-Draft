@@ -1,17 +1,21 @@
 import React from "react";
 import { Route, Routes } from 'react-router-dom'; 
 import "./App.css";
-import Nav from "./components/Nav";
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Bets from "./pages/Bets";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
     <div className="app">
-      <Nav />
-      <div className="container">
+      <Navbar />
+      <div className="app-container">
         <Routes>
           <Route path="/" element={<Home />} /> 
           <Route path="home" element={<Home />} />
+          <Route path="bets" element={<Bets />} />
+          <Route path="profile" element={<Profile />} />
         </Routes>
       </div>
     </div>
