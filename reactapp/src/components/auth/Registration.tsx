@@ -1,4 +1,5 @@
 import React, { useState, FormEvent } from "react";
+import { useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import "./Registration.css";
 import { LoggedInProps } from "../../types/interfaces";
@@ -10,6 +11,7 @@ const Registration: React.FC<LoggedInProps> = ({ loggedIn }) => {
   const [successfulSubmission, setSuccessfulSubmission] = useState<boolean>(false);
   const [confirmationMessage, setConfirmationMessage] = useState("");
 
+  const navigate = useNavigate(); 
 
   
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -29,6 +31,7 @@ const Registration: React.FC<LoggedInProps> = ({ loggedIn }) => {
         setPasswordConfirmation("");
         setSuccessfulSubmission(true);
         setConfirmationMessage("You have been registered successfully.")
+        navigate("/login");
       }
     }).catch(error => {
       console.log("registration error", error);
