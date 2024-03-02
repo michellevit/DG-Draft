@@ -6,7 +6,7 @@ import UserDashboard from "../components/UserDashboard";
 
 const Profile: React.FC<LoggedInProps> = ({ loggedIn }) => {
   return <div className="profile-container">
-    {loggedIn ? <Registration /> : <UserDashboard />}
+    {loggedIn ? <UserDashboard /> : <Registration /> }
   </div>;
 }
 
