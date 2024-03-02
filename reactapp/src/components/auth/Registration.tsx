@@ -31,7 +31,7 @@ const Registration: React.FC<LoggedInProps> = ({ loggedIn }) => {
         setPasswordConfirmation("");
         setSuccessfulSubmission(true);
         setConfirmationMessage("You have been registered successfully.")
-        navigate("/login");
+        navigate("/profile");
       }
     }).catch(error => {
       console.log("registration error", error);
