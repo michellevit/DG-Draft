@@ -46,6 +46,7 @@ const Registration: React.FC = () => {
 
   return (
   <div className="registration-container">
+    <h2>Register for an account</h2>
     <form onSubmit={handleSubmit}>
     <div>
           <input 
