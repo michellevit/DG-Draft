@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
+import { LoggedInProps } from "../types/interfaces";
 
 
-const Navbar: React.FC = () => {
+const Navbar: React.FC<LoggedInProps> = ({ loggedIn }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <nav>
@@ -15,7 +16,7 @@ const Navbar: React.FC = () => {
       </div>
       <ul className={menuOpen ? "open" : ""}>
         <li><NavLink to="/bets">Bets</NavLink></li>
-        <li><NavLink to="/profile">Profile</NavLink></li>
+        <li><NavLink to="/profile">{loggedIn ? "Profile" : "Sign Up"}</NavLink></li>
       </ul>
     </nav>
   )
