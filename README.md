@@ -1,13 +1,13 @@
-# Disc Golf Betting App
+# Disc Golf Bets
 
 ![Ruby Version](https://img.shields.io/badge/Ruby-3.2.3-red.svg)
 ![Rails Version](https://img.shields.io/badge/Rails-7.1.3-red.svg)
 ![React Version](https://img.shields.io/badge/React-18.2.0-blue.svg)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-blue.svg)
-<!-- ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)
-![Heroku](https://img.shields.io/badge/Platform-Heroku-lightgrey.svg) -->
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)
+![Heroku](https://img.shields.io/badge/Platform-Heroku-lightgrey.svg)
 
-This project is a website for making bets (non-monetary) on disc golf tournament standings.
+This website was created for making bets (non-monetary) on disc golf tournament standings.
 
 <a href="https://dg-bets.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a>
 
