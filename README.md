@@ -48,8 +48,8 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 - Login: `heroku login`
 - Migrate DB: `heroku run rake db:migrate -a dg-bets`
 - Get DB Data: `heroku pg:psql -a dg-bets`, `SELECT * FROM users;`
-- Get Heroku Logs: `heroku logs --app dg-bets`
-- Restart Heroku Server: `heroku restart dg-bets`
+- Get Heroku Logs: `heroku logs -a dg-bets`
+- Restart Heroku Server: `heroku restart -a dg-bets`
 
 ## M Instructions <a name="features-to-add"></a>
 - When deploying to an actual website (and not just personal domain for demo):

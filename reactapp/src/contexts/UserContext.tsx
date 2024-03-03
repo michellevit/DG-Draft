@@ -67,6 +67,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, [loggedIn]);
 
   const value = { user, setUser, loggedIn, setLoggedIn };
+  
   return (
     <UserContext.Provider value={value}>
       {children}
