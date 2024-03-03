@@ -8,6 +8,7 @@ const Home: React.FC = () => {
   return <div className="home-container">
     <h2>Home</h2>
     <p>Status: {user ? "Logged In" : "Not Logged In"}</p>
+    <p>Token: {localStorage.getItem('sessionToken')}</p>
     <Leaderboard />
   </div>;
 }
