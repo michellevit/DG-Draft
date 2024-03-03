@@ -12,7 +12,6 @@ const Profile: React.FC = () => {
     axios.delete(`${process.env.REACT_APP_API_URL}/logout`, { withCredentials: true })
       .then(() => {
         setUser(null); 
-        localStorage.removeItem('user'); 
         localStorage.removeItem('sessionToken');
         navigate("/");         
       })

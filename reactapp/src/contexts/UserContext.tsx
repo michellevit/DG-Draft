@@ -27,6 +27,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
     const token = localStorage.getItem('sessionToken');
+    console.log('Retrieved token from local storage:', token);
     if (token) {
       axios.get(`${process.env.REACT_APP_API_URL}/validate_token`, {
         headers: {
@@ -41,6 +42,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         }
       })
       .catch(error => {
+        console.error('Token validation error:', error);
         localStorage.removeItem('sessionToken');
         setUser(null);
         console.log("Check login error", error);
