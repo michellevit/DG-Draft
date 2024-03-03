@@ -4,12 +4,18 @@ class UsersController < ApplicationController
   
     def update_username
       @user = User.find(params[:id])
-      new_username = generate_unique_username
-      if @user.update(username: new_username)
-        render json: { user: @user }
+      requested_username = params[:username]
+      
+      if User.exists?(username: requested_username)
+        render json: { error: 'Username already in use' }, status: :unprocessable_entity
       else
-        render json: { error: 'Failed to update username' }, status: :unprocessable_entity
+        if @user.update(username: requested_username)
+          render json: { user: @user }
+        else
+          render json: { error: 'Failed to update username' }, status: :unprocessable_entity
+        end
       end
     end
+    
 end
   
