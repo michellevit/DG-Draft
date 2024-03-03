@@ -4,6 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Bets from "./pages/Bets";
+import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
 import { UserProvider } from "./contexts/UserContext"; 
@@ -23,7 +24,7 @@ const App: React.FC = () => {
           <Route path="home" element={<Home loggedIn={loggedIn}/>} />
           <Route path="bets" element={<Bets  loggedIn={loggedIn}/>} />
           <Route path="profile" element={<Profile loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
-          <Route path="login" element={<Profile loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
+          <Route path="login" element={<Login loggedIn={loggedIn} setLoggedIn={setLoggedIn}/>} />
           <Route path="signup" element={<Signup setLoggedIn={setLoggedIn}/>} />
         </Routes>
       </div>

@@ -19,6 +19,7 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 - [What I Learned](#what-i-learned)
 - [What I Would Do Differently](#what-i-would-do-differently)
 - [Basic Usage](#basic-usage)
+  - [Using the Heroku CLI](#heroku-cli)
 - [Troubleshooting](#troubleshooting)
 - [Features To Add](#features-to-add)
 - [Credits](#credits)
@@ -40,6 +41,10 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 ## What I Would Do Differently<a name="what-i-would-do-differently"></a>
 
 ## Basic Usage<a name="basic-usage"></a>
+
+### Using the Heroku CLI<a name="heroku-cli"></a>
+- Login: `heroku login`
+- Migrate DB: `heroku run rake db:migrate -a dg-bets`
 
 ## M Instructions <a name="features-to-add"></a>
 - When deploying to an actual website (and not just personal domain for demo):

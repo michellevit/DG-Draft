@@ -2,8 +2,10 @@ import React, { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useUser } from "../contexts/UserContext";
+import { LoggedInProps } from "../types/interfaces";
 
-const Login: React.FC = () => {
+
+const Login: React.FC<LoggedInProps> = ({ loggedIn, setLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");

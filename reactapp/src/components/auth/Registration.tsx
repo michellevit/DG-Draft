@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Registration.css";
 import { LoggedInProps } from "../../types/interfaces";
-import { useUser } from "../../contexts/UserContext";
+import { useUser } from '../../contexts/UserContext';
 
 const Registration: React.FC<LoggedInProps> = ({ setLoggedIn }) => {
   const [email, setEmail] = useState("");
