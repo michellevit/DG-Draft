@@ -35,6 +35,8 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 ## Features<a name="features"></a>
 
 ## Architectural Decisions<a name="architectural-decisions"></a>
+- **Authentication: Session vs Token:** Moving from session[:user_id] = user.id to a JWT approach: shifted from a stateful, server-side session management to a stateless, client-side token management strategy. 
+- **React Context API:** Provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree (prop drill).
 
 ## What I Learned<a name="what-I-learned"></a>
 

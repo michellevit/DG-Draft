@@ -13,13 +13,19 @@ const UserDashboard: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (user) {
-      axios.put(`${process.env.REACT_APP_API_URL}/users/${user.id}/update_username`, { username: newUsername }, { withCredentials: true })
-        .then(response => {
-          setUser({ ...user, username: response.data.user.username });
-        })
-        .catch(error => {
-          console.error("Username update error:", error);
-        });
+      const token = localStorage.getItem('sessionToken');
+      axios.put(`${process.env.REACT_APP_API_URL}/users/${user.id}/update_username`, { username: newUsername }, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        },
+        withCredentials: true
+      })
+      .then(response => {
+        setUser({ ...user, username: response.data.user.username });
+      })
+      .catch(error => {
+        console.error("Username update error:", error);
+      });
     }
   };
 

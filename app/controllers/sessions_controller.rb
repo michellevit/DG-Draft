@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
     include CurrentUserConcern
+    include Tokenable
 
     # create -> logs the user in
     def create
@@ -7,11 +8,12 @@ class SessionsController < ApplicationController
             .find_by(email: params["user"]["email"])
             .try(:authenticate, params["user"]["password"])
         if user
-            session[:user_id] = user.id
+            token = generate_token(user.id)
             render json: {
                 status: :created,
                 logged_in: true,
-                user: user
+                user: user,
+                token: token
             }
         else 
             render json: { status: 401 }
@@ -20,15 +22,17 @@ class SessionsController < ApplicationController
     
     # logged_in -> checks if the user is logged in (by getting the status from current_user_concern)
     def logged_in
+        token = request.headers['Authorization']&.split(' ')&.last
+        @current_user = authenticate_token(token) if token
         if @current_user
-            render json: {
-                logged_in: true,
-                user: @current_user
-            }
+          render json: {
+            logged_in: true,
+            user: @current_user
+          }
         else 
-            render json: {
-                logged_in: false
-            }
+          render json: {
+            logged_in: false
+          }
         end
     end
 

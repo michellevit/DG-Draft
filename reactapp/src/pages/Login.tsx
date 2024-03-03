@@ -22,6 +22,7 @@ const Login: React.FC = () => {
     .then(response => {
       if (response.data.logged_in) {
         setUser({ id: response.data.user.id, email: response.data.user.email, username: response.data.user.username });
+        localStorage.setItem('sessionToken', response.data.token);
         navigate("/profile");;  
       }
     })

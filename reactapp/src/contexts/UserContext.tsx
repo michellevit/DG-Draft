@@ -29,9 +29,14 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [user, setUser] = useState<User | null>(null);
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_API_URL}/logged_in`, { withCredentials: true })
-      .then(response => {
-        if (response.data.logged_in) {
+    const token = localStorage.getItem('sessionToken');
+    if (token) {
+      axios.get(`${process.env.REACT_APP_API_URL}/validate_token`, {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      }).then(response => {
+        if (response.data.valid) {
           setUser(response.data.user);
           setLoggedIn(true);
         } else {
@@ -39,8 +44,10 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         }
       })
       .catch(error => {
+        localStorage.removeItem('sessionToken');
         console.log("Check login error", error);
       });
+    }
   }, []);
   useEffect(() => {
     if (loggedIn && user) {
@@ -61,7 +68,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
 
   const value = { user, setUser, loggedIn, setLoggedIn };
   return (
-    <UserContext.Provider value={{ user, setUser, loggedIn, setLoggedIn }}>
+    <UserContext.Provider value={value}>
       {children}
     </UserContext.Provider>
   );

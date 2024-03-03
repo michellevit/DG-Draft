@@ -43,6 +43,7 @@ const Signup: React.FC = () => {
         if (setLoggedIn) { 
           setLoggedIn(true);
         }
+        localStorage.setItem('sessionToken', response.data.token);
         setTimeout(() => {
           navigate("/profile");
         }, 4000); 

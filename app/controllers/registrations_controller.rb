@@ -1,4 +1,6 @@
 class RegistrationsController < ApplicationController
+    include Tokenable
+    
     def create
         user = User.new(
             email: params['user']['email'],
@@ -7,17 +9,18 @@ class RegistrationsController < ApplicationController
             username: generate_unique_username
         )
 
-    if user.save
-        session[:user_id] = user.id
-        render json: {
-            status: :created,
-            user: user
-        }
+        if user.save
+            token = generate_token(user.id)
+            render json: {
+                status: :created,
+                user: user,
+                token: token 
+            }
         else
-        render json: {
-            status: 422, 
-            errors: user.errors.full_messages
-        }, status: :unprocessable_entity
+            render json: {
+                status: 422, 
+                errors: user.errors.full_messages
+            }, status: :unprocessable_entity
         end
     end
     
@@ -30,7 +33,9 @@ class RegistrationsController < ApplicationController
         end
     end
 
-  def generate_username
-    "someone-#{rand(0..99999)}"
-  end
+    def generate_username
+        "someone-#{rand(0..99999)}"
+    end
+
+
 end
