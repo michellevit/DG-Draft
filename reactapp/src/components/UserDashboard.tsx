@@ -11,9 +11,11 @@ const UserDashboard: React.FC = () => {
   };
 
   useEffect(() => {
-    console.log("User:", user);
-    console.log("Session Token: ", localStorage.getItem('sessionToken'))
-    console.log("Username: ", user ? user.username : "none");
+    if(user) {
+      console.log("User:", user);
+      console.log("Session Token: ", localStorage.getItem('sessionToken'))
+      console.log("Username: ", user ? user.username : "none");
+    }
   }, [user]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
