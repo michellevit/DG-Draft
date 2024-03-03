@@ -26,9 +26,9 @@ export const useUser = () => {
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
-    const token = localStorage.getItem('sessionToken');
-    console.log('Retrieved token from local storage:', token);
     const fetchUser = async () => {
+      const token = localStorage.getItem('sessionToken');
+      console.log('Retrieved token from local storage:', token);
       try {
         if (token) {
           const response = await axios.get(`${process.env.REACT_APP_API_URL}/validate_token`, {
