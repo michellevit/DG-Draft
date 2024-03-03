@@ -41,7 +41,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       .catch(error => {
         console.log("Check login error", error);
       });
-  }, []);
+  }, [loggedIn, user]);
   useEffect(() => {
     if (loggedIn && user) {
       axios.get(`${process.env.REACT_APP_API_URL}/username`, { withCredentials: true })
