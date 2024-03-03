@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Registration.css";
 import { LoggedInProps } from "../../types/interfaces";
+import { useUser } from "../../contexts/UserContext";
 
 const Registration: React.FC<LoggedInProps> = ({ setLoggedIn }) => {
   const [email, setEmail] = useState("");
@@ -10,7 +11,7 @@ const Registration: React.FC<LoggedInProps> = ({ setLoggedIn }) => {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [successfulSubmission, setSuccessfulSubmission] = useState<boolean>(false);
   const [confirmationMessage, setConfirmationMessage] = useState("");
-
+  const { setUser } = useUser();
   const navigate = useNavigate(); 
 
   
@@ -26,6 +27,7 @@ const Registration: React.FC<LoggedInProps> = ({ setLoggedIn }) => {
     { withCredentials: true }
     ).then(response => {
       if (response.data.status === "created") {
+        setUser({ email: response.data.user.email });
         setEmail("");
         setPassword("");
         setPasswordConfirmation("");
