@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useUser } from "../contexts/UserContext";
 
@@ -9,6 +9,12 @@ const UserDashboard: React.FC = () => {
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewUsername(e.target.value);
   };
+
+  useEffect(() => {
+    console.log("User:", user);
+    console.log("Session Token: ", localStorage.getItem('sessionToken'))
+    console.log("Username: ", user ? user.username : "none");
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
