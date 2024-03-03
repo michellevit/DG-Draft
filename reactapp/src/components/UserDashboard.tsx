@@ -16,7 +16,7 @@ const UserDashboard: React.FC = () => {
       console.log("Session Token: ", localStorage.getItem('sessionToken'))
       console.log("Username: ", user ? user.username : "none");
     }
-  }, [user]);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

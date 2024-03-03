@@ -47,22 +47,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       });
     }
   }, []);
-  useEffect(() => {
-    if (user) {
-      axios.get(`${process.env.REACT_APP_API_URL}/username`, { withCredentials: true })
-        .then(response => {
-          setUser((prevUser: User | null) => {
-            if (prevUser) {
-              return { ...prevUser, username: response.data.username };
-            }
-            return null;
-          });
-        })
-        .catch(error => {
-          console.log("Fetch username error", error);
-        });
-    }
-  }, [user]);
+
 
   const value = { user, setUser };
 
