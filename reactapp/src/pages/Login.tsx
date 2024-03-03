@@ -21,7 +21,7 @@ const Login: React.FC = () => {
     }, { withCredentials: true })
     .then(response => {
       if (response.data.logged_in) {
-        setUser({ email: response.data.user.email });
+        setUser({ email: response.data.user.email, username: response.data.user.username });
         navigate("/profile");;  
       }
     })
