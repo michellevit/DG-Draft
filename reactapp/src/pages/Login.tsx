@@ -12,7 +12,6 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    console.log('handleSubmit called:', Date.now());
     e.preventDefault();
     axios.post(`${process.env.REACT_APP_API_URL}/sessions`, {
       user: {

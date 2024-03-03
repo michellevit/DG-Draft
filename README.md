@@ -45,13 +45,16 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 ### Using the Heroku CLI<a name="heroku-cli"></a>
 - Login: `heroku login`
 - Migrate DB: `heroku run rake db:migrate -a dg-bets`
-- Get DB data: `heroku pg:psql -a dg-bets`, `SELECT * FROM users;`
+- Get DB Data: `heroku pg:psql -a dg-bets`, `SELECT * FROM users;`
 - Get Heroku Logs: `heroku logs --app dg-bets`
+- Restart Heroku Server: `heroku restart dg-bets`
 
 ## M Instructions <a name="features-to-add"></a>
 - When deploying to an actual website (and not just personal domain for demo):
   - Change the origin allowed in config/initializers/cors.rb
   - Change the cookie domain specified in config/initializers/session_store.rb
+  - Change the domain specified in config/initializers/cors.rb
+  - Change the domain specified in reactapp/.env
   - logo 192 + logo 152
 
 

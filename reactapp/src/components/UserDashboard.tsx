@@ -13,7 +13,7 @@ const UserDashboard: React.FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (user) {
-      axios.put(`${process.env.REACT_APP_API_URL}/users/${user.id}`, { username: newUsername }, { withCredentials: true })
+      axios.put(`${process.env.REACT_APP_API_URL}/users/${user.id}/update_username`, { username: newUsername }, { withCredentials: true })
         .then(response => {
           setUser({ ...user, username: response.data.user.username });
         })
