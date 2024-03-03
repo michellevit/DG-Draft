@@ -33,7 +33,8 @@ const Registration: React.FC = () => {
     { withCredentials: true }
     ).then(response => {
       if (response.data.status === "created") {
-        setUser({ email: response.data.user.email });
+        const { email, username } = response.data.user;
+        setUser({ email, username }); 
         setEmail("");
         setPassword("");
         setPasswordConfirmation("");

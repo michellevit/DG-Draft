@@ -3,6 +3,7 @@ import axios from "axios";
 
 interface User {
   email: string;
+  username: string;
 }
 
 interface UserContextType {
@@ -31,14 +32,31 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       .then(response => {
         if (response.data.logged_in) {
           setUser(response.data.user);
-          setLoggedIn(true); 
+          setLoggedIn(true);
         } else {
           setLoggedIn(false);
         }
-      }).catch(error => {
+      })
+      .catch(error => {
         console.log("Check login error", error);
       });
-  }, []); 
+  }, []);
+  useEffect(() => {
+    if (loggedIn && user) {
+      axios.get(`${process.env.REACT_APP_API_URL}/username`, { withCredentials: true })
+        .then(response => {
+          setUser((prevUser: User | null) => {
+            if (prevUser) {
+              return { ...prevUser, username: response.data.username };
+            }
+            return null;
+          });
+        })
+        .catch(error => {
+          console.log("Fetch username error", error);
+        });
+    }
+  }, [loggedIn, user]);
 
   const value = { user, setUser, loggedIn, setLoggedIn };
   return (

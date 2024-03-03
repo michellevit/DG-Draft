@@ -3,20 +3,34 @@ class RegistrationsController < ApplicationController
         user = User.new(
             email: params['user']['email'],
             password: params['user']['password'],
-            password_confirmation: params['user']['password_confirmation']
+            password_confirmation: params['user']['password_confirmation'],
+            username: generate_unique_username
         )
 
-        if user.save
-            session[:user_id] = user.id
-            render json: {
-                status: :created,
-                user: user
-            }
+    if user.save
+        session[:user_id] = user.id
+        render json: {
+            status: :created,
+            user: user
+        }
         else
-            render json: {
-                status: 422, # Unprocessable Entity
-                errors: user.errors.full_messages
-            }, status: :unprocessable_entity
+        render json: {
+            status: 422, 
+            errors: user.errors.full_messages
+        }, status: :unprocessable_entity
         end
     end
+    
+    private
+    
+    def generate_unique_username
+        loop do
+        username = generate_username
+        break username unless User.exists?(username: username)
+        end
+    end
+
+  def generate_username
+    "someone-#{rand(0..99999)}"
+  end
 end
