@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, FunctionComponent } from 'react';
 
 interface User {
   email: string;
@@ -19,12 +19,14 @@ export const useUser = () => {
   return context;
 };
 
-export const UserProvider: React.FC<{children: ReactNode}> = ({ children }) => {
+interface UserProviderProps {
+  children: ReactNode;
+}
+
+export const UserProvider: FunctionComponent<UserProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
-      {children}
-    </UserContext.Provider>
-  );
+  const value = { user, setUser };
+
+  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
