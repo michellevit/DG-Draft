@@ -2,16 +2,15 @@ import React, { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom"; 
 import axios from "axios";
 import "./Registration.css";
-import { LoggedInProps } from "../../types/interfaces";
 import { useUser } from '../../contexts/UserContext';
 
-const Registration: React.FC<LoggedInProps> = ({ setLoggedIn }) => {
+const Registration: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [successfulSubmission, setSuccessfulSubmission] = useState<boolean>(false);
   const [confirmationMessage, setConfirmationMessage] = useState("");
-  const { setUser } = useUser();
+  const { setUser, setLoggedIn } = useUser(); 
   const navigate = useNavigate(); 
 
   
@@ -39,13 +38,13 @@ const Registration: React.FC<LoggedInProps> = ({ setLoggedIn }) => {
         setPassword("");
         setPasswordConfirmation("");
         setSuccessfulSubmission(true);
-        setConfirmationMessage("You have been registered successfully.")
+        setConfirmationMessage("You have been registered successfully and will be redirected to your profile page.")
         if (setLoggedIn) { 
           setLoggedIn(true);
         }
         setTimeout(() => {
           navigate("/profile");
-        }, 5000); 
+        }, 4000); 
       }
     }).catch(error => {
       if (error.response && error.response.status === 422) {

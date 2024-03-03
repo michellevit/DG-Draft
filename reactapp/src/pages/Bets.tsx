@@ -1,11 +1,10 @@
 import React from "react";
-import { LoggedInProps } from "../types/interfaces";
 
 
-const Bets: React.FC<LoggedInProps> = ({ loggedIn }) => {
+const Bets: React.FC = () => {
   return <div className="bets-container">
     <h2>Bets</h2>
-  </div>;
+  </div>
 }
 
 export default Bets;

@@ -2,10 +2,9 @@ import React, { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useUser } from "../contexts/UserContext";
-import { LoggedInProps } from "../types/interfaces";
 
 
-const Login: React.FC<LoggedInProps> = ({ loggedIn, setLoggedIn }) => {
+const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");
@@ -23,7 +22,7 @@ const Login: React.FC<LoggedInProps> = ({ loggedIn, setLoggedIn }) => {
     .then(response => {
       if (response.data.logged_in) {
         setUser({ email: response.data.user.email });
-        navigate("/profile"); 
+        navigate("/profile");;  
       }
     })
     .catch(error => {
