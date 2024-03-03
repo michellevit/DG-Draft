@@ -1,4 +1,4 @@
 export interface LoggedInProps {
-    loggedIn: boolean;
+    loggedIn?: boolean;
     setLoggedIn?: React.Dispatch<React.SetStateAction<boolean>>;
 }

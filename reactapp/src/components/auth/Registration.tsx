@@ -4,7 +4,7 @@ import axios from "axios";
 import "./Registration.css";
 import { LoggedInProps } from "../../types/interfaces";
 
-const Registration: React.FC<LoggedInProps> = ({ loggedIn }) => {
+const Registration: React.FC<LoggedInProps> = ({ setLoggedIn }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
@@ -31,8 +31,11 @@ const Registration: React.FC<LoggedInProps> = ({ loggedIn }) => {
         setPasswordConfirmation("");
         setSuccessfulSubmission(true);
         setConfirmationMessage("You have been registered successfully.")
+        if (setLoggedIn) { 
+          setLoggedIn(true);
+        }
         setTimeout(() => {
-          navigate("/login");
+          navigate("/profile");
         }, 5000); 
       }
     }).catch(error => {
