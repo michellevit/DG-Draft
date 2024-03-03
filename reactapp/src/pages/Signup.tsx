@@ -10,7 +10,7 @@ const Signup: React.FC = () => {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [successfulSubmission, setSuccessfulSubmission] = useState<boolean>(false);
   const [confirmationMessage, setConfirmationMessage] = useState("");
-  const { setUser, setLoggedIn } = useUser(); 
+  const { setUser } = useUser(); 
   const navigate = useNavigate(); 
 
   
@@ -40,9 +40,6 @@ const Signup: React.FC = () => {
         setPasswordConfirmation("");
         setSuccessfulSubmission(true);
         setConfirmationMessage("You have been registered successfully and will be redirected to your profile page.")
-        if (setLoggedIn) { 
-          setLoggedIn(true);
-        }
         localStorage.setItem('sessionToken', response.data.token);
         setTimeout(() => {
           navigate("/profile");

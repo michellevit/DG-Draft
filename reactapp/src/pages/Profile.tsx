@@ -6,13 +6,12 @@ import UserDashboard from "../components/UserDashboard";
 
 
 const Profile: React.FC = () => {
-  const { user, setUser, setLoggedIn } = useUser();
+  const { user, setUser } = useUser();
   const navigate = useNavigate();
   const handleLogout = () => {
     axios.delete(`${process.env.REACT_APP_API_URL}/logout`, { withCredentials: true })
       .then(() => {
         setUser(null); 
-        setLoggedIn(false);
         localStorage.removeItem('user'); 
         localStorage.removeItem('sessionToken');
         navigate("/");         

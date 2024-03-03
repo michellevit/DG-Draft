@@ -10,8 +10,6 @@ interface User {
 interface UserContextType {
   user: User | null;
   setUser: (user: User | null) => void;
-  loggedIn: boolean;
-  setLoggedIn: (loggedIn: boolean) => void;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
@@ -27,7 +25,6 @@ export const useUser = () => {
 
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [loggedIn, setLoggedIn] = useState<boolean>(false);
   useEffect(() => {
     const token = localStorage.getItem('sessionToken');
     if (token) {
@@ -38,19 +35,20 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       }).then(response => {
         if (response.data.valid) {
           setUser(response.data.user);
-          setLoggedIn(true);
         } else {
-          setLoggedIn(false);
+          localStorage.removeItem('sessionToken');
+          setUser(null);
         }
       })
       .catch(error => {
         localStorage.removeItem('sessionToken');
+        setUser(null);
         console.log("Check login error", error);
       });
     }
   }, []);
   useEffect(() => {
-    if (loggedIn && user) {
+    if (user) {
       axios.get(`${process.env.REACT_APP_API_URL}/username`, { withCredentials: true })
         .then(response => {
           setUser((prevUser: User | null) => {
@@ -64,10 +62,10 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           console.log("Fetch username error", error);
         });
     }
-  }, [loggedIn]);
+  }, [user]);
 
-  const value = { user, setUser, loggedIn, setLoggedIn };
-  
+  const value = { user, setUser };
+
   return (
     <UserContext.Provider value={value}>
       {children}
