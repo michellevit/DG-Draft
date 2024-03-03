@@ -17,6 +17,13 @@ const Registration: React.FC<LoggedInProps> = ({ setLoggedIn }) => {
   
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (password !== passwordConfirmation) {
+      setSuccessfulSubmission(false);
+      setConfirmationMessage("Passwords do not match.");
+      return; 
+    }
+
     axios.post(`${process.env.REACT_APP_API_URL}/registrations`, {
       user: {
         email: email,
@@ -41,10 +48,13 @@ const Registration: React.FC<LoggedInProps> = ({ setLoggedIn }) => {
         }, 5000); 
       }
     }).catch(error => {
-      console.log("registration error", error);
+      if (error.response && error.response.status === 422) {
+        setConfirmationMessage(error.response.data.errors.join(", "));
+      } else {
+        setConfirmationMessage("An unexpected error occurred.");
+      }
       setSuccessfulSubmission(false);
-      setConfirmationMessage("The passwords do not match.")
-    })
+    });
   }
 
   return (

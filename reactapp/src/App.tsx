@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Bets from "./pages/Bets";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
+import { UserProvider } from "./contexts/UserContext"; 
 
 
 
@@ -13,6 +14,7 @@ const App: React.FC = () => {
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
 
   return (
+    <UserProvider>
     <div className="app">
       <Navbar loggedIn={loggedIn}/>
       <div className="app-container">
@@ -26,6 +28,7 @@ const App: React.FC = () => {
         </Routes>
       </div>
     </div>
+    </UserProvider>
   );
 }
 
