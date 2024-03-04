@@ -17,7 +17,7 @@ class UsersController < ApplicationController
       else
         puts "D"
         @current_user.username = requested_username
-        if @current_user.save
+        if @current_user.save(validate: false)
           render json: { user: @current_user }
         else
           puts "E"
