@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :sessions, only: [:attempt_login]
+  post '/sessions', to: 'sessions#attempt_login'
   resources :registrations, only: [:create_user]
   delete :logout, to: "sessions#logout"
   get :authenticate_user, to: "sessions#authenticate_user"
