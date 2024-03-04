@@ -3,7 +3,9 @@ class UsersController < ApplicationController
   
   def update_username
     token = request.headers['Authorization']&.split(' ')&.last
+    puts "Received token: #{token}"
     @current_user = authenticate_token(token) if token
+    puts "Authenticated user: #{@current_user.inspect}" 
     if @current_user
       requested_username = params[:username]
       if @current_user.username == requested_username
