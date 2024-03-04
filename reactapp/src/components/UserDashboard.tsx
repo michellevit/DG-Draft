@@ -45,6 +45,7 @@ const UserDashboard: React.FC = () => {
   return (
     <div className="dashboard-container">
       <h1>Welcome {user ? user.username : ""}!</h1>
+      <h3>Points {user ? user.points : 0}</h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
