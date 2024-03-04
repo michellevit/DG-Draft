@@ -33,7 +33,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         console.log('inside try');
         if (token) {
           console.log('found a token!');
-          const response = await axios.get(`${process.env.REACT_APP_API_URL}/validate_token`, {
+          const response = await axios.get(`${process.env.REACT_APP_API_URL}/authenticate_token`, {
             headers: {
               Authorization: `Bearer ${token}`
             }
