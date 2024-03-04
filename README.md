@@ -67,7 +67,7 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 
 
 ## Troubleshooting<a name="troubleshooting"></a>
-
+- Apply migrations after modifying the models
 
 ## Features To Add <a name="features-to-add"></a>
 - update username not working

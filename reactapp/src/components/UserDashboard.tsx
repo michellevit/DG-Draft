@@ -4,16 +4,22 @@ import { useUser } from "../contexts/UserContext";
 
 const UserDashboard: React.FC = () => {
   const { user, setUser } = useUser();
-  const [newUsername, setNewUsername] = useState<string>(""); 
-  const [errorMessage, setErrorMessage] = useState<string>(""); 
+  const [newUsername, setNewUsername] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setNewUsername(e.target.value);
+    const value = e.target.value;
+    if (value.length <= 25) { // Check if length is within limit
+      setNewUsername(value);
+      setErrorMessage(""); // Clear error message if within limit
+    } else {
+      setErrorMessage("Username cannot exceed 25 characters"); // Set error message if exceeds limit
+    }
   };
 
   useEffect(() => {
     setErrorMessage("");
-    if(user) {
+    if (user) {
       console.log("User:", user);
       console.log("Session Token: ", localStorage.getItem('sessionToken'))
       console.log("Username: ", user ? user.username : "none");
@@ -21,8 +27,9 @@ const UserDashboard: React.FC = () => {
   }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    setErrorMessage("");
     e.preventDefault();
-    if (user) {
+    if (user && newUsername) {
       const token = localStorage.getItem('sessionToken');
       console.log("Sending token: ", token);
       axios.patch(`${process.env.REACT_APP_API_URL}/users/${user.id}/update_username`, { username: newUsername }, {
@@ -34,6 +41,7 @@ const UserDashboard: React.FC = () => {
       .then(response => {
         console.log("Response from server: ", response.data);
         setUser({ ...user, username: response.data.user.username });
+        setNewUsername(""); 
       })
       .catch(error => {
         console.error("Username update error:", error.response.data.error);
