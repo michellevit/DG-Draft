@@ -17,16 +17,6 @@ const UserDashboard: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    console.log('new');
-    setErrorMessage("");
-    if (user) {
-      console.log("User:", user);
-      console.log("Session Token: ", localStorage.getItem('sessionToken'))
-      console.log("Username: ", user ? user.username : "none");
-    }
-  }, []);
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (errorMessage) {
@@ -34,7 +24,6 @@ const UserDashboard: React.FC = () => {
     }
     if (user && newUsername) {
       const token = localStorage.getItem('sessionToken');
-      console.log("Sending token: ", token);
       axios.patch(`${process.env.REACT_APP_API_URL}/users/${user.id}/update_username`, { username: newUsername }, {
         headers: {
           Authorization: `Bearer ${token}`
