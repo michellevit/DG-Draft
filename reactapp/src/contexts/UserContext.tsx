@@ -44,6 +44,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
             console.log('User: ', response.data.user);
             setUser(response.data.user);
           } else {
+            console.log('bad response data: ', response.data.user);
             console.log('Uh oh 1');
             // localStorage.removeItem('sessionToken');
             // setUser(null);
