@@ -34,15 +34,20 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 
 ## Features<a name="features"></a>
 
+
 ## Architectural Decisions<a name="architectural-decisions"></a>
 - **Authentication: Session vs Token:** Moving from session[:user_id] = user.id to a JWT approach: shifted from a stateful, server-side session management to a stateless, client-side token management strategy. 
 - **React Context API:** Provides a way to share values like these between components without having to explicitly pass a prop through every level of the tree (prop drill).
 
+
 ## What I Learned<a name="what-I-learned"></a>
+
 
 ## What I Would Do Differently<a name="what-i-would-do-differently"></a>
 
+
 ## Basic Usage<a name="basic-usage"></a>
+
 
 ### Using the Heroku CLI<a name="heroku-cli"></a>
 - Login: `heroku login`
@@ -50,6 +55,7 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 - Get DB Data: `heroku pg:psql -a dg-bets`, `SELECT * FROM users;`
 - Get Heroku Logs: `heroku logs -a dg-bets`
 - Restart Heroku Server: `heroku restart -a dg-bets`
+
 
 ## M Instructions <a name="features-to-add"></a>
 - When deploying to an actual website (and not just personal domain for demo):
@@ -62,8 +68,12 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 
 ## Troubleshooting<a name="troubleshooting"></a>
 
+
 ## Features To Add <a name="features-to-add"></a>
--update username not working
+- update username not working
+- forgot password
+- contact form
+
 
 ## Credits <a name="credits"></a>
 Michelle Flandin

@@ -22,7 +22,7 @@ const UserDashboard: React.FC = () => {
     e.preventDefault();
     if (user) {
       const token = localStorage.getItem('sessionToken');
-      axios.put(`${process.env.REACT_APP_API_URL}/users/${user.id}/update_username`, { username: newUsername }, {
+      axios.patch(`${process.env.REACT_APP_API_URL}/users/${user.id}/update_username`, { username: newUsername }, {
         headers: {
           Authorization: `Bearer ${token}`
         },
