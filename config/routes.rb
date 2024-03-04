@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:attempt_login]
   resources :registrations, only: [:create_user]
   delete :logout, to: "sessions#logout"
-  get :authenticate_token, to: "sessions#authenticate_token"
+  get :authenticate_user, to: "sessions#authenticate_user"
   root 'application#react_app'
   resources :users do
     patch 'update_username', on: :member

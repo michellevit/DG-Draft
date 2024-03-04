@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def update_username
     token = request.headers['Authorization']&.split(' ')&.last
     puts "Received token: #{token}"
-    @current_user = authenticate_token(token) if token
+    @current_user = authenticate_user(token) if token
     puts "Authenticated user: #{@current_user.inspect}" 
     if @current_user
       requested_username = params[:username]
@@ -19,6 +19,22 @@ class UsersController < ApplicationController
       end
     else
       render json: { error: 'Invalid token' }, status: :unauthorized
+    end
+  end
+
+  def authenticate_user
+    token = request.headers['Authorization']&.split(' ')&.last
+    @current_user = authenticate_token(token) if token
+    if @current_user
+      render json: {
+        valid: true,
+        user: @current_user
+      }
+    else
+      render json: {
+        valid: false,
+        error: 'Invalid token'
+      }
     end
   end
 

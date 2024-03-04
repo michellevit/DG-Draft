@@ -32,7 +32,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       const token = localStorage.getItem('sessionToken');
       try {
         if (token) {
-          const response = await axios.get(`${process.env.REACT_APP_API_URL}/authenticate_token`, {
+          const response = await axios.get(`${process.env.REACT_APP_API_URL}/authenticate_user`, {
             headers: {
               Authorization: `Bearer ${token}`
             }
