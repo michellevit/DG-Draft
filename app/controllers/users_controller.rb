@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     if @current_user
       puts "GOT HERE"
       requested_username = params[:username]
+      puts "Requested Username: #{requested_username}"
       puts "A"
       if @current_user.username == requested_username
         puts "B"

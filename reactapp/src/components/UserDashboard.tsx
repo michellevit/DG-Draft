@@ -5,12 +5,14 @@ import { useUser } from "../contexts/UserContext";
 const UserDashboard: React.FC = () => {
   const { user, setUser } = useUser();
   const [newUsername, setNewUsername] = useState<string>(""); 
+  const [errorMessage, setErrorMessage] = useState<string>(""); 
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setNewUsername(e.target.value);
   };
 
   useEffect(() => {
+    setErrorMessage("");
     if(user) {
       console.log("User:", user);
       console.log("Session Token: ", localStorage.getItem('sessionToken'))
@@ -34,7 +36,8 @@ const UserDashboard: React.FC = () => {
         setUser({ ...user, username: response.data.user.username });
       })
       .catch(error => {
-        console.error("Username update error:", error);
+        console.error("Username update error:", error.response.data.error);
+        setErrorMessage(error)
       });
     }
   };
@@ -51,6 +54,7 @@ const UserDashboard: React.FC = () => {
           required
         />
         <button type="submit">Update Username</button>
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
       </form>
     </div>
   );
