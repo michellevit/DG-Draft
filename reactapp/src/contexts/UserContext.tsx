@@ -39,14 +39,14 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           if (response.data.valid) {
             setUser(response.data.user);
           } else {
-            localStorage.removeItem('sessionToken');
-            setUser(null);
+            // localStorage.removeItem('sessionToken');
+            // setUser(null);
           }
         }
       } catch (error) {
         console.error('Token validation error:', error);
-        localStorage.removeItem('sessionToken');
-        setUser(null);
+        // localStorage.removeItem('sessionToken');
+        // setUser(null);
         console.log("Check login error", error);
       }
     };
