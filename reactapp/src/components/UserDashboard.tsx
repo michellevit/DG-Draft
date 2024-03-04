@@ -9,15 +9,16 @@ const UserDashboard: React.FC = () => {
 
   const handleUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
-    if (value.length <= 25) { // Check if length is within limit
+    if (value.length <= 25) {
       setNewUsername(value);
-      setErrorMessage(""); // Clear error message if within limit
+      setErrorMessage(""); 
     } else {
-      setErrorMessage("Username cannot exceed 25 characters"); // Set error message if exceeds limit
+      setErrorMessage("Username cannot exceed 25 characters"); 
     }
   };
 
   useEffect(() => {
+    console.log('new');
     setErrorMessage("");
     if (user) {
       console.log("User:", user);
