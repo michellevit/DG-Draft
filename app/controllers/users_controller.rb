@@ -14,20 +14,19 @@ class UsersController < ApplicationController
       if @current_user.username == requested_username
         puts "B"
         render json: { error: 'New username cannot be the same as the current one.' }, status: :unprocessable_entity
-      elsif User.exists?(username: requested_username)
-        puts "C"
-        render json: { error: 'Username already in use' }, status: :unprocessable_entity
-      elsif @current_user.update(username: requested_username)
-        puts "D"
-        render json: { user: @current_user }
       else
-        puts "E"
-        render json: { error: 'Failed to update username' }, status: :unprocessable_entity
+        puts "D"
+        @current_user.username = requested_username
+        if @current_user.save
+          render json: { user: @current_user }
+        else
+          puts "E"
+          render json: { error: @current_user.errors.full_messages.join(', ') }, status: :unprocessable_entity
+        end
       end
     else
       puts "F"
       render json: { error: 'Invalid token' }, status: :unauthorized
     end
   end
-
 end

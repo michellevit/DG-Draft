@@ -3,4 +3,5 @@ class User < ApplicationRecord
     validates_presence_of :email
     validates_uniqueness_of :email
     validates :password, length: { minimum: 6 }
+    validates :username, presence: true, uniqueness: true
 end

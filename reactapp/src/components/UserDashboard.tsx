@@ -37,7 +37,7 @@ const UserDashboard: React.FC = () => {
       })
       .catch(error => {
         console.error("Username update error:", error.response.data.error);
-        setErrorMessage(error)
+        setErrorMessage(error.response.data.error)
       });
     }
   };
