@@ -37,7 +37,6 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
               Authorization: `Bearer ${token}`
             }
           });
-          console.log('made the request...');
           if (response.data.valid) {
             setUser(response.data.user);
           } else {
