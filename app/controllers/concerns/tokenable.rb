@@ -15,7 +15,7 @@ module Tokenable
       puts "TOKENABLE BEGIN"
       puts "TOKENABLE HMAC: #{hmac_secret}"
       decoded_token = JWT.decode(token, hmac_secret, true, { algorithm: 'HS256' })
-      puts "TOKENABLE decoded token:  #{token}"
+      puts "TOKENABLE decoded token: #{decoded_token}"
       user_id = decoded_token[0]['user_id'] 
       puts "TOKENABLE user_id:  #{user_id}"
       @current_user = User.find_by(id: user_id)
