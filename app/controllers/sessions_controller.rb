@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
     end
     
     # authenticate_token -> checks if the user is logged in -> if success, returns user's data
-    def authenticate_token
+    def authenticate_user
       token = params[:token]
       @current_user = authenticate_token(token) if token
       if @current_user
