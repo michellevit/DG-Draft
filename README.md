@@ -1,4 +1,4 @@
-# Disc Golf Bets
+# Fantasy Disc Golf
 
 ![Ruby Version](https://img.shields.io/badge/Ruby-3.2.3-red.svg)
 ![Rails Version](https://img.shields.io/badge/Rails-7.1.3-red.svg)
@@ -9,7 +9,7 @@
 
 This website was created for making bets (non-monetary) on disc golf tournament standings.
 
-<a href="https://dg-bets.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a>
+<a href="https://fantasy-dg.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a>
 
 
 ## Table of Contents
@@ -51,10 +51,10 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 
 ### Using the Heroku CLI<a name="heroku-cli"></a>
 - Login: `heroku login`
-- Migrate DB: `heroku run rake db:migrate -a dg-bets`
-- Get DB Data: `heroku pg:psql -a dg-bets`, `SELECT * FROM users;`
-- Get Heroku Logs: `heroku logs -a dg-bets`
-- Restart Heroku Server: `heroku restart -a dg-bets`
+- Migrate DB: `heroku run rake db:migrate -a fantasy-dg`
+- Get DB Data: `heroku pg:psql -a fantasy-dg`, `SELECT * FROM users;`
+- Get Heroku Logs: `heroku logs -a fantasy-dg`
+- Restart Heroku Server: `heroku restart -a fantasy-dg`
 
 
 ## M Instructions <a name="features-to-add"></a>
@@ -70,6 +70,19 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 - Apply migrations after modifying the models
 
 ## Features To Add <a name="features-to-add"></a>
+- add bet-card component
+  - tournament name
+  - MPO or FPO
+  - tournament date start
+  - tournament date end 
+  - close-window for selecting players
+  - single or matchup
+  - player A
+  - player B
+  - player C
+  - player D
+  - player E
+- add leaderboard
 - update username not working
 - forgot password
 - contact form
