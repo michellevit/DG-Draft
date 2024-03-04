@@ -34,7 +34,7 @@ const Signup: React.FC = () => {
     ).then(response => {
       if (response.data.status === "created") {
         const { email, username } = response.data.user;
-        setUser({ email, username }); 
+        setUser({ email, username, points: 0 }); 
         setEmail("");
         setPassword("");
         setPasswordConfirmation("");
