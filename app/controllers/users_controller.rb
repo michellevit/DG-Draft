@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   end
 
   def authenticate_user
-    token = request.headers['Authorization']&.split(' ')&.last
+    token = params[:token]
     @current_user = authenticate_token(token) if token
     if @current_user
       render json: {
