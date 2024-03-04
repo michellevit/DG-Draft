@@ -9,11 +9,13 @@ module Tokenable
   end
 
   def authenticate_token(token)
+    puts "Received token: #{token}"
     hmac_secret = ENV['JWT_SECRET_KEY']
     begin
       decoded_token = JWT.decode(token, hmac_secret, true, { algorithm: 'HS256' })
       user_id = decoded_token[0]['user_id'] 
       @current_user = User.find_by(id: user_id)
+      puts "Return: #{@current_user}"
       return @current_user if user_id.present? && @current_user
     rescue JWT::DecodeError, JWT::ExpiredSignature
       nil
