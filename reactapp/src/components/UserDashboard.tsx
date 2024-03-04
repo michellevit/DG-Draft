@@ -31,7 +31,6 @@ const UserDashboard: React.FC = () => {
         withCredentials: true
       })
       .then(response => {
-        console.log("Response from server: ", response.data);
         setUser({ ...user, username: response.data.user.username });
         setNewUsername(""); 
       })
