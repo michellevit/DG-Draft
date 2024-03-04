@@ -30,20 +30,27 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       const token = localStorage.getItem('sessionToken');
       console.log('Retrieved token from local storage:', token);
       try {
+        console.log('inside try');
         if (token) {
+          console.log('found a token!');
           const response = await axios.get(`${process.env.REACT_APP_API_URL}/validate_token`, {
             headers: {
               Authorization: `Bearer ${token}`
             }
           });
+          console.log('made the request...');
           if (response.data.valid) {
+            console.log('validating data!');
+            console.log('User: ', response.data.user);
             setUser(response.data.user);
           } else {
+            console.log('Uh oh 1');
             // localStorage.removeItem('sessionToken');
             // setUser(null);
           }
         }
       } catch (error) {
+        console.log('Uh oh 2');
         console.error('Token validation error:', error);
         // localStorage.removeItem('sessionToken');
         // setUser(null);
