@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   include Tokenable
-  before_action :authenticate_user, only: [:update_username]
+  before_action :authenticate_token, only: [:update_username]
   
   def update_username
     requested_username = params[:username]
