@@ -1,7 +1,7 @@
 class RegistrationsController < ApplicationController
     include Tokenable
     
-    def create
+    def create_user
         user = User.new(
             email: params['user']['email'],
             password: params['user']['password'],
