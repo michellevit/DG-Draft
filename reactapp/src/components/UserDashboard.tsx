@@ -28,8 +28,10 @@ const UserDashboard: React.FC = () => {
   }, []);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    setErrorMessage("");
     e.preventDefault();
+    if (errorMessage) {
+      return; 
+    }
     if (user && newUsername) {
       const token = localStorage.getItem('sessionToken');
       console.log("Sending token: ", token);
