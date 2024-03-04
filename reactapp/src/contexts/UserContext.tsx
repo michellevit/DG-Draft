@@ -10,6 +10,7 @@ interface User {
 interface UserContextType {
   user: User | null;
   setUser: (user: User | null) => void;
+  loading: boolean;
 }
 
 const UserContext = createContext<UserContextType | undefined>(undefined);
@@ -25,14 +26,12 @@ export const useUser = () => {
 
 export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchUser = async () => {
       const token = localStorage.getItem('sessionToken');
-      console.log('Retrieved token from local storage:', token);
       try {
-        console.log('inside try');
         if (token) {
-          console.log('found a token!');
           const response = await axios.get(`${process.env.REACT_APP_API_URL}/authenticate_token`, {
             headers: {
               Authorization: `Bearer ${token}`
@@ -40,22 +39,19 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
           });
           console.log('made the request...');
           if (response.data.valid) {
-            console.log('validating data!');
-            console.log('User: ', response.data.user);
             setUser(response.data.user);
           } else {
-            console.log('bad response data: ', response.data.user);
-            console.log('Uh oh 1');
-            // localStorage.removeItem('sessionToken');
-            // setUser(null);
+            localStorage.removeItem('sessionToken');
+            setUser(null);
           }
         }
       } catch (error) {
         console.log('Uh oh 2');
-        console.error('Token validation error:', error);
-        // localStorage.removeItem('sessionToken');
-        // setUser(null);
+        localStorage.removeItem('sessionToken');
+        setUser(null);
         console.log("Check login error", error);
+      }finally {
+        setLoading(false);
       }
     };
 
@@ -63,7 +59,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, []);
 
 
-  const value = { user, setUser };
+  const value = { user, setUser, loading };
 
   return (
     <UserContext.Provider value={value}>
