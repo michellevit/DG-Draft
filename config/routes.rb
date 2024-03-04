@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   post '/sessions', to: 'sessions#attempt_login'
-  resources :registrations, only: [:create_user]
+  post '/sessions', to: 'sessions#create_user'
   delete :logout, to: "sessions#logout"
   get :authenticate_user, to: "sessions#authenticate_user"
   root 'application#react_app'
