@@ -1,4 +1,4 @@
-# Fantasy Disc Golf
+# DG
 
 ![Ruby Version](https://img.shields.io/badge/Ruby-3.2.3-red.svg)
 ![Rails Version](https://img.shields.io/badge/Rails-7.1.3-red.svg)
@@ -7,7 +7,7 @@
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)
 ![Heroku](https://img.shields.io/badge/Platform-Heroku-lightgrey.svg)
 
-This website was created for making bets (non-monetary) on disc golf tournament standings.
+This website was created for creating fantasy disc golf leagues.
 
 <a href="https://fantasy-dg.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a>
 
@@ -17,7 +17,6 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 - [Features](#features)
 - [Architectural Decisions](#architectural-decisions)
 - [What I Learned](#what-i-learned)
-- [What I Would Do Differently](#what-i-would-do-differently)
 - [Basic Usage](#basic-usage)
   - [Using the Heroku CLI](#heroku-cli)
 - [Troubleshooting](#troubleshooting)
@@ -41,9 +40,6 @@ This website was created for making bets (non-monetary) on disc golf tournament 
 
 
 ## What I Learned<a name="what-I-learned"></a>
-
-
-## What I Would Do Differently<a name="what-i-would-do-differently"></a>
 
 
 ## Basic Usage<a name="basic-usage"></a>
