@@ -25,6 +25,5 @@ class UsersController < ApplicationController
     top_users = User.order(points: :desc).limit(25)
     render json: top_users, only: [:username, :points]
   end
-end
 
 end
