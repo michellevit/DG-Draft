@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const { user } = useUser(); 
   return (
     <nav>
-      <Link to="/" className="title">DG Bets</Link>
+      <Link to="/" className="title">Fantasy Disc Golf</Link>
       <div className={"menu" + (menuOpen ? " icon-open" : "")} onClick={() => setMenuOpen(!menuOpen)}>
         <span></span>
         <span></span>
