@@ -19,6 +19,7 @@ const Leaderboard: React.FC = () => {
           `${process.env.REACT_APP_API_URL}/leaderboard`
         );
         setLeaderboardData(response.data);
+        console.log(response.data);
       } catch (error) {
         console.error("Failed to fetch leaderboard data:", error);
       }
