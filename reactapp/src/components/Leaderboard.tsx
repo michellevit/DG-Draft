@@ -3,18 +3,21 @@ import axios from "axios";
 import { useUser } from "../contexts/UserContext";
 
 interface LeaderboardUser {
+  id: number;
   username: string;
   points: number;
 }
 
 const Leaderboard: React.FC = () => {
-  const { user } = useUser();
   const [leaderboardData, setLeaderboardData] = useState<LeaderboardUser[]>([]);
+  const { user } = useUser();
 
   useEffect(() => {
     const fetchLeaderboardData = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/leaderboard`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/leaderboard`
+        );
         setLeaderboardData(response.data);
       } catch (error) {
         console.error("Failed to fetch leaderboard data:", error);
@@ -28,12 +31,21 @@ const Leaderboard: React.FC = () => {
     <div className="leaderboard-container">
       <h2>Leaderboard</h2>
       <ul>
-        {leaderboardData.map((user, index) => (
-          <li key={index}>{user.username} - {user.points} points</li>
+        {leaderboardData.map((leaderboardUser, index) => (
+          <li
+            key={index}
+            style={
+              user && user.id === leaderboardUser.id
+                ? { fontWeight: "bold" }
+                : {}
+            }
+          >
+            {leaderboardUser.username} - {leaderboardUser.points} points
+          </li>
         ))}
       </ul>
     </div>
   );
-}
+};
 
 export default Leaderboard;
