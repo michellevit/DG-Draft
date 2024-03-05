@@ -9,7 +9,7 @@
 
 This website was created for creating fantasy disc golf leagues.
 
-<a href="https://fantasy-dg.michellef.dev/api" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a>
+<a href="https://fantasy-dg.michellef.dev" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a>
 
 
 ## Table of Contents
