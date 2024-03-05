@@ -7,6 +7,8 @@ import Bets from "./pages/Bets";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 import { UserProvider } from "./contexts/UserContext"; 
 
 
@@ -24,6 +26,8 @@ const App: React.FC = () => {
           <Route path="profile" element={<Profile />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="privacy" element={<Privacy />} />
+          <Route path="terms" element={<Terms />} />
         </Routes>
       </div>
     </div>
