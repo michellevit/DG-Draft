@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users do
     patch 'update_username', on: :member
   end
+  get 'leaderboard', to: 'users#leaderboard'
   root 'application#react_app'
   get "up" => "rails/health#show", as: :rails_health_check
   get '*path', to: 'application#react_app'

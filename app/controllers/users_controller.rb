@@ -20,4 +20,11 @@ class UsersController < ApplicationController
       render json: { error: 'Invalid token' }, status: :unauthorized
     end
   end
+
+  def leaderboard
+    top_users = User.order(points: :desc).limit(25)
+    render json: top_users, only: [:username, :points]
+  end
+end
+
 end
