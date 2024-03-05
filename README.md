@@ -1,4 +1,4 @@
-# DG
+# DG Draft
 
 ![Ruby Version](https://img.shields.io/badge/Ruby-3.2.3-red.svg)
 ![Rails Version](https://img.shields.io/badge/Rails-7.1.3-red.svg)
@@ -47,10 +47,10 @@ This website was created for creating fantasy disc golf leagues.
 
 ### Using the Heroku CLI<a name="heroku-cli"></a>
 - Login: `heroku login`
-- Migrate DB: `heroku run rake db:migrate -a fantasy-dg`
-- Get DB Data: `heroku pg:psql -a fantasy-dg`, `SELECT * FROM users;`
-- Get Heroku Logs: `heroku logs -a fantasy-dg`
-- Restart Heroku Server: `heroku restart -a fantasy-dg`
+- Migrate DB: `heroku run rake db:migrate -a dg-draft`
+- Get DB Data: `heroku pg:psql -a dg-draft`, `SELECT * FROM users;`
+- Get Heroku Logs: `heroku logs -a dg-draft`
+- Restart Heroku Server: `heroku restart -a dg-draft`
 
 
 ## M Instructions <a name="features-to-add"></a>
