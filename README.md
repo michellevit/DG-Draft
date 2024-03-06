@@ -18,6 +18,8 @@ This website was created for creating fantasy disc golf leagues.
 - [Architectural Decisions](#architectural-decisions)
 - [What I Learned](#what-i-learned)
 - [Basic Usage](#basic-usage)
+  - [Activate Virtual Env](#virtual-env)
+  - [Update Player/Event Data](#update-pdga-data)
   - [Using the Heroku CLI](#heroku-cli)
 - [Troubleshooting](#troubleshooting)
 - [Features To Add](#features-to-add)
@@ -43,7 +45,23 @@ This website was created for creating fantasy disc golf leagues.
 
 
 ## Basic Usage<a name="basic-usage"></a>
+### Activate the Virtual Env<a name="virtual-env"></a>
+- Activate the virtual env: 
+  - Navigate to the python folder in the terminal
+  - Run `.\venv\Scripts\activate`
 
+### Update Player/Event Data<a name="update-pdga-data"></a>
+- Make a copy of the python/dg-data-2024.xlsx file and update the year
+- Get the data from pdga.com (follow notes instructions)
+  - Copy/paste the player and event data
+- Save the file in the python folder
+- Modify the jsonify-data.py var 'excel_file_name' to have the current year
+- Run `python jsonify.data.py`
+- The data will be saved to the json files in lib/seeds
+- Run the rake file to push the data to the database 
+  - Run `rails db:seed`
+  - Note: this will not create duplicates of entries with the same pdga#
+  - Note: this will not create duplicates of events with the same start/end date
 
 ### Using the Heroku CLI<a name="heroku-cli"></a>
 - Login: `heroku login`

@@ -1,0 +1,638 @@
+[
+    {
+        "name": "M. Lynds",
+        "pdga_number": 176242
+    },
+    {
+        "name": "M. Oliva",
+        "pdga_number": 63257
+    },
+    {
+        "name": "L. Tsinajinnie",
+        "pdga_number": 139109
+    },
+    {
+        "name": "H. Finley",
+        "pdga_number": 51277
+    },
+    {
+        "name": "E. Midtlyng",
+        "pdga_number": 198446
+    },
+    {
+        "name": "S. Kiefer",
+        "pdga_number": 124963
+    },
+    {
+        "name": "E. Salonen",
+        "pdga_number": 64927
+    },
+    {
+        "name": "E. Hansen",
+        "pdga_number": 144112
+    },
+    {
+        "name": "H. Handley",
+        "pdga_number": 133547
+    },
+    {
+        "name": "M. Gannon",
+        "pdga_number": 85942
+    },
+    {
+        "name": "H. Blomroos",
+        "pdga_number": 59227
+    },
+    {
+        "name": "J. Allen",
+        "pdga_number": 15354
+    },
+    {
+        "name": "N. Ryan",
+        "pdga_number": 114560
+    },
+    {
+        "name": "K. Mertsch",
+        "pdga_number": 99455
+    },
+    {
+        "name": "M. Simpson",
+        "pdga_number": 161127
+    },
+    {
+        "name": "J. Lynds",
+        "pdga_number": 176243
+    },
+    {
+        "name": "S. Rawnsley",
+        "pdga_number": 122208
+    },
+    {
+        "name": "N. Ovathanasin",
+        "pdga_number": 157471
+    },
+    {
+        "name": "R. Cox",
+        "pdga_number": 32917
+    },
+    {
+        "name": "S. Hokom",
+        "pdga_number": 34563
+    },
+    {
+        "name": "P. Pierce",
+        "pdga_number": 29190
+    },
+    {
+        "name": "L. Lorentzen",
+        "pdga_number": 99441
+    },
+    {
+        "name": "P. Shue",
+        "pdga_number": 33833
+    },
+    {
+        "name": "A. Mandujano",
+        "pdga_number": 62880
+    },
+    {
+        "name": "H. Starzynski",
+        "pdga_number": 200202
+    },
+    {
+        "name": "S. Donnecke",
+        "pdga_number": 185534
+    },
+    {
+        "name": "A. Mandujano",
+        "pdga_number": 62880
+    },
+    {
+        "name": "V. Mandujano",
+        "pdga_number": 62879
+    },
+    {
+        "name": "E. Widboom",
+        "pdga_number": 58276
+    },
+    {
+        "name": "A. Smith",
+        "pdga_number": 147050
+    },
+    {
+        "name": "R. Klein",
+        "pdga_number": 138272
+    },
+    {
+        "name": "H. Huynh",
+        "pdga_number": 112647
+    },
+    {
+        "name": "G. Beck",
+        "pdga_number": 191500
+    },
+    {
+        "name": "I. Shakhova",
+        "pdga_number": 177578
+    },
+    {
+        "name": "C. Burge",
+        "pdga_number": 79233
+    },
+    {
+        "name": "D. Carey",
+        "pdga_number": 66842
+    },
+    {
+        "name": "S. Gast",
+        "pdga_number": 6440
+    },
+    {
+        "name": "H. Stefanovich",
+        "pdga_number": 79777
+    },
+    {
+        "name": "D. Reading",
+        "pdga_number": 15863
+    },
+    {
+        "name": "J. Nolan",
+        "pdga_number": 126019
+    },
+    {
+        "name": "A. Phelps",
+        "pdga_number": 132291
+    },
+    {
+        "name": "J. Korver",
+        "pdga_number": 7438
+    },
+    {
+        "name": "A. Breines",
+        "pdga_number": 117291
+    },
+    {
+        "name": "A. Lewis",
+        "pdga_number": 61950
+    },
+    {
+        "name": "C. Allen",
+        "pdga_number": 44184
+    },
+    {
+        "name": "A. Kerman",
+        "pdga_number": 142354
+    },
+    {
+        "name": "S. Vincent",
+        "pdga_number": 29947
+    },
+    {
+        "name": "V. Mandujano",
+        "pdga_number": 62879
+    },
+    {
+        "name": "V. Main",
+        "pdga_number": 104314
+    },
+    {
+        "name": "J. Weese",
+        "pdga_number": 50656
+    },
+    {
+        "name": "H. Flintoft",
+        "pdga_number": 83693
+    },
+    {
+        "name": "S. Yang",
+        "pdga_number": 133080
+    },
+    {
+        "name": "Z. AnDyke",
+        "pdga_number": 39504
+    },
+    {
+        "name": "C. Vollbrecht",
+        "pdga_number": 165652
+    },
+    {
+        "name": "J. Smiley",
+        "pdga_number": 184736
+    },
+    {
+        "name": "M. Walker",
+        "pdga_number": 59431
+    },
+    {
+        "name": "M. Tomaino",
+        "pdga_number": 60798
+    },
+    {
+        "name": "S. Smith",
+        "pdga_number": 203310
+    },
+    {
+        "name": "K. Dickerson",
+        "pdga_number": 237609
+    },
+    {
+        "name": "E. Stinchcomb",
+        "pdga_number": 71262
+    },
+    {
+        "name": "E. Beach",
+        "pdga_number": 61144
+    },
+    {
+        "name": "A. Turner",
+        "pdga_number": 215821
+    },
+    {
+        "name": "T. Crammer",
+        "pdga_number": 102378
+    },
+    {
+        "name": "S. Duran",
+        "pdga_number": 218760
+    },
+    {
+        "name": "E. Yale",
+        "pdga_number": 144791
+    },
+    {
+        "name": "L. Fish",
+        "pdga_number": 32925
+    },
+    {
+        "name": "K. Allsalu",
+        "pdga_number": 84279
+    },
+    {
+        "name": "K. Lee",
+        "pdga_number": 75818
+    },
+    {
+        "name": "C. Howells",
+        "pdga_number": 131574
+    },
+    {
+        "name": "B. Robinson",
+        "pdga_number": 153949
+    },
+    {
+        "name": "K. Rogenbaum",
+        "pdga_number": 108593
+    },
+    {
+        "name": "L. Butler",
+        "pdga_number": 65489
+    },
+    {
+        "name": "S. Lai",
+        "pdga_number": 215439
+    },
+    {
+        "name": "K. Wood",
+        "pdga_number": 236725
+    },
+    {
+        "name": "A. Jones",
+        "pdga_number": 216412
+    },
+    {
+        "name": "M. Soasepp",
+        "pdga_number": 128532
+    },
+    {
+        "name": "P. Reineke",
+        "pdga_number": 6439
+    },
+    {
+        "name": "A. Blakeman",
+        "pdga_number": 48199
+    },
+    {
+        "name": "M. Rosta",
+        "pdga_number": 87523
+    },
+    {
+        "name": "M. Watanobe",
+        "pdga_number": 102761
+    },
+    {
+        "name": "K. Fountain",
+        "pdga_number": 73693
+    },
+    {
+        "name": "B. Howell",
+        "pdga_number": 11739
+    },
+    {
+        "name": "J. Rice",
+        "pdga_number": 151072
+    },
+    {
+        "name": "R. Appel",
+        "pdga_number": 176645
+    },
+    {
+        "name": "L. Resang",
+        "pdga_number": 147104
+    },
+    {
+        "name": "T. Toomsalu",
+        "pdga_number": 134403
+    },
+    {
+        "name": "E. Peksena",
+        "pdga_number": 202571
+    },
+    {
+        "name": "C. Chen",
+        "pdga_number": 43610
+    },
+    {
+        "name": "E. Kitchen",
+        "pdga_number": 177875
+    },
+    {
+        "name": "M. Zinck",
+        "pdga_number": 147298
+    },
+    {
+        "name": "S. Liu",
+        "pdga_number": 158461
+    },
+    {
+        "name": "E. Weatherman",
+        "pdga_number": 111487
+    },
+    {
+        "name": "M. Kielas",
+        "pdga_number": 173601
+    },
+    {
+        "name": "C. Ricciotti",
+        "pdga_number": 75029
+    },
+    {
+        "name": "S. Kobec",
+        "pdga_number": 114414
+    },
+    {
+        "name": "M. Jurgeleviciute",
+        "pdga_number": 76331
+    },
+    {
+        "name": "B. Leaman-Snyder",
+        "pdga_number": 101295
+    },
+    {
+        "name": "M. Merrick",
+        "pdga_number": 187489
+    },
+    {
+        "name": "K. Foster",
+        "pdga_number": 152191
+    },
+    {
+        "name": "J. Tan",
+        "pdga_number": 118261
+    },
+    {
+        "name": "N. Guerrero",
+        "pdga_number": 140947
+    },
+    {
+        "name": "L. Waite",
+        "pdga_number": 173883
+    },
+    {
+        "name": "M. Oliva",
+        "pdga_number": 63257
+    },
+    {
+        "name": "L. Vivet",
+        "pdga_number": 237823
+    },
+    {
+        "name": "A. Sloan",
+        "pdga_number": 67404
+    },
+    {
+        "name": "A. McGuire",
+        "pdga_number": 199274
+    },
+    {
+        "name": "C. Beck",
+        "pdga_number": 71684
+    },
+    {
+        "name": "K. Clay",
+        "pdga_number": 125178
+    },
+    {
+        "name": "K. Unt",
+        "pdga_number": 116694
+    },
+    {
+        "name": "C. Chen",
+        "pdga_number": 275294
+    },
+    {
+        "name": "A. Eaton",
+        "pdga_number": 100197
+    },
+    {
+        "name": "K. Bj\u00f8rk\u00e5s",
+        "pdga_number": 66898
+    },
+    {
+        "name": "J. Dimartino",
+        "pdga_number": 195389
+    },
+    {
+        "name": "S. Lee",
+        "pdga_number": 165310
+    },
+    {
+        "name": "A. Krueger",
+        "pdga_number": 79500
+    },
+    {
+        "name": "A. Tahlier",
+        "pdga_number": 141044
+    },
+    {
+        "name": "K. Tekku",
+        "pdga_number": 196237
+    },
+    {
+        "name": "L. Vivet",
+        "pdga_number": 237823
+    },
+    {
+        "name": "B. Kevere",
+        "pdga_number": 171857
+    },
+    {
+        "name": "R. Russell",
+        "pdga_number": 176407
+    },
+    {
+        "name": "R. Tsukamoto",
+        "pdga_number": 8140
+    },
+    {
+        "name": "H. Liu",
+        "pdga_number": 275301
+    },
+    {
+        "name": "A. Grace-Schafer",
+        "pdga_number": 69838
+    },
+    {
+        "name": "K. Sterner",
+        "pdga_number": 110724
+    },
+    {
+        "name": "T. Chocek",
+        "pdga_number": 189702
+    },
+    {
+        "name": "J. DeLude",
+        "pdga_number": 160103
+    },
+    {
+        "name": "C. Kennedy",
+        "pdga_number": 154343
+    },
+    {
+        "name": "S. Wairau",
+        "pdga_number": 276519
+    },
+    {
+        "name": "C. Vollbrecht",
+        "pdga_number": 165652
+    },
+    {
+        "name": "H. Rohi",
+        "pdga_number": 161303
+    },
+    {
+        "name": "K. Miller",
+        "pdga_number": 72635
+    },
+    {
+        "name": "T. Borth",
+        "pdga_number": 78232
+    },
+    {
+        "name": "K. Johnson",
+        "pdga_number": 130187
+    },
+    {
+        "name": "E. Li",
+        "pdga_number": 152810
+    },
+    {
+        "name": "K. Maixner",
+        "pdga_number": 115863
+    },
+    {
+        "name": "J. Trapp",
+        "pdga_number": 144087
+    },
+    {
+        "name": "Y. Valenzuela",
+        "pdga_number": 149470
+    },
+    {
+        "name": "J. Henderson",
+        "pdga_number": 155692
+    },
+    {
+        "name": "S. Smith",
+        "pdga_number": 203310
+    },
+    {
+        "name": "C. McCabe",
+        "pdga_number": 103661
+    },
+    {
+        "name": "E. Dale",
+        "pdga_number": 171584
+    },
+    {
+        "name": "K. Jenc\u012bte",
+        "pdga_number": 192273
+    },
+    {
+        "name": "D. Keen",
+        "pdga_number": 102024
+    },
+    {
+        "name": "J. Serratos",
+        "pdga_number": 66463
+    },
+    {
+        "name": "B. McKibben",
+        "pdga_number": 230819
+    },
+    {
+        "name": "Y. Nakagawara",
+        "pdga_number": 65846
+    },
+    {
+        "name": "Z. Lorenz-Boser",
+        "pdga_number": 221013
+    },
+    {
+        "name": "W. Graham",
+        "pdga_number": 131920
+    },
+    {
+        "name": "A. Hendrickson",
+        "pdga_number": 214238
+    },
+    {
+        "name": "P. Miller",
+        "pdga_number": 126492
+    },
+    {
+        "name": "S. Bonacci",
+        "pdga_number": 85189
+    },
+    {
+        "name": "C. Sweetten",
+        "pdga_number": 34655
+    },
+    {
+        "name": "K. French",
+        "pdga_number": 47036
+    },
+    {
+        "name": "M. Liivam\u00e4gi",
+        "pdga_number": 107297
+    },
+    {
+        "name": "K. T\u00e4tte",
+        "pdga_number": 94085
+    },
+    {
+        "name": "G. Vereni\u016bt\u0117",
+        "pdga_number": 198784
+    },
+    {
+        "name": "S. Puisiene",
+        "pdga_number": 167861
+    },
+    {
+        "name": "K. Davis",
+        "pdga_number": 152567
+    },
+    {
+        "name": "J. Cheung",
+        "pdga_number": 237772
+    }
+]
