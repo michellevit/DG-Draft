@@ -10,9 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_06_041633) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_06_045414) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "event_placements", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "player_id", null: false
+    t.integer "placement"
+    t.string "division"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id", "placement"], name: "index_event_placements_on_event_id_and_placement", unique: true
+    t.index ["event_id"], name: "index_event_placements_on_event_id"
+    t.index ["player_id"], name: "index_event_placements_on_player_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.string "event_name"
@@ -43,4 +55,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_041633) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "event_placements", "events"
+  add_foreign_key "event_placements", "players"
 end
