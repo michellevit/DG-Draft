@@ -59,7 +59,8 @@ This website was created for creating fantasy disc golf leagues.
 - Run `python jsonify.data.py`
 - The data will be saved to the json files in lib/seeds
 - Run the rake file to push the data to the database 
-  - Run `rails db:seed`
+  - Development: `rails db:seed`
+  - Production: `heroku run rake db:seed --app dg-draft`
   - Note: this will not create duplicates of entries with the same pdga#
   - Note: this will not create duplicates of events with the same start/end date
 
@@ -69,6 +70,7 @@ This website was created for creating fantasy disc golf leagues.
 - Get DB Data: `heroku pg:psql -a dg-draft`, `SELECT * FROM users;`
 - Get Heroku Logs: `heroku logs -a dg-draft`
 - Restart Heroku Server: `heroku restart -a dg-draft`
+- Seed DB: `heroku run rake db:seed --app dg-draft`
 
 
 ## M Instructions <a name="features-to-add"></a>

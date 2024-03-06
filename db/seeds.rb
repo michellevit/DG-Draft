@@ -28,6 +28,7 @@ mpo_players_data.each do |player|
   Player.find_or_create_by(pdga_number: player['pdga_number']) do |p|
     p.name = player['name']
     p.division = 'mpo'  
+  end
 end
 
 # Seed FPO players
