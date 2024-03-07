@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
         <span></span>
       </div>
       <ul className={menuOpen ? "open" : ""}>
-        {user && <li><NavLink to="/bets">Bets</NavLink></li>}
+        {user && <li><NavLink to="/challenges">Challenges</NavLink></li>}
         {user && <li><NavLink to="/profile">Profile</NavLink></li>}
         {!user && <li><NavLink to="/login">Login</NavLink></li>}
         {!user && <li><NavLink to="/signup">Sign Up</NavLink></li>}
