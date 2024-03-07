@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Bets from "./pages/Bets";
+import Challenges from "./pages/Challenges";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
@@ -22,7 +22,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} /> 
           <Route path="home" element={<Home />} />
-          <Route path="bets" element={<Bets />} />
+          <Route path="challenges" element={<Challenges />} />
           <Route path="profile" element={<Profile />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />

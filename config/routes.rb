@@ -4,9 +4,11 @@ Rails.application.routes.draw do
     delete :logout, to: "sessions#logout"
     get :authenticate_user, to: "sessions#authenticate_user"
     post '/registrations', to: 'registrations#create_user'
+    resources :events, only: [:index]
     resources :users do
       patch 'update_username', on: :member
     end
+    resources :challenges, only: [:create]
     get 'leaderboard', to: 'users#leaderboard'
   end
 

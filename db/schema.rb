@@ -10,9 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_06_045908) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_07_044139) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "challenges", force: :cascade do |t|
+    t.bigint "event_id", null: false
+    t.bigint "challenger_id", null: false
+    t.bigint "challengee_id", null: false
+    t.string "start_condition"
+    t.string "status", default: "pending"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "division"
+    t.index ["challengee_id"], name: "index_challenges_on_challengee_id"
+    t.index ["challenger_id"], name: "index_challenges_on_challenger_id"
+    t.index ["event_id"], name: "index_challenges_on_event_id"
+  end
 
   create_table "event_placements", force: :cascade do |t|
     t.bigint "event_id", null: false
@@ -56,6 +70,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_06_045908) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "challenges", "events"
+  add_foreign_key "challenges", "users", column: "challengee_id"
+  add_foreign_key "challenges", "users", column: "challenger_id"
   add_foreign_key "event_placements", "events"
   add_foreign_key "event_placements", "players"
 end
