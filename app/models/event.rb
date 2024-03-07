@@ -5,4 +5,7 @@ class Event < ApplicationRecord
     validates :location, presence: true
     has_many :event_placements
     has_many :players, through: :event_placements
+    def formatted_name
+        "#{event_name} - #{event_date_start.strftime('%b %d')}"
+    end
 end
