@@ -1,7 +1,7 @@
--namespace the backend urls
-
-Challenges: To store information about challenges between users.
-Drafts: To record each user's draft picks.
+Challenges:
+-create a challenge vs another user
+-submit
+-accept
 
 
 -make an easy way to push event winners in the backend (component for admin)

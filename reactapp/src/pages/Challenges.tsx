@@ -38,7 +38,7 @@ const Challenge: React.FC = () => {
       <form>
         <h1>New Challenge</h1>
         <div>
-          <label>Enter Event Name</label>
+          <label>Event Name</label>
           <select>
             {events.map((event) => (
               <option key={event.id} value={event.id}>{event.event_name}</option>
