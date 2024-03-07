@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
+import "./Challenge.css";
 
 interface Event {
   id: number;
@@ -10,7 +11,9 @@ interface Event {
 }
 
 const Challenge: React.FC = () => {
-  const [events, setEvents] = useState<Event[]>([]);
+  const [allEvents, setAllEvents] = useState<Event[]>([]);
+  const [challengeeUsername, setChallengeeUsername] = useState("");
+  const [startCondition, setStartCondition] = useState("random");
   const { user, loading } = useUser();
   const navigate = useNavigate();
 
@@ -20,7 +23,7 @@ const Challenge: React.FC = () => {
         const response = await axios.get(
           `${process.env.REACT_APP_API_URL}/events`
         );
-        setEvents(response.data);
+        setAllEvents(response.data);
       } catch (error) {
         console.error("Failed to fetch events", error);
       }
@@ -33,9 +36,19 @@ const Challenge: React.FC = () => {
       <form>
         <h1>New Challenge</h1>
         <div>
+          <label>{user?.username} VS</label>
+          <input
+            type="text"
+            value={challengeeUsername}
+            onChange={(e) => setChallengeeUsername(e.target.value)}
+            placeholder="Enter challengee's username"
+            required
+          />
+        </div>
+        <div>
           <label>Event Name</label>
           <select>
-            {events.map((event) => (
+            {allEvents.map((event) => (
               <option key={event.id} value={event.id}>
                 {`${event.event_name} - ${new Date(
                   event.event_date_start
@@ -45,6 +58,17 @@ const Challenge: React.FC = () => {
                 })}`}
               </option>
             ))}
+          </select>
+        </div>
+        <div>
+          <label>I Play As</label>
+          <select
+            value={startCondition}
+            onChange={(e) => setStartCondition(e.target.value)}
+          >
+            <option value="challenger">{user?.username}</option>
+            <option value="challengee">(challengeeUsername ? challengeeUsername : "Challengee")</option>
+            <option value="random">Random</option>
           </select>
         </div>
         <button type="submit">Submit</button>
