@@ -23,7 +23,8 @@ module Api
     
     # authenticate_token -> checks if the user is logged in -> if success, returns user's data
     def authenticate_user
-      token = params[:token]
+      auth_header = request.headers['Authorization']
+      token = auth_header.split(' ').last if auth_header
       @current_user = authenticate_token(token) if token
       if @current_user
         render json: {
