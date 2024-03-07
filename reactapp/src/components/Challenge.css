@@ -1,4 +1,12 @@
-.new_challenge-container {
+.new-challenge-container {
     background: rgb(41, 131, 206);
     border-radius: 25px;
+}
+
+.new-challenge-container form {
+    padding: 1rem;
+}
+
+.new-challenge-container form > * {
+    padding: 1rem;
 }

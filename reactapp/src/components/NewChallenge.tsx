@@ -32,7 +32,7 @@ const Challenge: React.FC = () => {
   }, []);
 
   return (
-    <div className="new_challenge-container">
+    <div className="new-challenge-container">
       <form>
         <h1>New Challenge</h1>
         <div>
@@ -61,13 +61,13 @@ const Challenge: React.FC = () => {
           </select>
         </div>
         <div>
-          <label>I Play As</label>
+          <label>Who Picks First?</label>
           <select
             value={startCondition}
             onChange={(e) => setStartCondition(e.target.value)}
           >
             <option value="challenger">{user?.username}</option>
-            <option value="challengee">(challengeeUsername ? challengeeUsername : "Challengee")</option>
+            <option value="challengee">{challengeeUsername ? challengeeUsername : "Challengee"}</option>
             <option value="random">Random</option>
           </select>
         </div>
