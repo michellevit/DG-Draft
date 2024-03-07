@@ -71,7 +71,7 @@ const Challenge: React.FC = () => {
             <option value="random">Random</option>
           </select>
         </div>
-        <button type="submit">Submit</button>
+        <div><button type="submit">Submit</button></div>=
       </form>
     </div>
   );
