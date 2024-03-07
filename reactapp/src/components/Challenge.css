@@ -11,6 +11,11 @@
     text-align: center;
 }
 
-.new-challenge-container form > * {
+
+.new-challenge-container form > div {
     padding: 1rem;
+}
+
+.new-challenge-container form select, .new-challenge-container form select input {
+    margin-left: 1rem;
 }
