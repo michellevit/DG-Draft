@@ -23,6 +23,7 @@
 }
 
 .new-challenge-container form label {
+    width: 100px;
     margin-right: 1rem;
 }
 
