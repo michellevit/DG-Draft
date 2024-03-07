@@ -1,0 +1,123 @@
+-namespace the backend urls
+
+Challenges: To store information about challenges between users.
+Drafts: To record each user's draft picks.
+
+
+-make an easy way to push event winners in the backend (component for admin)
+
+
+b. API Endpoints
+Challenge Creation: Endpoint to initiate a challenge between users, specifying the initiator, the challenged user, and draft order preference.
+Challenge Response: Endpoint for users to accept or decline challenges.
+Draft Picks: Endpoints for users to select their draft picks in the order specified by the challenge.
+Event and Player Sync: Endpoints (or scheduled tasks) to sync player and event data from the PDGA API.
+Event Result Submission: A secure backend interface for you to manually enter event results.
+c. Business Logic
+Implement the logic for:
+
+Draft pick selections ensuring no player is selected more than once.
+Calculating points based on event results.
+Updating user points and challenge statuses after an event concludes.
+4. Frontend Development
+a. Challenge System
+Build out UI components to:
+
+Display open challenges and allow users to accept/decline.
+Create new challenges against other users.
+b. Drafting Interface
+Develop a drafting interface that:
+
+Lists available players fetched from your backend.
+Enforces the draft order and selection rules you've outlined.
+Updates in real-time as each user makes their selections.
+c. Event and Leaderboard Display
+Create components to:
+
+Display upcoming and past events, including their results.
+Show the leaderboard based on user points.
+5. Testing and Iteration
+After implementing the core functionalities, rigorously test the application to ensure everything works as expected. Pay special attention to edge cases in the drafting process and challenge system.
+
+6. Deployment and Monitoring
+Once satisfied with the development, deploy your application. Monitor its performance and user feedback to make improvements over time.
+
+7. Administrative Backend for Event Results
+Given the PDGA API's limitations regarding event results, creating a simple administrative interface to input event results manually will be crucial. This could be a simple form in your Rails app secured by authentication.
+
+Starting Steps
+Start Small: Begin by setting up the backend models and their associations.
+API Integration: Work on integrating the PDGA API to fetch and store player and event data.
+Core Features First: Focus on building out the challenge and draft functionalities before moving on to more complex features like the live draft system.
+By breaking down the project into manageable pieces and focusing on one feature at a time, you can systematically work through the development process. Remember, it's essential to test each part thoroughly before moving on to the next to ensure a solid foundation for your application.
+
+
+
+
+
+
+
+
+
+
+FEATURES: 
+
+reactapp
+-src
+--components
+---auth
+----Registration.tsx
+---Leaderboard.tsx
+---Navbar.tsx
+---UserDashboard.tsx
+--contexts
+---UserContext.tsx
+--pages
+---Bets.tsx
+---Home.tsx
+---Login.tsx
+---Profile.tsx
+---Signup.tsx
+--types
+---interface.ts
+--App.tsx
+--index.tsx
+-tsconfig
+
+
+
+mic@mic.com 
+hello1
+
+
+bets page: 
+  - current bets
+  - past bets
+  - compare bets
+
+-user can create a new card
+-only 1 card per tournament (cant 
+-pick the tournament
+-toggle rule: can only pick players that were not picked on their most recent matchup
+-challenge friend 
+  - who goes first: random, select, or opposite of last time (if available)
+  - once the first person selects someone,the second person picks 2, then first person can pick 1, and second person picks 1, etc
+-solo: pick 5
+
+
+friends page:
+-add friend
+-delete friend
+-compare bet cards with friends
+-friends leaderboard
+
+
+
+public profile page: 
+-see user's past bets
+
+
+-free for 1 month
+-$5/month
+-free for 1 year if you refer a friend + they create a fantasy card
+

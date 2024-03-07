@@ -1,5 +1,5 @@
 if Rails.env == "production"
-    Rails.application.config.session_store :cookie_store, key: "_authentication_app", domain: "fantasy-dg.michellef.dev"
+    Rails.application.config.session_store :cookie_store, key: "_authentication_app", domain: "dgdraft.com"
 else
     Rails.application.config.session_store :cookie_store, key: "_authentication_app"
 end
