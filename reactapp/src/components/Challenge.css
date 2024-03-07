@@ -16,6 +16,10 @@
     padding: 1rem;
 }
 
-.new-challenge-container form select, .new-challenge-container form select input {
-    margin-left: 1rem;
+.new-challenge-container form label {
+    margin-right: 1rem;
+}
+
+.new-challenge-container button {
+    padding: 0.5rem;
 }
