@@ -25,7 +25,7 @@
 }
 
 .new-challenge-container form select, .new-challenge-container form input {
-    width: 100px;
+    width: 300px;
 }
 
 .new-challenge-container button {
