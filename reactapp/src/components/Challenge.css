@@ -7,6 +7,10 @@
     padding: 1rem;
 }
 
+.new-challenge-container form h1 {
+    text-align: center;
+}
+
 .new-challenge-container form > * {
     padding: 1rem;
 }

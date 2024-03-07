@@ -46,7 +46,7 @@ const Challenge: React.FC = () => {
           />
         </div>
         <div>
-          <label>Event Name</label>
+          <label>Event</label>
           <select>
             {allEvents.map((event) => (
               <option key={event.id} value={event.id}>
