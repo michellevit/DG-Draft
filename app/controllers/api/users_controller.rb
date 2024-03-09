@@ -25,7 +25,7 @@ module Api
     def user_exists
       user = User.find_by(username: params[:username])
       if user
-        render json: { exists: true }
+        render json: { exists: true, id: user.id }
       else
         render json: { exists: false }, status: :not_found
       end
@@ -35,6 +35,6 @@ module Api
       top_users = User.order(points: :desc).limit(25)
       render json: top_users, only: [:username, :points]
     end
-    
+
   end
 end

@@ -13,7 +13,7 @@ const ErrorModal: React.FC<ErrorModalProps> = ({ message, onClose }) => {
         <div className="error-modal" onClick={(e) => e.stopPropagation()}>
           {" "}
           <div className="error-modal-content">
-            <h2>Error:</h2>
+            <h2>Error</h2>
             <p>{message}</p>
             <button onClick={onClose}>Close</button>
           </div>

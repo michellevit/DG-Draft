@@ -1,8 +1,10 @@
 import React, { useEffect, useState, FormEvent } from "react";
 import axios from "axios";
-import "./Challenge.css";
+import "./Challenges.css";
 import { useUser } from "../contexts/UserContext";
 import { useError } from '../contexts/ErrorContext';
+import { useNavigate } from "react-router-dom";
+
 
 interface Event {
   id: number;
@@ -10,12 +12,14 @@ interface Event {
   event_date_start: string;
 }
 
-const Challenge: React.FC = () => {
+const NewChallenge: React.FC = () => {
   const { showError } = useError();
   const [allEvents, setAllEvents] = useState<Event[]>([]);
+  const [selectedEventId, setSelectedEventId] = useState("");
   const [challengeeUsername, setChallengeeUsername] = useState("");
   const [startCondition, setStartCondition] = useState("random");
   const { user, loading } = useUser();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -39,6 +43,32 @@ const Challenge: React.FC = () => {
       showError('Invalid username'); 
       return;
     }
+    try {
+      const userResponse = await axios.get(`${process.env.REACT_APP_API_URL}/user_exists`, { params: { username: challengeeUsername } });
+      if (!userResponse.data.exists) {
+        showError('Invalid username'); 
+        return;
+      }
+      const challengeeId = userResponse.data.id; // Assuming this endpoint would also return the user ID
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/challenges`, {
+        event_id: selectedEventId,
+        challenger_id: user?.id,
+        challengee_id: challengeeId,
+        start_condition: startCondition,
+      });
+      navigate('/challenges/current');
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        if (error.response && error.response.data) {
+          showError(error.response.data.errors.join(', '));
+        } else {
+          showError('An unexpected error occurred.');
+        }
+      } else {
+        console.error('An unexpected error occurred:', error);
+        showError('An unexpected error occurred.');
+      }
+    }
   };
 
   return (
@@ -57,7 +87,11 @@ const Challenge: React.FC = () => {
         </div>
         <div>
           <label>Event</label>
-          <select required>
+          <select 
+            value={selectedEventId}
+            onChange={(e) => setSelectedEventId(e.target.value)}
+            required
+          >
             {allEvents.map((event) => (
               <option key={event.id} value={event.id}>
                 {`${event.event_name} - ${new Date(
@@ -87,4 +121,4 @@ const Challenge: React.FC = () => {
   );
 };
 
-export default Challenge;
+export default NewChallenge;

@@ -1,9 +1,12 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Outlet } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Challenges from "./pages/Challenges";
+import NewChallenge from "./pages/NewChallenge";
+import CurrentChallenges from "./pages/CurrentChallenges";
+import PastChallenges from "./pages/PastChallenges";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Signup from "./pages/Signup";
@@ -22,7 +25,12 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="home" element={<Home />} />
-              <Route path="challenges" element={<Challenges />} />
+              <Route path="challenges" element={<Challenges />}>
+                <Route index element={<CurrentChallenges />} />
+                <Route path="new" element={<NewChallenge />} />
+                <Route path="current" element={<CurrentChallenges />} />
+                <Route path="past" element={<PastChallenges />} />
+              </Route>
               <Route path="profile" element={<Profile />} />
               <Route path="login" element={<Login />} />
               <Route path="signup" element={<Signup />} />

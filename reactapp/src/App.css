@@ -6,11 +6,15 @@ body {
 }
 
 
-
-
 * {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
+}
+
+
+button {
+  background-color: white;
+  padding: 1rem;
 }

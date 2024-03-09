@@ -9,9 +9,15 @@ Rails.application.routes.draw do
       patch 'update_username', on: :member
       get 'user_exists', on: :collection
     end
-    resources :challenges, only: [:create]
     get 'leaderboard', to: 'users#leaderboard'
+    resources :challenges, only: [:create] do
+      collection do
+        get 'current/:user_id', to: 'challenges#current_for_user'
+        get 'past/:user_id', to: 'challenges#past_for_user'
+      end
+    end
   end
+
 
   root 'application#react_app'
   get "up" => "rails/health#show", as: :rails_health_check
