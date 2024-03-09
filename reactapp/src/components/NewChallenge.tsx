@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, FormEvent } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import "./Challenge.css";
 
@@ -15,7 +14,6 @@ const Challenge: React.FC = () => {
   const [challengeeUsername, setChallengeeUsername] = useState("");
   const [startCondition, setStartCondition] = useState("random");
   const { user, loading } = useUser();
-  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -31,9 +29,18 @@ const Challenge: React.FC = () => {
     fetchEvents();
   }, []);
 
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const usernameExists = await axios.get(`${process.env.REACT_APP_API_URL}/user_exists`, { params: { username: challengeeUsername } });
+    if (!usernameExists.data.exists) {
+      alert('Username does not exist!');
+      return;
+    }
+  };
+
   return (
     <div className="new-challenge-container">
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>New Challenge</h1>
         <div>
           <label>{user?.username} VS</label>
@@ -47,7 +54,7 @@ const Challenge: React.FC = () => {
         </div>
         <div>
           <label>Event</label>
-          <select>
+          <select required>
             {allEvents.map((event) => (
               <option key={event.id} value={event.id}>
                 {`${event.event_name} - ${new Date(

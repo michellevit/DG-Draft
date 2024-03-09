@@ -22,9 +22,19 @@ module Api
       end
     end
 
+    def user_exists
+      user = User.find_by(username: params[:username])
+      if user
+        render json: { exists: true }
+      else
+        render json: { exists: false }, status: :not_found
+      end
+    end
+
     def leaderboard
       top_users = User.order(points: :desc).limit(25)
       render json: top_users, only: [:username, :points]
     end
+    
   end
 end

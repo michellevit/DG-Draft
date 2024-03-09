@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :events, only: [:index]
     resources :users do
       patch 'update_username', on: :member
+      get 'user_exists', on: :collection
     end
     resources :challenges, only: [:create]
     get 'leaderboard', to: 'users#leaderboard'
