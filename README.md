@@ -100,8 +100,8 @@ This website was created for creating fantasy disc golf leagues.
   - player D
   - player E
 - add leaderboard
-- update username not working
 - forgot password
+- change password
 - contact form
 
 

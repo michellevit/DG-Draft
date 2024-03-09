@@ -1,7 +1,8 @@
 import React, { useEffect, useState, FormEvent } from "react";
 import axios from "axios";
-import { useUser } from "../contexts/UserContext";
 import "./Challenge.css";
+import { useUser } from "../contexts/UserContext";
+import { useError } from '../contexts/ErrorContext';
 
 interface Event {
   id: number;
@@ -10,6 +11,7 @@ interface Event {
 }
 
 const Challenge: React.FC = () => {
+  const { showError } = useError();
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [challengeeUsername, setChallengeeUsername] = useState("");
   const [startCondition, setStartCondition] = useState("random");
@@ -29,11 +31,12 @@ const Challenge: React.FC = () => {
     fetchEvents();
   }, []);
 
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const usernameExists = await axios.get(`${process.env.REACT_APP_API_URL}/user_exists`, { params: { username: challengeeUsername } });
     if (!usernameExists.data.exists) {
-      alert('Username does not exist!');
+      showError('Invalid username'); 
       return;
     }
   };
