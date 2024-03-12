@@ -5,16 +5,17 @@ import ChallengeCard from '../components/ChallengeCard';
 import { Challenge } from '../types/interfaces';
 
 const CurrentChallenges = () => {
-  const [challenges, setChallenges] = useState<Challenge[]>([]); 
-  const { user } = useUser();
+  const [challenges, setChallenges] = useState<Challenge[]>([]);
+  const { user, loading } = useUser();
 
   useEffect(() => {
     const fetchChallenges = async () => {
-      if (user) {
+      if (!loading && user && user.id) { 
         console.log("USER: ", user);
         try {
-          console.log("URL: ", `${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`);
-          const response = await axios.get(`${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`);
+          const url = `${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`;
+          console.log("URL: ", url);
+          const response = await axios.get(url);
           setChallenges(response.data);
           console.log("Response Data: ", response.data);
         } catch (error) {
@@ -24,7 +25,7 @@ const CurrentChallenges = () => {
       }
     };
     fetchChallenges();
-  }, [user]);
+  }, [user, loading]);
 
   if (challenges.length === 0) {
     return (
@@ -33,6 +34,7 @@ const CurrentChallenges = () => {
       </div>
     );
   }
+
   return (
     <div className="challenges-list">
       {challenges.map((challenge: Challenge) => (
