@@ -10,7 +10,6 @@ const CurrentChallenges = () => {
   const { user, loading } = useUser();
 
   useEffect(() => {
-    console.log("USER:", user);
     const fetchChallenges = async () => {
       if (!loading && user && user.id) { 
         try {

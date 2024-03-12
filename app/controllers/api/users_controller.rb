@@ -14,13 +14,22 @@ module Api
     end
 
     def user_exists
+      # Log the input username
+      Rails.logger.info "Checking user existence for username: #{params[:username]}"
+
       user = User.find_by(username: params[:username])
+
       if user
+        # Log the found user
+        Rails.logger.info "User exists. ID: #{user.id}, Username: #{user.username}"
         render json: { exists: true, id: user.id }
       else
+        # Log the case where no user is found
+        Rails.logger.info "No user found with username: #{params[:username]}"
         render json: { exists: false }, status: :not_found
       end
     end
+
 
     def leaderboard
       top_users = User.order(points: :desc).limit(25)
