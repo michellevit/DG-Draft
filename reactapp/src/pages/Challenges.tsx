@@ -16,7 +16,6 @@ const Challenges: React.FC = () => {
 
   return (
     <div className="challenges-container">
-      <h2>Challenges</h2>
       <nav>
         <Link to="new">New Challenge</Link> |{" "}
         <Link to="current">Current Challenges</Link> |{" "}

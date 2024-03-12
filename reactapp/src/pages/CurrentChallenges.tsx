@@ -13,6 +13,7 @@ const CurrentChallenges = () => {
     const fetchChallenges = async () => {
       if (!loading && user && user.id) { 
         try {
+          console.log("USER:", user);
           const response = await axios.get(
             `${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`
           );
