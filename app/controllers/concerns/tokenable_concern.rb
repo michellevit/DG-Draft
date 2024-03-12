@@ -1,5 +1,5 @@
 # app/controllers/concerns/tokenable_concern.rb
-module Tokenable
+module TokenableConcern
   extend ActiveSupport::Concern
 
   # Generates a JWT token for a given user ID
