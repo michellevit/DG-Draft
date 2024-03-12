@@ -6,31 +6,39 @@ import { Challenge } from '../types/interfaces';
 
 const CurrentChallenges = () => {
   const [challenges, setChallenges] = useState<Challenge[]>([]);
+  const [isLoading, setIsLoading] = useState(true); 
   const { user, loading } = useUser();
 
   useEffect(() => {
     const fetchChallenges = async () => {
       if (!loading && user && user.id) { 
-        console.log("USER: ", user);
         try {
-          const url = `${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`;
-          console.log("URL: ", url);
-          const response = await axios.get(url);
+          const response = await axios.get(
+            `${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`
+          );
           setChallenges(response.data);
-          console.log("Response Data: ", response.data);
         } catch (error) {
           console.error('Failed to fetch current challenges', error);
-          console.log("ERROR:", error);
+        } finally {
+          setIsLoading(false); 
         }
       }
     };
-    fetchChallenges();
+    if (loading) {
+      setIsLoading(true);
+    } else {
+      fetchChallenges();
+    }
   }, [user, loading]);
+
+  if (isLoading) {
+    return <div>Loading current challenges...</div>;
+  }
 
   if (challenges.length === 0) {
     return (
       <div className="challenges-list">
-        <p>No current challenges available.</p>
+        <p>No current challenges.</p>
       </div>
     );
   }

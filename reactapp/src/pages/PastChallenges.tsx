@@ -6,22 +6,35 @@ import { Challenge } from "../types/interfaces";
 
 const PastChallenges = () => {
   const [challenges, setChallenges] = useState<Challenge[]>([]);
-  const { user } = useUser();
+  const [isLoading, setIsLoading] = useState(true);
+  const { user, loading } = useUser();
 
   useEffect(() => {
     const fetchChallenges = async () => {
-      if (user) {
+      if (!loading && user && user.id) {
         try {
-          const response = await axios.get(`${process.env.REACT_APP_API_URL}/challenges/past/${user.id}`);
+          const response = await axios.get(
+            `${process.env.REACT_APP_API_URL}/challenges/past/${user.id}`
+          );
           setChallenges(response.data);
         } catch (error) {
-          console.error('Failed to fetch current challenges', error);
+          console.error("Failed to fetch past challenges", error);
+        } finally {
+          setIsLoading(false);
         }
       }
     };
-  
-    fetchChallenges();
-  }, [user]);
+
+    if (loading) {
+      setIsLoading(true);
+    } else {
+      fetchChallenges();
+    }
+  }, [user, loading]);
+
+  if (isLoading) {
+    return <div>Loading past challenges...</div>;
+  }
 
   if (challenges.length === 0) {
     return (
