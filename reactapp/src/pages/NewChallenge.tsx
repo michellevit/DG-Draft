@@ -18,7 +18,7 @@ const NewChallenge: React.FC = () => {
   const [selectedEventId, setSelectedEventId] = useState("");
   const [challengeeUsername, setChallengeeUsername] = useState("");
   const [startCondition, setStartCondition] = useState("random");
-  const { user, loading } = useUser();
+  const { user } = useUser();
   const navigate = useNavigate();
 
   useEffect(() => {
