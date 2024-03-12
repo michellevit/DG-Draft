@@ -13,9 +13,13 @@ const PastChallenges = () => {
     const fetchChallenges = async () => {
       if (!loading && user && user.id) {
         try {
+          const token = localStorage.getItem('sessionToken');
           const response = await axios.get(
-            `${process.env.REACT_APP_API_URL}/challenges/past/${user.id}`
-          );
+            `${process.env.REACT_APP_API_URL}/challenges/past/${user.id}`, {
+              headers: {
+                Authorization: `Bearer ${token}`, 
+              },
+            });
           setChallenges(response.data);
         } catch (error) {
           console.error("Failed to fetch past challenges", error);
