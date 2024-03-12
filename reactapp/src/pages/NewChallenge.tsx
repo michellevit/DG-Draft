@@ -38,6 +38,7 @@ const NewChallenge: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log("URL: ", `${process.env.REACT_APP_API_URL}/user_exists`)
     const usernameExists = await axios.get(`${process.env.REACT_APP_API_URL}/user_exists`, { params: { username: challengeeUsername } });
     console.log("USERNAME EXISTS?: ", usernameExists.data);
     if (!usernameExists.data.exists) {
