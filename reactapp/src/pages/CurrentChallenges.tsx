@@ -11,11 +11,15 @@ const CurrentChallenges = () => {
   useEffect(() => {
     const fetchChallenges = async () => {
       if (user) {
+        console.log("USER: ", user);
         try {
+          console.log("URL: ", `${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`);
           const response = await axios.get(`${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`);
           setChallenges(response.data);
+          console.log("Response Data: ", response.data);
         } catch (error) {
           console.error('Failed to fetch current challenges', error);
+          console.log("ERROR:", error);
         }
       }
     };

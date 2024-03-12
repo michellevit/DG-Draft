@@ -23,6 +23,14 @@ const PastChallenges = () => {
     fetchChallenges();
   }, [user]);
 
+  if (challenges.length === 0) {
+    return (
+      <div className="challenges-list">
+        <p>No past challenges.</p>
+      </div>
+    );
+  }
+
   return (
     <div className="challenges-list">
       {challenges.map((challenge) => (
