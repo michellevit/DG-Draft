@@ -16,9 +16,9 @@ module Tokenable
       @current_user = User.find_by(id: user_id)
       return @current_user if user_id.present? && @current_user
     rescue JWT::DecodeError
-      return { error: 'Invalid token format' }
+      return nil, { error: 'Invalid token format' }
     rescue JWT::ExpiredSignature
-      return { error: 'Token has expired' }
+      return nil, { error: 'Token has expired' }
     end
   end
 
