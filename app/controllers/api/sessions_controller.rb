@@ -1,7 +1,7 @@
 module Api
   class SessionsController < ApplicationController
     include CurrentUserConcern
-    include Tokenable
+    include TokenableConcern
 
     # attempt_login -> attempts to log the user in with provided email/password -> if success, returns user's data
     def attempt_login
@@ -25,17 +25,12 @@ module Api
     def authenticate_user
       auth_header = request.headers['Authorization']
       token = auth_header.split(' ').last if auth_header
-      @current_user = authenticate_token(token) if token
-      if @current_user
-        render json: {
-          valid: true,
-          user: @current_user
-        }
+      user, error = authenticate_token(token) if token
+      
+      if user
+        render json: { valid: true, user: user }
       else
-        render json: {
-          valid: false,
-          error: 'Invalid token'
-        }
+        render json: { valid: false, error: error || 'Invalid token' }
       end
     end
 

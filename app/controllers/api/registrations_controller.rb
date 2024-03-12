@@ -1,6 +1,6 @@
 module Api
     class RegistrationsController < ApplicationController
-        include Tokenable
+        include TokenableConcern
         
         def create_user
             user = User.new(
