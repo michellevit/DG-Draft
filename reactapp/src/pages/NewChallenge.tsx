@@ -45,11 +45,12 @@ const NewChallenge: React.FC = () => {
     }
     try {
       const userResponse = await axios.get(`${process.env.REACT_APP_API_URL}/user_exists`, { params: { username: challengeeUsername } });
+      console.log("USER RESPONSE: ", userResponse);
       if (!userResponse.data.exists) {
         showError('Invalid username'); 
         return;
       }
-      const challengeeId = userResponse.data.id; // Assuming this endpoint would also return the user ID
+      const challengeeId = usernameExists.data.id; 
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/challenges`, {
         event_id: selectedEventId,
         challenger_id: user?.id,
