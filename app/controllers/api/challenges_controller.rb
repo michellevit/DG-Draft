@@ -15,24 +15,21 @@ module Api
     
     # Gets current challenges for the user
     def current_for_user
-      Rails.logger.info "Entering current_for_user method"
-      begin
-        current_challenges = Challenge.where("event_date_end > ?", Date.today)
-                                      .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
-        Rails.logger.info "Current challenges fetched successfully"
-        render json: current_challenges
-      rescue => e
-        Rails.logger.error "Error fetching current challenges: #{e.message}"
-        render json: { error: e.message }, status: :internal_server_error
-      end
+      current_challenges = Challenge.joins(:event)
+                                    .where("events.event_date_end >= ?", Date.today)
+                                    .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
+      render json: current_challenges
     end
+    
 
     # Gets past challenges for the user
     def past_for_user
-      past_challenges = Challenge.where("event_date_end <= ?", Date.today)
-                                 .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
+      past_challenges = Challenge.joins(:event)
+                                    .where("events.event_date_end < ?", Date.today)
+                                    .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
       render json: past_challenges
     end
+    
 
     private
 
