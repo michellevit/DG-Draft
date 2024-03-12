@@ -15,9 +15,12 @@ const CurrentChallenges = () => {
       if (!loading && user && user.id) { 
         try {
           console.log("USER:", user);
-          const response = await axios.get(
-            `${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`
-          );
+          const token = localStorage.getItem('sessionToken');
+          const response = await axios.get(`${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`, {
+            headers: {
+              Authorization: `Bearer ${token}`, 
+            },
+          });
           setChallenges(response.data);
         } catch (error) {
           console.error('Failed to fetch current challenges', error);
