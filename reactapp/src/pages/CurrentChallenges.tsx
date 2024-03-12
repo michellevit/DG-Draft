@@ -16,6 +16,7 @@ const CurrentChallenges = () => {
         try {
           console.log("USER:", user);
           const token = localStorage.getItem('sessionToken');
+          console.log("TOKEN: ", token);
           const response = await axios.get(`${process.env.REACT_APP_API_URL}/challenges/current/${user.id}`, {
             headers: {
               Authorization: `Bearer ${token}`, 
