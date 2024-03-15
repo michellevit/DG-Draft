@@ -75,6 +75,7 @@ const NewChallenge: React.FC = () => {
 
   useEffect(() => {
     const createChallenge = async () => {
+      console.log("challengeeId: ", challengeeId);
       if (challengeeId === undefined) return;
 
       const token = localStorage.getItem("sessionToken");
