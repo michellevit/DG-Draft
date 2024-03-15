@@ -16,7 +16,7 @@ const NewChallenge: React.FC = () => {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [selectedEventId, setSelectedEventId] = useState("");
   const [challengeeUsername, setChallengeeUsername] = useState("");
-  const [challengeeId, setChallengeeId] = useState("");
+  const [challengeeId, setChallengeeId] = useState<number | undefined>(undefined);
   const [startCondition, setStartCondition] = useState("random");
   const { user } = useUser();
   const navigate = useNavigate();
@@ -47,8 +47,7 @@ const NewChallenge: React.FC = () => {
         showError(`No user named '${challengeeUsername}' exists`); 
         return;
       }
-      console.log("ABC: ", usernameExists.data.id);
-      setChallengeeId(usernameExists.data.id)
+      setChallengeeId(usernameExists.data.id);
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         if (error.response && error.response.data) {
