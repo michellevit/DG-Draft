@@ -5,7 +5,7 @@ module Api
     before_action :verify_current_user, only: [:create, :current_for_user, :past_for_user]
 
     def create
-      challenge = Challenge.new(challenge_params.merge(user_id: @current_user.id))
+      challenge = Challenge.new(challenge_params)
       if challenge.save
         render json: challenge, status: :created
       else
