@@ -82,7 +82,7 @@ const NewChallenge: React.FC = () => {
       <form onSubmit={handleSubmit}>
         <h1>New Challenge</h1>
         <div>
-          <label>{user?.username ?? "User"} vs</label>
+          <label>{user?.username} vs</label>
           <input
             type="text"
             value={challengeeUsername}
