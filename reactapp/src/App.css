@@ -21,6 +21,6 @@ a {
 button {
   background-color: white;
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: 25px;
   border: 1px solid black;
 }
