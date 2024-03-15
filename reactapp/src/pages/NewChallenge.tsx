@@ -40,10 +40,9 @@ const NewChallenge: React.FC = () => {
     e.preventDefault();
     console.log("Form submitted");
     try {
-      const usernameExists = await axios.get(`${process.env.REACT_APP_API_URL}/user_exists`, { params: { username: challengeeUsername } });
-      console.log("USER RESPONSE: ", usernameExists.data);
-      console.log("userResoinse.data: ", usernameExists.data);
-      console.log("userResoinse.data.exists: ", usernameExists.data.exists);
+      const usernameExists = await axios.get(`${process.env.REACT_APP_API_URL}/users/user_exists`, { params: { username: challengeeUsername } });
+      console.log("usernameExists.data: ", usernameExists.data);
+      console.log("usernameExists.data.exists: ", usernameExists.data.exists);
       if (!usernameExists.data.exists) {
         showError('Invalid username'); 
         return;

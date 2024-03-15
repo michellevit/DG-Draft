@@ -17,8 +17,6 @@ Rails.application.routes.draw do
       end
     end
   end
-
-
   root 'application#react_app'
   get "up" => "rails/health#show", as: :rails_health_check
   get '*path', to: 'application#react_app'
