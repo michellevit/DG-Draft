@@ -61,14 +61,19 @@ const NewChallenge: React.FC = () => {
       }
       return;
     }
-  
+    const token = localStorage.getItem('token'); 
+    const config = {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    };
     try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/challenges`, {
         event_id: selectedEventId,
         challenger_id: user?.id,
         challengee_id: challengeeId,
         start_condition: startCondition,
-      });
+      }, config);
       navigate('/challenges/current');
     } catch (postError) {
       if (axios.isAxiosError(postError)) {
