@@ -47,6 +47,7 @@ const NewChallenge: React.FC = () => {
         showError(`No user named '${challengeeUsername}' exists`); 
         return;
       }
+      console.log("ABC: ", usernameExists.data.id);
       setChallengeeId(usernameExists.data.id)
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
