@@ -16,7 +16,9 @@ const NewChallenge: React.FC = () => {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [selectedEventId, setSelectedEventId] = useState("");
   const [challengeeUsername, setChallengeeUsername] = useState("");
-  const [challengeeId, setChallengeeId] = useState<number | undefined>(undefined);
+  const [challengeeId, setChallengeeId] = useState<number | undefined>(
+    undefined
+  );
   const [startCondition, setStartCondition] = useState("random");
   const { user } = useUser();
   const navigate = useNavigate();
@@ -38,57 +40,85 @@ const NewChallenge: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (user && challengeeUsername === user.username) {
-      showError('You may not challenge yourself'); 
+      showError("You may not challenge yourself");
       return;
-    } 
+    }
     try {
-      const usernameExists = await axios.get(`${process.env.REACT_APP_API_URL}/users/user_exists`, { params: { username: challengeeUsername } });
+      const usernameExists = await axios.get(
+        `${process.env.REACT_APP_API_URL}/users/user_exists`,
+        { params: { username: challengeeUsername } }
+      );
       if (!usernameExists.data.exists) {
-        showError(`No user named '${challengeeUsername}' exists`); 
+        showError(`No user named '${challengeeUsername}' exists`);
         return;
       }
       setChallengeeId(usernameExists.data.id);
     } catch (error: unknown) {
       if (axios.isAxiosError(error)) {
         if (error.response && error.response.data) {
-          showError(error.response.data.errors.join(', '));
+          showError(error.response.data.errors.join(", "));
         } else {
-          showError('An unexpected error occurred during user existence check.');
+          showError(
+            "An unexpected error occurred during user existence check."
+          );
         }
       } else {
-        console.error('An unexpected error occurred during user existence check:', error);
-        showError('An unexpected error occurred during user existence check.');
+        console.error(
+          "An unexpected error occurred during user existence check:",
+          error
+        );
+        showError("An unexpected error occurred during user existence check.");
       }
       return;
     }
-    const token = localStorage.getItem('sessionToken'); 
-    console.log('challengeeId:', challengeeId);
-    const config = {
-      headers: {
-        'Authorization': `Bearer ${token}`
+  };
+
+  useEffect(() => {
+    const createChallenge = async () => {
+      if (challengeeId === undefined) return;
+
+      const token = localStorage.getItem("sessionToken");
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      try {
+        const response = await axios.post(
+          `${process.env.REACT_APP_API_URL}/challenges`,
+          {
+            event_id: selectedEventId,
+            challenger_id: user?.id,
+            challengee_id: challengeeId,
+            start_condition: startCondition,
+          },
+          config
+        );
+        navigate("/challenges/current");
+      } catch (postError) {
+        if (axios.isAxiosError(postError)) {
+          if (postError.response && postError.response.data) {
+            showError(postError.response.data.errors.join(", "));
+          } else {
+            showError(
+              "An unexpected error occurred while creating the challenge."
+            );
+          }
+        } else {
+          console.error(
+            "An unexpected error occurred while creating the challenge:",
+            postError
+          );
+          showError(
+            "An unexpected error occurred while creating the challenge."
+          );
+        }
       }
     };
-    try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/challenges`, {
-        event_id: selectedEventId,
-        challenger_id: user?.id,
-        challengee_id: challengeeId,
-        start_condition: startCondition,
-      }, config);
-      navigate('/challenges/current');
-    } catch (postError) {
-      if (axios.isAxiosError(postError)) {
-        if (postError.response && postError.response.data) {
-          showError(postError.response.data.errors.join(', '));
-        } else {
-          showError('An unexpected error occurred while creating the challenge.');
-        }
-      } else {
-        console.error('An unexpected error occurred while creating the challenge:', postError);
-        showError('An unexpected error occurred while creating the challenge.');
-      }
-    }
-  };
+
+    createChallenge();
+  }, [challengeeId]);
 
   return (
     <div className="new-challenge-container">
