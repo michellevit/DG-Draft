@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useUser } from '../contexts/UserContext';
 import ChallengeCard from '../components/ChallengeCard';
 import { Challenge } from '../types/interfaces';
+import "./Challenges.css";
+
 
 const CurrentChallenges: React.FC = () => {
   const [challenges, setChallenges] = useState<Challenge[]>([]);

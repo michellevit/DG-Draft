@@ -34,3 +34,10 @@
 .new-challenge-container button {
     padding: 0.5rem;
 }
+
+
+ /* Current Challenges */
+
+.challenges-list {
+    padding: 2rem;
+}
