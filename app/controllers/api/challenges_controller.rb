@@ -12,7 +12,7 @@ module Api
         Rails.logger.error("Error saving challenge: #{challenge.errors.full_messages.join(', ')}")
         render json: challenge.errors, status: :unprocessable_entity
       end
-    end+
+    end
     
     # Gets current challenges for the user
     def current_for_user
