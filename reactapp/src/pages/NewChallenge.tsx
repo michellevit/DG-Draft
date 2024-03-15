@@ -75,7 +75,7 @@ const NewChallenge: React.FC = () => {
 
   useEffect(() => {
     const createChallenge = async () => {
-      if (challengeeId === undefined) return;
+      if (challengeeId === undefined || selectedEventId === "") return;
       console.log("selectedEventId: ", selectedEventId);
       const token = localStorage.getItem("sessionToken");
       const config = {
@@ -118,7 +118,7 @@ const NewChallenge: React.FC = () => {
     };
 
     createChallenge();
-  }, [challengeeId]);
+  }, [challengeeId, selectedEventId]);
 
   return (
     <div className="new-challenge-container">
