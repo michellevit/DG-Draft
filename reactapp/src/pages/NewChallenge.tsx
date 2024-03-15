@@ -37,6 +37,10 @@ const NewChallenge: React.FC = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (user && challengeeUsername === user.username) {
+      showError('You may not challenge yourself'); 
+      return;
+    } 
     try {
       const usernameExists = await axios.get(`${process.env.REACT_APP_API_URL}/users/user_exists`, { params: { username: challengeeUsername } });
       if (!usernameExists.data.exists) {
@@ -80,7 +84,7 @@ const NewChallenge: React.FC = () => {
       }
     }
   };
-  
+
   return (
     <div className="new-challenge-container">
       <form onSubmit={handleSubmit}>

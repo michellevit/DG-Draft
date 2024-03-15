@@ -9,6 +9,7 @@ module Api
       if challenge.save
         render json: challenge, status: :created
       else
+        Rails.logger.error("Error saving challenge: #{challenge.errors.full_messages.join(', ')}")
         render json: challenge.errors, status: :unprocessable_entity
       end
     end
