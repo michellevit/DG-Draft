@@ -1,7 +1,4 @@
 .new-challenge-container {
-    background: rgb(41, 131, 206);
-    border-radius: 25px;
-    width: 500px;
     display: flex;
     padding: 2rem;
 }
@@ -12,6 +9,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background: rgb(41, 131, 206);
+    border-radius: 25px;
+    width: 500px;
 }
 
 .new-challenge-container form h1 {
