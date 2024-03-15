@@ -2,7 +2,7 @@ module Api
   class ChallengesController < ApplicationController
     include CurrentUserConcern
 
-    before_action :verify_current_user, only: [:current_for_user, :past_for_user]
+    before_action :verify_current_user, only: [:create, :current_for_user, :past_for_user]
 
     def create
       challenge = Challenge.new(challenge_params.merge(user_id: @current_user.id))
@@ -12,7 +12,7 @@ module Api
         Rails.logger.error("Error saving challenge: #{challenge.errors.full_messages.join(', ')}")
         render json: challenge.errors, status: :unprocessable_entity
       end
-    end
+    end+
     
     # Gets current challenges for the user
     def current_for_user
