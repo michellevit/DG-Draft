@@ -1,6 +1,6 @@
 import React from "react";
 import { ChallengeCardProps } from "../types/interfaces";
-import "./App.css";
+import "./ChallengeCard.css";
 
 const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
   return (
