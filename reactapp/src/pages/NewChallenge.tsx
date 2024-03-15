@@ -2,9 +2,8 @@ import React, { useEffect, useState, FormEvent } from "react";
 import axios from "axios";
 import "./Challenges.css";
 import { useUser } from "../contexts/UserContext";
-import { useError } from '../contexts/ErrorContext';
+import { useError } from "../contexts/ErrorContext";
 import { useNavigate } from "react-router-dom";
-
 
 interface Event {
   id: number;
@@ -17,6 +16,7 @@ const NewChallenge: React.FC = () => {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [selectedEventId, setSelectedEventId] = useState("");
   const [challengeeUsername, setChallengeeUsername] = useState("");
+  const [challengeeId, setChallengeeId] = useState("");
   const [startCondition, setStartCondition] = useState("random");
   const { user } = useUser();
   const navigate = useNavigate();
@@ -35,17 +35,31 @@ const NewChallenge: React.FC = () => {
     fetchEvents();
   }, []);
 
-
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
     try {
       const usernameExists = await axios.get(`${process.env.REACT_APP_API_URL}/users/user_exists`, { params: { username: challengeeUsername } });
       if (!usernameExists.data.exists) {
         showError(`No user named '${challengeeUsername}' exists`); 
         return;
       }
-      const challengeeId = usernameExists.data.id; 
+      const challengeeID = usernameExists.data.id; 
+      setChallengeeId(challengeeId)
+    } catch (error: unknown) {
+      if (axios.isAxiosError(error)) {
+        if (error.response && error.response.data) {
+          showError(error.response.data.errors.join(', '));
+        } else {
+          showError('An unexpected error occurred during user existence check.');
+        }
+      } else {
+        console.error('An unexpected error occurred during user existence check:', error);
+        showError('An unexpected error occurred during user existence check.');
+      }
+      return;
+    }
+  
+    try {
       const response = await axios.post(`${process.env.REACT_APP_API_URL}/challenges`, {
         event_id: selectedEventId,
         challenger_id: user?.id,
@@ -53,20 +67,20 @@ const NewChallenge: React.FC = () => {
         start_condition: startCondition,
       });
       navigate('/challenges/current');
-    } catch (error: unknown) {
-      if (axios.isAxiosError(error)) {
-        if (error.response && error.response.data) {
-          showError(error.response.data.errors.join(', '));
+    } catch (postError) {
+      if (axios.isAxiosError(postError)) {
+        if (postError.response && postError.response.data) {
+          showError(postError.response.data.errors.join(', '));
         } else {
-          showError('An unexpected error occurred.');
+          showError('An unexpected error occurred while creating the challenge.');
         }
       } else {
-        console.error('An unexpected error occurred:', error);
-        showError('An unexpected error occurred.');
+        console.error('An unexpected error occurred while creating the challenge:', postError);
+        showError('An unexpected error occurred while creating the challenge.');
       }
     }
   };
-
+  
   return (
     <div className="new-challenge-container">
       <form onSubmit={handleSubmit}>
@@ -83,7 +97,7 @@ const NewChallenge: React.FC = () => {
         </div>
         <div>
           <label>Event</label>
-          <select 
+          <select
             value={selectedEventId}
             onChange={(e) => setSelectedEventId(e.target.value)}
             required
@@ -107,11 +121,15 @@ const NewChallenge: React.FC = () => {
             onChange={(e) => setStartCondition(e.target.value)}
           >
             <option value="challenger">{user?.username}</option>
-            <option value="challengee">{challengeeUsername ? challengeeUsername : "Challengee"}</option>
+            <option value="challengee">
+              {challengeeUsername ? challengeeUsername : "Challengee"}
+            </option>
             <option value="random">Random</option>
           </select>
         </div>
-        <div><button type="submit">Submit</button></div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
       </form>
     </div>
   );
