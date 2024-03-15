@@ -63,14 +63,30 @@ By breaking down the project into manageable pieces and focusing on one feature 
 FEATURES: 
 
 reactapp
--src
---components
----auth
-----Registration.tsx
----Leaderboard.tsx
----Navbar.tsx
----UserDashboard.tsx
---contexts
+|- src
+| |- components
+| | |- ErrorModal.tsx
+| | |- Leaderboard.tsx
+| | |- Navbar.tsx
+| | |- UserDashboard.tsx
+| |- contexts
+| | |- ErrorContext.tsx
+| | |- UserContext.tsx
+| |- pages
+| | |- Challenges.tsx
+| | |- CurrentChallenges.tsx
+| | |- NewChallenges.tsx
+| | |- PastChallenges.tsx
+| | |- Home.tsx
+| | |- Login.tsx
+| | |- Privacy.tsx
+| | |- Profile.tsx
+| | |- Signup.tsx
+| | |- Terms.tsx
+| |- App.tsx
+| |- index.tsx
+
+
 ---UserContext.tsx
 --pages
 ---Bets.tsx

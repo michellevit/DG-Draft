@@ -34,6 +34,7 @@ This website was created for creating fantasy disc golf leagues.
   
 
 ## Features<a name="features"></a>
+- User Authentication
 
 
 ## Architectural Decisions<a name="architectural-decisions"></a>

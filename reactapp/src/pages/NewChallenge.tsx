@@ -49,6 +49,8 @@ const NewChallenge: React.FC = () => {
     try {
       const userResponse = await axios.get(`${process.env.REACT_APP_API_URL}/user_exists`, { params: { username: challengeeUsername } });
       console.log("USER RESPONSE: ", userResponse.data);
+      console.log("userResoinse.data: ", userResponse.data);
+      console.log("userResoinse.data.exists: ", userResponse.data.exists);
       if (!userResponse.data.exists) {
         showError('Invalid username'); 
         return;
