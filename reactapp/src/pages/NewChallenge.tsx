@@ -61,7 +61,7 @@ const NewChallenge: React.FC = () => {
       }
       return;
     }
-    const token = localStorage.getItem('token'); 
+    const token = localStorage.getItem('sessionToken'); 
     console.log('Token:', token);
     const config = {
       headers: {
