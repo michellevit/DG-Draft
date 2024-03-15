@@ -4,7 +4,7 @@ import { useUser } from '../contexts/UserContext';
 import ChallengeCard from '../components/ChallengeCard';
 import { Challenge } from '../types/interfaces';
 
-const CurrentChallenges = () => {
+const CurrentChallenges: React.FC = () => {
   const [challenges, setChallenges] = useState<Challenge[]>([]);
   const [isLoading, setIsLoading] = useState(true); 
   const { user, loading } = useUser();
