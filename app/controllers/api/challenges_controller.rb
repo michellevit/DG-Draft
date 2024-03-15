@@ -16,10 +16,9 @@ module Api
     
     # Gets current challenges for the user
     def current_for_user
-      current_challenges = Challenge.joins(event: [:challenger, :challengee])
+      current_challenges = Challenge.joins(:event)
                                     .where("events.event_date_end >= ?", Date.today)
                                     .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
-                                    .select("challenges.*, events.event_name, events.event_date_end, challengers.username as challenger_username, challengees.username as challengee_username")
       render json: current_challenges
     end
     

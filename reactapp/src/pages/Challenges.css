@@ -3,6 +3,7 @@
     border-radius: 25px;
     width: 500px;
     display: flex;
+    padding: 2rem;
 }
 
 .new-challenge-container form {
