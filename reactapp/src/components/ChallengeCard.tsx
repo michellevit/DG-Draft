@@ -9,7 +9,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
       <p>Challenger: {challenge.challenger?.username}</p>
       <p>Challengee: {challenge.challengee?.username}</p>
       <p>Date: {new Date(challenge.event_date_end).toLocaleDateString()}</p>
-      <p>Status: {challenge.status}</p>
+      {/* <p>Status: {challenge.status}</p> */}
     </div>
   );
 };
