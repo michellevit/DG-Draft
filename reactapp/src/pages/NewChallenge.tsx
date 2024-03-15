@@ -141,19 +141,16 @@ const NewChallenge: React.FC = () => {
             onChange={(e) => setSelectedEventId(e.target.value)}
             required
           >
-            {allEvents.map((event) => {
-              console.log("Event ID:", event.id); // Log the event ID
-              return (
-                <option key={event.id} value={event.id}>
-                  {`${event.event_name} - ${new Date(
-                    event.event_date_start
-                  ).toLocaleDateString("en-US", {
-                    month: "short",
-                    day: "numeric",
-                  })}`}
-                </option>
-              );
-            })}
+             {allEvents.map((event) => (
+              <option key={event.id} value={event.id}>
+                {`${event.event_name} - ${new Date(
+                  event.event_date_start
+                ).toLocaleDateString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                })}`}
+              </option>
+            ))}
           </select>
         </div>
         <div>
