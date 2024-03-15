@@ -41,10 +41,8 @@ const NewChallenge: React.FC = () => {
     console.log("Form submitted");
     try {
       const usernameExists = await axios.get(`${process.env.REACT_APP_API_URL}/users/user_exists`, { params: { username: challengeeUsername } });
-      console.log("usernameExists.data: ", usernameExists.data);
-      console.log("usernameExists.data.exists: ", usernameExists.data.exists);
       if (!usernameExists.data.exists) {
-        showError(`No user ${challengeeUsername} exists`); 
+        showError(`No user named '${challengeeUsername}' exists`); 
         return;
       }
       const challengeeId = usernameExists.data.id; 
