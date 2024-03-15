@@ -16,13 +16,9 @@ module Api
     def user_exists
       user = User.find_by(username: params[:username])
       if user
-        Rails.logger.error("User found with username: #{params[:username]}")
-        Rails.logger.info("User found with username: #{params[:username]}")
         render json: { exists: true, id: user.id }
       else
-        Rails.logger.error("User not found with username: #{params[:username]}")
-        Rails.logger.info("User not found with username: #{params[:username]}")
-        render json: { exists: false }, status: :not_found
+        render json: { exists: false }
       end
       
       # Disable caching

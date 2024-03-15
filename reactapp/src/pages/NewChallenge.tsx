@@ -44,7 +44,7 @@ const NewChallenge: React.FC = () => {
       console.log("usernameExists.data: ", usernameExists.data);
       console.log("usernameExists.data.exists: ", usernameExists.data.exists);
       if (!usernameExists.data.exists) {
-        showError('Invalid username'); 
+        showError(`No user ${challengeeUsername} exists`); 
         return;
       }
       const challengeeId = usernameExists.data.id; 
