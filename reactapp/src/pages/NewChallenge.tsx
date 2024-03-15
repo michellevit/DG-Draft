@@ -30,6 +30,9 @@ const NewChallenge: React.FC = () => {
           `${process.env.REACT_APP_API_URL}/events`
         );
         setAllEvents(response.data);
+        if (!selectedEventId && response.data.length > 0) {
+          setSelectedEventId(response.data[0].id);
+        }
       } catch (error) {
         console.error("Failed to fetch events", error);
       }
@@ -53,6 +56,7 @@ const NewChallenge: React.FC = () => {
         return;
       }
       setChallengeeId(usernameExists.data.id);
+
       const token = localStorage.getItem("sessionToken");
       const config = {
         headers: {
