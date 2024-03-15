@@ -16,9 +16,7 @@ const NewChallenge: React.FC = () => {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [selectedEventId, setSelectedEventId] = useState("");
   const [challengeeUsername, setChallengeeUsername] = useState("");
-  const [challengeeId, setChallengeeId] = useState<number | undefined>(
-    undefined
-  );
+
   const [startCondition, setStartCondition] = useState("random");
   const { user } = useUser();
   const navigate = useNavigate();
@@ -55,8 +53,6 @@ const NewChallenge: React.FC = () => {
         showError(`No user named '${challengeeUsername}' exists`);
         return;
       }
-      setChallengeeId(usernameExists.data.id);
-
       const token = localStorage.getItem("sessionToken");
       const config = {
         headers: {
@@ -86,7 +82,7 @@ const NewChallenge: React.FC = () => {
       <form onSubmit={handleSubmit}>
         <h1>New Challenge</h1>
         <div>
-          <label>{user?.username} vs</label>
+          <label>{user?.username ?? "User"} vs</label>
           <input
             type="text"
             value={challengeeUsername}
