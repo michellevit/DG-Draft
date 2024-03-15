@@ -8,6 +8,7 @@ export interface Challenge {
     challengee: {
       username: string;
     };
+    status: string;
   }
   
   export interface ChallengeCardProps {
