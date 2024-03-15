@@ -20,6 +20,7 @@ const CurrentChallenges: React.FC = () => {
             },
           });
           setChallenges(response.data);
+          console.log(response.data);
         } catch (error) {
           console.error('Failed to fetch current challenges', error);
         } finally {
