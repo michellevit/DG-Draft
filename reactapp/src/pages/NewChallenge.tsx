@@ -62,6 +62,7 @@ const NewChallenge: React.FC = () => {
       return;
     }
     const token = localStorage.getItem('token'); 
+    console.log('Token:', token);
     const config = {
       headers: {
         'Authorization': `Bearer ${token}`
