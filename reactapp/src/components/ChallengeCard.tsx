@@ -3,13 +3,17 @@ import { ChallengeCardProps } from "../types/interfaces";
 import "./ChallengeCard.css";
 
 const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
-  const formatDate = (date: Date) => { 
+  const formatDate = (dateInput: Date | string) => {
+    const date = new Date(dateInput);
+    if (isNaN(date.getTime())) {
+      return "Invalid date";
+    }
     const options: Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric' };
     return date.toLocaleDateString('en-US', options);
   };
-  
-  const startDate = formatDate(challenge.event_date_start);
-  const endDate = formatDate(challenge.event_date_end);
+
+  const startDate = challenge.event_date_start ? formatDate(challenge.event_date_start) : 'Date not available';
+  const endDate = challenge.event_date_end ? formatDate(challenge.event_date_end) : 'Date not available';
   const displayDate = `${startDate} - ${endDate}`;
   
   return (
