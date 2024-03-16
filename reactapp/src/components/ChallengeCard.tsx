@@ -19,7 +19,8 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
   
   return (
     <div className="challenge-card">
-      <h3>{challenge.event.event_name}</h3>
+      <h3>Event: {challenge.event.event_name}</h3>
+      <p>Divison: {challenge.divison}</p>
       <p>Challenger: {challenge.challenger?.username}</p>
       <p>Challengee: {challenge.challengee?.username}</p>
       <p>Date: {displayDate}</p>
