@@ -16,14 +16,13 @@ module Api
     
     # Gets current challenges for the user
     def current_for_user
-      current_challenges = Challenge.includes(:challenger, :challengee)
+      current_challenges = Challenge.includes(:event, :challenger, :challengee)
                                     .joins(:event)
                                     .where("events.event_date_end >= ?", Date.today)
                                     .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
-                                    .select("challenges.*, events.event_date_start, events.event_date_end")
     
       render json: current_challenges.as_json(include: {
-        event: { only: [:event_date_start, :event_date_end] },
+        event: { only: [:event_name, :event_date_start, :event_date_end] },
         challenger: { only: :username },
         challengee: { only: :username }
       })
@@ -32,14 +31,13 @@ module Api
 
     # Gets past challenges for the user
     def past_for_user
-      past_challenges = Challenge.includes(:challenger, :challengee)
+      past_challenges = Challenge.includes(:event, :challenger, :challengee)
                                  .joins(:event)
                                  .where("events.event_date_end < ?", Date.today)
                                  .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
-                                 .select("challenges.*, events.event_date_start, events.event_date_end")
     
       render json: past_challenges.as_json(include: {
-        event: { only: [:event_date_start, :event_date_end] },
+        event: { only: [:event_name, :event_date_start, :event_date_end] },
         challenger: { only: :username },
         challengee: { only: :username }
       })

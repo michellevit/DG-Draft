@@ -3,6 +3,7 @@ class Event < ApplicationRecord
     validates :event_date_start, presence: true
     validates :event_date_end, presence: true
     validates :location, presence: true
+    has_many :challenges, inverse_of: :event
     has_many :event_placements
     has_many :players, through: :event_placements
     def formatted_name
