@@ -16,21 +16,33 @@ module Api
     
     # Gets current challenges for the user
     def current_for_user
-      current_challenges = Challenge.joins(:event)
-        .where("events.event_date_end >= ?", Date.today)
-        .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
-        .select("challenges.*, events.event_date_start, events.event_date_end")
-      render json: current_challenges.as_json(include: {event: {only: [:event_date_start, :event_date_end]}})
+      current_challenges = Challenge.includes(:challenger, :challengee)
+                                    .joins(:event)
+                                    .where("events.event_date_end >= ?", Date.today)
+                                    .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
+                                    .select("challenges.*, events.event_date_start, events.event_date_end")
+    
+      render json: current_challenges.as_json(include: {
+        event: { only: [:event_date_start, :event_date_end] },
+        challenger: { only: :username },
+        challengee: { only: :username }
+      })
     end
     
 
     # Gets past challenges for the user
     def past_for_user
-      past_challenges = Challenge.joins(:event)
+      past_challenges = Challenge.includes(:challenger, :challengee)
+                                 .joins(:event)
                                  .where("events.event_date_end < ?", Date.today)
                                  .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
                                  .select("challenges.*, events.event_date_start, events.event_date_end")
-      render json: past_challenges.as_json(include: {event: {only: [:event_date_start, :event_date_end]}})
+    
+      render json: past_challenges.as_json(include: {
+        event: { only: [:event_date_start, :event_date_end] },
+        challenger: { only: :username },
+        challengee: { only: :username }
+      })
     end
     
 
