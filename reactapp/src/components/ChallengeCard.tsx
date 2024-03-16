@@ -20,10 +20,11 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
   return (
     <div className="challenge-card">
       <h3>Event: {challenge.event.event_name}</h3>
+      <p>Event Date: {displayDate}</p>
       <p>Divison: {challenge.division}</p>
       <p>Challenger: {challenge.challenger?.username}</p>
       <p>Challengee: {challenge.challengee?.username}</p>
-      <p>Date: {displayDate}</p>
+      <p>Who Picks First: {challenge.start_condition}</p>
       <p>Status: {challenge.status}</p>
     </div>
   );

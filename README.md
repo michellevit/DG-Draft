@@ -68,7 +68,9 @@ This website was created for creating fantasy disc golf leagues.
 ### Using the Heroku CLI<a name="heroku-cli"></a>
 - Login: `heroku login`
 - Migrate DB: `heroku run rake db:migrate -a dg-draft`
-- Get DB Data?: `heroku pg:psql -a dg-draft`, `SELECT * FROM users;`
+- Open DB Console: `heroku pg:psql -a dg-draft`
+  - View all data from table: `SELECT * FROM users;`
+  - Delete all data from table: `DELETE FROM challenges`
 - Get DB Data?: `heroku run rails console -a dg-draft`
 - Get Heroku Logs: `heroku logs -a dg-draft`
 - Restart Heroku Server: `heroku restart -a dg-draft`

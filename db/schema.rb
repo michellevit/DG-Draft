@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_16_190848) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_16_201310) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_16_190848) do
     t.string "division"
     t.index ["challengee_id"], name: "index_challenges_on_challengee_id"
     t.index ["challenger_id"], name: "index_challenges_on_challenger_id"
-    t.index ["event_id", "challenger_id", "challengee_id"], name: "index_challenges_on_event_challenger_challengee_unique", unique: true
+    t.index ["event_id", "challenger_id", "challengee_id", "division"], name: "index_challenges_on_event_challenger_challengee_division_unique", unique: true
     t.index ["event_id"], name: "index_challenges_on_event_id"
   end
 

@@ -17,7 +17,7 @@ const NewChallenge: React.FC = () => {
   const [selectedEventId, setSelectedEventId] = useState("");
   const [challengeeUsername, setChallengeeUsername] = useState("");
   const [startCondition, setStartCondition] = useState("random");
-  const [division, setDivision] = useState("");
+  const [division, setDivision] = useState("MPO");
   const { user } = useUser();
   const navigate = useNavigate();
 

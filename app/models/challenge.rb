@@ -10,8 +10,8 @@ class Challenge < ApplicationRecord
   private
 
   def unique_challenge_per_event
-    existing_challenge = Challenge.find_by(event_id: event_id, challenger_id: challenger_id, challengee_id: challengee_id)
-    errors.add(:base, 'Challenge already exists against this user for this event') if existing_challenge.present?
-  end  
+    existing_challenge = Challenge.find_by(event_id: event_id, challenger_id: challenger_id, challengee_id: challengee_id, division: division)
+    errors.add(:base, 'A similar challenge already exists for this event and division') if existing_challenge.present? && existing_challenge.id != id
+  end 
   
 end

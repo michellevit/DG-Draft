@@ -22,7 +22,7 @@ module Api
                                     .where("challenger_id = ? OR challengee_id = ?", @current_user.id, @current_user.id)
     
       render json: current_challenges.as_json(include: {
-        event: { only: [:event_name, :division, :event_date_start, :event_date_end] },
+        event: { only: [:event_name, :event_date_start, :event_date_end] },
         challenger: { only: :username },
         challengee: { only: :username }
       })
