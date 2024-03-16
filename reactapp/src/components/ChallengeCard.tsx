@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { ChallengeCardProps } from "../types/interfaces";
 import "./ChallengeCard.css";
 
@@ -20,7 +20,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
   return (
     <div className="challenge-card">
       <h3>Event: {challenge.event.event_name}</h3>
-      <p>Divison: {challenge.divison}</p>
+      <p>Divison: {challenge.division}</p>
       <p>Challenger: {challenge.challenger?.username}</p>
       <p>Challengee: {challenge.challengee?.username}</p>
       <p>Date: {displayDate}</p>
