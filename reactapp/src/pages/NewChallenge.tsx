@@ -16,8 +16,8 @@ const NewChallenge: React.FC = () => {
   const [allEvents, setAllEvents] = useState<Event[]>([]);
   const [selectedEventId, setSelectedEventId] = useState("");
   const [challengeeUsername, setChallengeeUsername] = useState("");
-
   const [startCondition, setStartCondition] = useState("random");
+  const [division, setDivision] = useState("");
   const { user } = useUser();
   const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ const NewChallenge: React.FC = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (user && challengeeUsername === user.username) {
-      showError("You may not challenge yourself");
+      showError("You may not challenge yourself...");
       return;
     }
     try {
@@ -63,6 +63,7 @@ const NewChallenge: React.FC = () => {
         `${process.env.REACT_APP_API_URL}/challenges`,
         {
           event_id: selectedEventId,
+          division: division,
           challenger_id: user?.id,
           challengee_id: usernameExists.data.id,
           start_condition: startCondition,
@@ -98,7 +99,7 @@ const NewChallenge: React.FC = () => {
             onChange={(e) => setSelectedEventId(e.target.value)}
             required
           >
-             {allEvents.map((event) => (
+            {allEvents.map((event) => (
               <option key={event.id} value={event.id}>
                 {`${event.event_name} - ${new Date(
                   event.event_date_start
@@ -108,6 +109,16 @@ const NewChallenge: React.FC = () => {
                 })}`}
               </option>
             ))}
+          </select>
+        </div>
+        <div>
+          <label>Divison</label>
+          <select
+            value={division}
+            onChange={(e) => setDivision(e.target.value)}
+          >
+            <option value="MPO">MPO</option>
+            <option value="FPO">FPO</option>
           </select>
         </div>
         <div>
