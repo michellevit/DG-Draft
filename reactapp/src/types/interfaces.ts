@@ -1,8 +1,10 @@
 export interface Challenge {
     id: number;
-    event_name: string;
-    event_date_start: Date;
-    event_date_end: Date;
+    event: {
+      event_name: string;
+      event_date_start: Date;
+      event_date_end: Date;
+    };
     division: string;
     start_condition: string;
     challenger: {
