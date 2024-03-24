@@ -46,6 +46,15 @@
   margin: 4rem auto;
 }
 
+.new-challenge-container .challenge-card input,
+.new-challenge-container .challenge-card select,
+.new-challenge-container .challenge-card button {
+  max-width: calc(100% - 2rem - 4px);
+  margin: 0 auto;
+  display: block; 
+}
+
+
 /* New Challenge Container */
 
 .new-challenge-container .challenge-card {

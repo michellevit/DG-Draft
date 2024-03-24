@@ -39,6 +39,11 @@ a:hover {
   font-weight: 400;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 button {
   position: relative;
