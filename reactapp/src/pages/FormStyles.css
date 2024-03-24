@@ -27,12 +27,12 @@
     padding: 0.75rem;
     margin-bottom: 1rem;
     border-radius: 0.25rem;
-    border: 1px solid #ccc;
-    width: 100%;
+    border: 1px solid black;
+    width: -webkit-fill-available;
   }
   
   .form-container button {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: #fff;
     cursor: pointer;
   }
