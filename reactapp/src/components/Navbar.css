@@ -8,7 +8,7 @@ nav {
     top: 0;
 }
 
-nav .title {
+nav a .title {
     font-family: "Kaushan Script";
     font-weight: 400;
     font-style: normal;
@@ -20,7 +20,7 @@ nav .title {
     padding: 0.2rem;
 }
 
-nav .title:hover {
+nav a .title:hover {
     color: var(--text-color-light);
 }
 
