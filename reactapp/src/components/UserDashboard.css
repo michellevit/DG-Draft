@@ -2,6 +2,11 @@
     width: 100%;
 }
 
+.dashboard-container > * {
+    padding: 0.5rem;
+}
+
+
 .dashboard-container form#update-username {
     display: flex;
     flex-direction: row;
