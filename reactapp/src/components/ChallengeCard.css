@@ -18,10 +18,6 @@
   width: 100%;
 }
 
-.challenge-card form table tbody tr {
-  padding: 1rem 0;
-}
-
 
 .challenge-card form table tbody tr th, 
 .challenge-card form table tbody tr td {
@@ -30,6 +26,10 @@
   white-space: nowrap;
 }
 
+challenge-card form table tbody tr td {
+  padding: 0.5rem 0;
+  display: block;
+}
 
 .challenge-card form table tbody tr th {
   width: fit-content;
