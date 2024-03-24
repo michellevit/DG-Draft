@@ -21,10 +21,6 @@
     border-right: none;
 }
 
-.dashboard-container .form-container button, .dashboard-container .form-container input {
-    margin-bottom: 0;
-}
-
 .dashboard-container form#update-username button {
     display: flex;
     flex-direction: row;
