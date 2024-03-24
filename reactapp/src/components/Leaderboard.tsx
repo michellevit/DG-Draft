@@ -16,14 +16,16 @@ const Leaderboard: React.FC = () => {
 
   useEffect(() => {
     const fetchLeaderboardData = async () => {
-      setIsLoading(true); 
+      setIsLoading(true);
       try {
-        const response = await axios.get(`${process.env.REACT_APP_API_URL}/leaderboard`);
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/leaderboard`
+        );
         setLeaderboardData(response.data);
-        setIsLoading(false); 
+        setIsLoading(false);
       } catch (error) {
         console.error("Failed to fetch leaderboard data:", error);
-        setIsLoading(false); 
+        setIsLoading(false);
       }
     };
     fetchLeaderboardData();
@@ -42,7 +44,9 @@ const Leaderboard: React.FC = () => {
             leaderboardData.map((leaderboardUser, index) => (
               <tr
                 key={leaderboardUser.id}
-                className={user && user.id === leaderboardUser.id ? "current-user" : ""}
+                className={
+                  user && user.id === leaderboardUser.id ? "current-user" : ""
+                }
               >
                 <td>{index + 1}</td>
                 <td>{leaderboardUser.username}</td>
@@ -54,5 +58,6 @@ const Leaderboard: React.FC = () => {
       </table>
     </div>
   );
+};
 
 export default Leaderboard;
