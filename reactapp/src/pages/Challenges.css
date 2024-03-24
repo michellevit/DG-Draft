@@ -30,7 +30,7 @@
  /* Current Challenge Container */
 
 .current-challenge-container .challenge-card {
-    background: --var(accent-color);
+    background: var(--accent-color);
 }
 
 

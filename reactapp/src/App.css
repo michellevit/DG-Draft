@@ -22,6 +22,10 @@ a {
   color: var(--text-color-white);
 }
 
+a:hover {
+  opacity: 0.5;
+}
+
 * {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
