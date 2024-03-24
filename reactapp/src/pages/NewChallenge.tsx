@@ -149,13 +149,8 @@ const NewChallenge: React.FC = () => {
                 </tr>
               </tbody>
             </table>
-            <div style={{ textAlign: "center", marginTop: "20px" }}>
-              <button
-                type="submit"
-                style={{ padding: "10px 20px", fontSize: "16px" }}
-              >
-                Submit
-              </button>
+            <div>
+              <button type="submit">Submit</button>
             </div>
           </form>
         </div>
