@@ -31,20 +31,27 @@ const Leaderboard: React.FC = () => {
   return (
     <div className="leaderboard-container">
       <h3>Leaderboard</h3>
-      <ul>
-        {leaderboardData.map((leaderboardUser, index) => (
-          <li
-            key={index}
-            style={
-              user && user.id === leaderboardUser.id
-                ? { fontWeight: "bold" }
-                : {}
-            }
-          >
-            {leaderboardUser.username} - {leaderboardUser.points} points
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Placement</th>
+            <th>Username</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+          {leaderboardData.map((leaderboardUser, index) => (
+            <tr
+              key={leaderboardUser.id}
+              className={user && user.id === leaderboardUser.id ? "current-user" : ""}
+            >
+              <td>{index + 1}</td>
+              <td>{leaderboardUser.username}</td>
+              <td>{leaderboardUser.points}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
