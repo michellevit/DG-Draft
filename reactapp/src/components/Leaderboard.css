@@ -2,11 +2,10 @@
   max-width: 500px;
   margin: 50px auto;
   padding: 20px;
-  background-color: var(--background-color);
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Arial", sans-serif;
-  background-color: var(--secondary-color);
+  background-color: var(--accent-color);
   border: 1px solid var(--text-color-light);
 }
 
