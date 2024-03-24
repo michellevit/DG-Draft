@@ -19,10 +19,6 @@
   width: 300px;
 }
 
-.challenge-card button {
-  padding: 0.5rem;
-}
-
 .new-challenge-container .challenge-card > div,
 .challenge-card p {
   margin: 1em;
