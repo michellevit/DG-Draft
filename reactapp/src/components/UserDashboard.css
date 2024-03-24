@@ -1,0 +1,4 @@
+.dashboard-container form {
+    display: flex;
+    flex-direction: row;
+}

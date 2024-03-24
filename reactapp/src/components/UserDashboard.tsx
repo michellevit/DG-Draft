@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useUser } from "../contexts/UserContext";
+import "./UserDashboard.css";
 
 const UserDashboard: React.FC = () => {
   const { user, setUser } = useUser();
