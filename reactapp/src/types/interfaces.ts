@@ -8,9 +8,11 @@ export interface Challenge {
     division: string;
     start_condition: string;
     challenger: {
+      id: number;
       username: string;
     };
     challengee: {
+      id: number;
       username: string;
     };
     status: string;
