@@ -33,12 +33,9 @@
   width: 100%;
 }
 
-.challenge-card th {
+.challenge-card table tbody tr th, 
+.challenge-card table tbody tr td {
   font-weight: 700;
-}
-
-.challenge-card th,
-.challenge-card td {
   text-align: left;
   white-space: nowrap;
 }
