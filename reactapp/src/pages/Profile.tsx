@@ -3,7 +3,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import UserDashboard from "../components/UserDashboard";
-import "./Profile.css";
 import "./FormStyles.css";
 
 
