@@ -7,8 +7,8 @@
 }
 
 
-.challenge-card {
-    border-radius: 0.25rem;
+.challenge-card, .new-challenge-card form {
+    border-radius: 0.75rem;
     padding: 1rem;
     width: 500px;
     display: flex;

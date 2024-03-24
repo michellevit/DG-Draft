@@ -81,9 +81,9 @@ const NewChallenge: React.FC = () => {
   return (
     <div className="new-challenge-container">
       <div className="challenge-list">
-        <div className="challenge-card">
+        <div className="new-challenge-card">
           <form onSubmit={handleSubmit}>
-            <h1>New Challenge</h1>
+            <h3>New Challenge</h3>
             <div>
               <label>{user?.username} vs</label>
               <input
