@@ -78,7 +78,7 @@ const NewChallenge: React.FC = () => {
       <div className="challenge-list">
         <div className="challenge-card">
           <form onSubmit={handleSubmit}>
-            <h3>New Challenge</h3>
+            <h3>Create New Challenge</h3>
             <table>
               <tbody>
                 <tr>
