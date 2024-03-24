@@ -30,7 +30,7 @@ const Profile: React.FC = () => {
 
   return <div className="form-container">
     <UserDashboard />
-    <button onClick={handleLogout} className="form-button">Logout</button>
+    <button onClick={handleLogout} className="form-button" id="logout">Logout</button>
     </div>;
 }
 
