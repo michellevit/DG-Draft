@@ -31,11 +31,12 @@
   border-bottom: 1px solid var(--text-color-light);
   color: var(--text-color-dark);
   font-size: 1.25rem;
-}
-
-.leaderboard-container tr {
   text-align: center;
 }
+
+.leaderboard-container tr td {
+    padding: 1rem 1rem;
+  }
 
 .leaderboard-container tr:last-child {
   border-bottom: none;
