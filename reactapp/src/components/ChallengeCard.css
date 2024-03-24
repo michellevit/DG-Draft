@@ -26,3 +26,14 @@
 }
 
 
+.challenge-card form table tbody tr th {
+  width: fit-content;
+}
+
+
+.challenge-card form table tbody tr td input, 
+.challenge-card form table tbody tr td select {
+  width: 100%;
+}
+
+
