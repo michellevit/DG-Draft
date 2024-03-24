@@ -18,13 +18,14 @@
   
 
 .leaderboard-container table {
-  margin: 2rem auto 2rem auto;
+  width: 100%;
+  margin: 2rem auto;
+  border-collapse: collapse;
 }
 
 
 .leaderboard-container tr {
   padding: 0.5rem 0;
-  border-bottom: 1px solid var(--accent-color);
   color: var(--text-color-dark);
   font-size: 1.25rem;
   text-align: center;
@@ -33,11 +34,11 @@
 
 .leaderboard-container tr td {
     width: 150px;
-    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--accent-color);
   }
 
 
-.leaderboard-container tr:last-child {
+.leaderboard-container tr:last-child td {
   border-bottom: none;
 }
 
