@@ -49,13 +49,13 @@
 /* New Challenge Container */
 
 .new-challenge-container .challenge-card {
-  background: var(--green-accent);
+  background: #FDFD96;
 }
 
 /* Current Challenge Container */
 
 .current-challenge-container .challenge-card {
-  background: white;
+  background: var(--accent-color);
 }
 
 .current-challenge-container .challenge-card table {
@@ -64,10 +64,14 @@
 
 /* Past Challenge Container */
 
-.past-challenge-container .challenge-card {
-  background: var(--accent-color);
-}
-
 .past-challenge-container .challenge-card table {
   margin: 2rem auto;
+}
+
+.past-challenge-container .challenge-card .won {
+  background: #FF6B6B;
+}
+
+.past-challenge-container .challenge-card .won {
+  background: #7DBE8E;
 }
