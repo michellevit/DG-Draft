@@ -23,5 +23,6 @@
 }
 
 .profile-container .logout {
-    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
 }
