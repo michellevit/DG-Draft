@@ -46,16 +46,19 @@
   margin: 4rem auto;
 }
 
-
 /* New Challenge Container */
 
 .new-challenge-container .challenge-card {
-  background: #FFFACD;
+  background: #fffacd;
 }
 
 .new-challenge-container .challenge-card form {
-    width: 100%;
-  }
+  width: 100%;
+}
+
+.new-challenge-container .challenge-card button {
+  background-color: var(--highlight-color);
+}
 
 .new-challenge-container .challenge-card button {
   width: -webkit-fill-available;
@@ -69,9 +72,8 @@
 }
 
 .current-challenge-container .challenge-card.fpo {
-    background: #F4A5AE;
-  }
-  
+  background: #f4a5ae;
+}
 
 .current-challenge-container .challenge-card table {
   margin: 2rem auto;
@@ -84,28 +86,32 @@
 }
 
 .past-challenge-container .challenge-card .win {
-  background: #FF6B6B;
+  background: #ff6b6b;
 }
 
 .past-challenge-container .challenge-card .loss {
-  background: #7DBE8E;
+  background: #7dbe8e;
 }
-
 
 /* Loading Message */
 
 .loading-message {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    font-family: 'Arial', sans-serif;
-    animation: fadeInOut 2s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  font-family: "Arial", sans-serif;
+  animation: fadeInOut 2s linear infinite;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 1;
   }
-  
-  @keyframes fadeInOut {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+  50% {
+    opacity: 0.5;
   }
+}
