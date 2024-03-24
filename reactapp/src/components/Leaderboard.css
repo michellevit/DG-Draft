@@ -27,8 +27,8 @@
   
 
 .leaderboard-container tr {
-  padding: 1rem;
-  border-bottom: 1px solid var(--text-color-light);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--accent-color);
   color: var(--text-color-dark);
   font-size: 1.25rem;
   text-align: center;
@@ -36,7 +36,7 @@
 
 .leaderboard-container tr td {
     width: 100px;
-    padding: 1rem 1rem;
+    padding: 0.5rem 0;
   }
 
 .leaderboard-container tr:last-child {
