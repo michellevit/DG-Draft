@@ -52,6 +52,11 @@
   background: #FFFACD;
 }
 
+.new-challenge-container .challenge-card button {
+  width: -webkit-fill-available;
+  background-color: var(--highlight-color);
+}
+
 /* Current Challenge Container */
 
 .current-challenge-container .challenge-card.mpo {
