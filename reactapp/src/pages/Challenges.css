@@ -1,76 +1,76 @@
 .challenges-container .challenge-list {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 2rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 2rem;
 }
 
-
 .challenges-container .challenge-card {
-    border-radius: 0.75rem;
-    padding: 1rem;
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 1px solid black;
-    box-shadow: 0px 5px 5px rgba(128, 128, 128, 0.5);
+  border-radius: 0.75rem;
+  padding: 1rem;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+  box-shadow: 0px 5px 5px rgba(128, 128, 128, 0.5);
 }
 
 .challenges-container nav {
-    display: flex;
-    flex-direction: row;
-    column-gap: 2rem;
-    justify-content: center;
-    margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+  justify-content: center;
+  margin-top: 0;
 }
 
-
-
-.challenges-container nav ul li a{
-    letter-spacing:  0.125rem;
+.challenges-container nav ul li a {
+  letter-spacing: 0.125rem;
 }
 
-.challenges-container nav ul li a:not(.active):hover, .challenges-container nav .active {
-    opacity: 0.5;
+.challenges-container nav ul li a:not(.active):hover,
+.challenges-container nav .active {
+  opacity: 0.5;
 }
 
 .challenges-container .challenge-card table {
-    margin: 2rem auto;
+  margin: 2rem auto;
 }
 
-
+.new-challenge-container,
+.current-challenge-container,
+.past-challenge-container {
+  margin: 4rem auto;
+}
 
 /* New Challenge Container */
 
 .new-challenge-container .challenge-card {
-    background: var(--green-accent);
+  background: var(--green-accent);
 }
 
 .past-challenge-container .challenge-card form {
-    margin: 2rem auto;
+  margin: 2rem auto;
 }
-
 
 /* Current Challenge Container */
 
 .current-challenge-container .challenge-card {
-    background: white;
+  background: white;
 }
 
 .current-challenge-container .challenge-card table {
-    margin: 2rem auto;
+  margin: 2rem auto;
 }
 
+/* Past Challenge Container */
 
- /* Past Challenge Container */
-
- .past-challenge-container .challenge-card {
-    background: var(--accent-color);
+.past-challenge-container .challenge-card {
+  background: var(--accent-color);
 }
 
 .past-challenge-container .challenge-card table {
-    margin: 2rem auto;
+  margin: 2rem auto;
 }
