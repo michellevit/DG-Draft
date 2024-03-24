@@ -1,4 +1,4 @@
-.dashboard-container form #update-username {
+.dashboard-container form#update-username {
     display: flex;
     flex-direction: row;
 }
