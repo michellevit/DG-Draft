@@ -10,21 +10,22 @@ interface LeaderboardUser {
 }
 
 const Leaderboard: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [leaderboardData, setLeaderboardData] = useState<LeaderboardUser[]>([]);
   const { user } = useUser();
 
   useEffect(() => {
     const fetchLeaderboardData = async () => {
+      setIsLoading(true); 
       try {
-        const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/leaderboard`
-        );
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/leaderboard`);
         setLeaderboardData(response.data);
+        setIsLoading(false); 
       } catch (error) {
         console.error("Failed to fetch leaderboard data:", error);
+        setIsLoading(false); 
       }
     };
-
     fetchLeaderboardData();
   }, []);
 
@@ -33,20 +34,25 @@ const Leaderboard: React.FC = () => {
       <h3>Leaderboard</h3>
       <table>
         <tbody>
-          {leaderboardData.map((leaderboardUser, index) => (
-            <tr
-              key={leaderboardUser.id}
-              className={user && user.id === leaderboardUser.id ? "current-user" : ""}
-            >
-              <td>{index + 1}</td>
-              <td>{leaderboardUser.username}</td>
-              <td>{leaderboardUser.points}</td>
+          {isLoading ? (
+            <tr>
+              <td colSpan={3}>Loading...</td>
             </tr>
-          ))}
+          ) : (
+            leaderboardData.map((leaderboardUser, index) => (
+              <tr
+                key={leaderboardUser.id}
+                className={user && user.id === leaderboardUser.id ? "current-user" : ""}
+              >
+                <td>{index + 1}</td>
+                <td>{leaderboardUser.username}</td>
+                <td>{leaderboardUser.points}</td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>
   );
-};
 
 export default Leaderboard;
