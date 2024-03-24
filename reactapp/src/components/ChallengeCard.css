@@ -11,7 +11,8 @@
 
 .challenge-card form table {
   width: 100%;
-  margin: 1rem 0;
+  border-collapse: separate;
+  border-spacing: 0 10px;
 }
 
 .challenge-card form table tbody {
@@ -30,7 +31,7 @@
   white-space: nowrap;
 }
 
-challenge-card form table tbody tr td {
+.challenge-card form table tbody tr td {
   padding: 0.5rem 0;
   display: block;
 }
