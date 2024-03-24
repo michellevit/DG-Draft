@@ -33,7 +33,7 @@ const Leaderboard: React.FC = () => {
 
   return (
     <div className="leaderboard-container">
-      <h3>Leaderboard</h3>
+      <h1>Leaderboard</h1>
       <table>
         <tbody>
           {isLoading ? (
