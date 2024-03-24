@@ -52,7 +52,7 @@ const PastChallenges = () => {
 
   return (
     <div className="past-challenge-container">
-    <div className="challenges-list">
+    <div className="challenge-list">
       {challenges.map((challenge) => (
         <ChallengeCard key={challenge.id} challenge={challenge} />
       ))}

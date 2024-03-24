@@ -80,66 +80,68 @@ const NewChallenge: React.FC = () => {
 
   return (
     <div className="new-challenge-container">
-      <div className="new-challenge-card">
-      <form onSubmit={handleSubmit}>
-        <h1>New Challenge</h1>
-        <div>
-          <label>{user?.username} vs</label>
-          <input
-            type="text"
-            value={challengeeUsername}
-            onChange={(e) => setChallengeeUsername(e.target.value)}
-            placeholder="Enter challengee's username"
-            required
-          />
+      <div className="challenge-list">
+        <div className="challenge-card">
+          <form onSubmit={handleSubmit}>
+            <h1>New Challenge</h1>
+            <div>
+              <label>{user?.username} vs</label>
+              <input
+                type="text"
+                value={challengeeUsername}
+                onChange={(e) => setChallengeeUsername(e.target.value)}
+                placeholder="Enter challengee's username"
+                required
+              />
+            </div>
+            <div>
+              <label>Event</label>
+              <select
+                value={selectedEventId}
+                onChange={(e) => setSelectedEventId(e.target.value)}
+                required
+              >
+                {allEvents.map((event) => (
+                  <option key={event.id} value={event.id}>
+                    {`${event.event_name} - ${new Date(
+                      event.event_date_start
+                    ).toLocaleDateString("en-US", {
+                      month: "short",
+                      day: "numeric",
+                    })}`}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label>Divison</label>
+              <select
+                value={division}
+                onChange={(e) => setDivision(e.target.value)}
+              >
+                <option value="MPO">MPO</option>
+                <option value="FPO">FPO</option>
+              </select>
+            </div>
+            <div>
+              <label>Who Picks First?</label>
+              <select
+                value={startCondition}
+                onChange={(e) => setStartCondition(e.target.value)}
+              >
+                <option value="challenger">{user?.username}</option>
+                <option value="challengee">
+                  {challengeeUsername ? challengeeUsername : "Challengee"}
+                </option>
+                <option value="Random">Random</option>
+              </select>
+            </div>
+            <div>
+              <button type="submit">Submit</button>
+            </div>
+          </form>
         </div>
-        <div>
-          <label>Event</label>
-          <select
-            value={selectedEventId}
-            onChange={(e) => setSelectedEventId(e.target.value)}
-            required
-          >
-            {allEvents.map((event) => (
-              <option key={event.id} value={event.id}>
-                {`${event.event_name} - ${new Date(
-                  event.event_date_start
-                ).toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "numeric",
-                })}`}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label>Divison</label>
-          <select
-            value={division}
-            onChange={(e) => setDivision(e.target.value)}
-          >
-            <option value="MPO">MPO</option>
-            <option value="FPO">FPO</option>
-          </select>
-        </div>
-        <div>
-          <label>Who Picks First?</label>
-          <select
-            value={startCondition}
-            onChange={(e) => setStartCondition(e.target.value)}
-          >
-            <option value="challenger">{user?.username}</option>
-            <option value="challengee">
-              {challengeeUsername ? challengeeUsername : "Challengee"}
-            </option>
-            <option value="Random">Random</option>
-          </select>
-        </div>
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-    </div>
+      </div>
     </div>
   );
 };

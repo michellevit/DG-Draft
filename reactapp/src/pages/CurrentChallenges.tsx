@@ -44,7 +44,7 @@ const CurrentChallenges: React.FC = () => {
 
   if (challenges.length === 0) {
     return (
-      <div className="challenges-list">
+      <div className="challenge-list">
         <p>No current challenges.</p>
       </div>
     );
@@ -52,7 +52,7 @@ const CurrentChallenges: React.FC = () => {
 
   return (
     <div className="current-challenge-container">
-      <div className="challenges-list">
+      <div className="challenge-list">
         {challenges.map((challenge: Challenge) => (
           <ChallengeCard key={challenge.id} challenge={challenge} />
         ))}
