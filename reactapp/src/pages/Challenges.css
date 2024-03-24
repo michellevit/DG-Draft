@@ -104,17 +104,17 @@
 
 /* Navbar */
 
-nav ul {
+.challenges-container nav ul {
     display: flex;
     padding: 0;
     justify-content: center;
 }
 
-nav ul li {
+.challenges-container nav ul li {
     list-style: none;
 }
 
-nav ul li a {
+.challenges-container nav ul li a {
     display: block;
     letter-spacing:  0.125rem;
     text-decoration: none;
@@ -123,10 +123,10 @@ nav ul li a {
     letter-spacing:  0.125rem;
 }
 
-nav ul li a:not(.active):hover {
+.challenges-container nav ul li a:not(.active):hover {
     opacity: 0.5;
 }
 
-nav .active {
+.challenges-container nav .active {
     opacity: 0.5;
 }
