@@ -26,3 +26,26 @@
 .new-challenge-container .challenge-card > div, .challenge-card p {
     margin: 1em;
 }
+
+
+.challenge-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+  
+  .challenge-card th {
+    text-align: left;
+    padding: 8px;
+    background-color: #f2f2f2;
+  }
+  
+  .challenge-card td {
+    padding: 8px;
+  }
+  
+  .challenge-card button {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    display: block;
+  }
