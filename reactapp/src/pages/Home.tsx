@@ -6,7 +6,6 @@ import { useUser } from "../contexts/UserContext";
 const Home: React.FC = () => {
   // const { user } = useUser();
   return <div className="home-container">
-    <h2>Home</h2>
     <Leaderboard />
   </div>;
 }

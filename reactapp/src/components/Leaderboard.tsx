@@ -30,6 +30,7 @@ const Leaderboard: React.FC = () => {
 
   return (
     <div className="leaderboard-container">
+      <h3>Leaderboard</h3>
       <ul>
         {leaderboardData.map((leaderboardUser, index) => (
           <li
