@@ -4,13 +4,13 @@
 }
 
 
-.dashboard-container form #update-username input {
+.dashboard-container form#update-username input {
     display: flex;
     flex-direction: row;
     border-radius: 0.25rem 0 0 0.25rem;
 }
 
-.dashboard-container form #update-username button {
+.dashboard-container form#update-username button {
     display: flex;
     flex-direction: row;
     border-radius: 0 0.25rem 0.25rem 0;
