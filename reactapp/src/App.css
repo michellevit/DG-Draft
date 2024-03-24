@@ -17,15 +17,16 @@ body {
   height: 100%;
 }
 
+
 a {
   text-decoration: none;
   color: var(--text-color-white);
 }
 
+
 a:hover {
   opacity: 0.5;
 }
-
 
 
 * {
@@ -49,6 +50,7 @@ button {
   will-change: transform, box-shadow; 
   overflow: hidden; 
 }
+
 
 button:hover {
   transform: translateX(-4px) translateY(-4px);

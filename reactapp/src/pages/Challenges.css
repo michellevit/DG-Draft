@@ -48,13 +48,12 @@
  /* Current Challenge Container */
 
 .current-challenge-container .challenge-card {
-    background: var(--accent-color);
+    background: white;
 }
 
 
  /* Past Challenge Container */
 
  .past-challenge-container .challenge-card {
-    background: var(--navy-accent);
-    color: white;
+    background: var(--accent-color);
 }
