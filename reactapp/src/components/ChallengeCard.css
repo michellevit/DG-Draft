@@ -1,10 +1,36 @@
 .challenge-card {
-    background-color: white;
-    border-radius: 25px;
+    border-radius: 0.25rem;
     padding: 1rem;
     width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .challenge-card h3 {
     text-align: center;
+}
+
+
+.challenge-card h1 {
+    text-align: center;
+}
+
+
+.challenge-card {
+    padding: 1rem;
+}
+
+.challenge-card label {
+    width: 100px;
+    margin-right: 1rem;
+}
+
+.challenge-card select, .challenge-card input {
+    width: 300px;
+}
+
+.challenge-card button {
+    padding: 0.5rem;
 }

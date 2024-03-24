@@ -51,10 +51,12 @@ const PastChallenges = () => {
   }
 
   return (
+    <div className="past-challenge-container">
     <div className="challenges-list">
       {challenges.map((challenge) => (
         <ChallengeCard key={challenge.id} challenge={challenge} />
       ))}
+    </div>
     </div>
   );
 };

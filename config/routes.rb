@@ -15,6 +15,11 @@ Rails.application.routes.draw do
         get 'current/:user_id', to: 'challenges#current_for_user'
         get 'past/:user_id', to: 'challenges#past_for_user'
       end
+      member do
+        patch :accept
+        patch :decline
+        delete :destroy
+      end
     end
   end
   root 'application#react_app'
