@@ -39,7 +39,7 @@ const PastChallenges = () => {
   }, [user, loading]);
 
   if (isLoading) {
-    return <div>Loading past challenges...</div>;
+    return <div className="loading-message">Loading past challenges...</div>;
   }
 
   if (challenges.length === 0) {

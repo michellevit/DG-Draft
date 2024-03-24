@@ -80,3 +80,22 @@
 .past-challenge-container .challenge-card .loss {
   background: #7DBE8E;
 }
+
+
+/* Loading Message */
+
+.loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    font-family: 'Arial', sans-serif;
+    animation: fadeInOut 2s linear infinite;
+  }
+  
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }

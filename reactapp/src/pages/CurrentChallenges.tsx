@@ -39,7 +39,7 @@ const CurrentChallenges: React.FC = () => {
   }, [user, loading]);
 
   if (isLoading) {
-    return <div>Loading current challenges...</div>;
+    return <div className="loading-message">Loading current challenges...</div>;
   }
 
   if (challenges.length === 0) {
