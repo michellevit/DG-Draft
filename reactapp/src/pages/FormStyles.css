@@ -37,8 +37,7 @@
 }
 
 button#logout.form-button {
-  width: 300px;
-  background-color: grey;
+  background-color: var(--grey-color);
 }
 
 .form-container .success,
