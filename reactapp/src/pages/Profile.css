@@ -9,6 +9,9 @@
     border: 1px solid black;
 }
 
+.profile-container h1, .profile-container h3 {
+    text-align: center;
+}
 
 .profile-container form input, .profile-container form button {
     padding: .75rem 1rem;
