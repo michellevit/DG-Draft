@@ -110,6 +110,11 @@
     justify-content: center;
 }
 
+.challenges-container ul {
+    margin-top: 0;
+}
+
+
 .challenges-container nav ul li {
     list-style: none;
 }
