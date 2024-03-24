@@ -131,7 +131,7 @@ const NewChallenge: React.FC = () => {
             <option value="challengee">
               {challengeeUsername ? challengeeUsername : "Challengee"}
             </option>
-            <option value="random">Random</option>
+            <option value="Random">Random</option>
           </select>
         </div>
         <div>
