@@ -81,8 +81,7 @@ const NewChallenge: React.FC = () => {
   return (
     <div className="new-challenge-container">
       <div className="challenge-list">
-        <div className="new-challenge-card">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="challenge-card">
             <h3>New Challenge</h3>
             <div>
               <label>{user?.username} vs</label>
@@ -142,7 +141,6 @@ const NewChallenge: React.FC = () => {
           </form>
         </div>
       </div>
-    </div>
   );
 };
 
