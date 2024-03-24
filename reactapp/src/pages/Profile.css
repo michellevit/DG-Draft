@@ -26,6 +26,7 @@
 
 .profile-container form > *{
     padding: 0 1rem;
+    margin: 0 1rem;
 }
 
 .profile-container .logout {
