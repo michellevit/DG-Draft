@@ -100,3 +100,33 @@
     opacity: 0.5;
   }
 }
+
+
+/* Navbar */
+
+nav ul {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    letter-spacing:  0.125rem;
+    text-decoration: none;
+    color: var(--text-color-light);
+    border-radius: 0.5rem;
+    letter-spacing:  0.125rem;
+}
+
+nav ul li a:not(.active):hover {
+    opacity: 0.5;
+}
+
+nav .active {
+    opacity: 0.5;
+}
