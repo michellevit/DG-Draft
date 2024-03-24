@@ -58,7 +58,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
           <tr><th>Division</th><td>{challenge.division}</td></tr>
           <tr><th>Challenger</th><td>{challenge.challenger?.username}</td></tr>
           <tr><th>Challengee</th><td>{challenge.challengee?.username}</td></tr>
-          <tr><th>Who Picks First</th><td>{challenge.start_condition}</td></tr>
+          <tr><th>First Pick</th><td>{challenge.start_condition}</td></tr>
           <tr><th>Status</th><td>{challenge.status}</td></tr>
         </tbody>
       </table>
