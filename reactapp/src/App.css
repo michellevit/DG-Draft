@@ -40,15 +40,15 @@ a:hover {
 button {
   position: relative;
   letter-spacing:  0.125rem;
-  border: 1px solid var(--text-color-dark);
   line-height: 1.5rem;
-  padding: 0.75rem 1rem;
-  border-radius: 0.25rem;
   background-color: white;
   color: var(--text-color-dark);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   will-change: transform, box-shadow; 
   overflow: hidden; 
+  padding: 0.5rem 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid black;
 }
 
 
