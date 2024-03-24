@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import { Link, Outlet } from "react-router-dom";
 import "./Challenges.css";
-import "../components/Navbar.css";
 
 const Challenges: React.FC = () => {
   const { user, loading } = useUser();
