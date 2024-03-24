@@ -88,7 +88,7 @@ const NewChallenge: React.FC = () => {
                   </td>
                 </tr>
                 <tr>
-                  <th>Challengee Username:</th>
+                  <th>Challengee:</th>
                   <td>
                     <input
                       type="text"
