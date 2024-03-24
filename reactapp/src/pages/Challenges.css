@@ -52,17 +52,17 @@
   background: #fffacd;
 }
 
-.new-challenge-container .challenge-card form {
+/* .new-challenge-container .challenge-card form {
   width: 100%;
-}
+} */
 
-.new-challenge-container .challenge-card button {
+/* .new-challenge-container .challenge-card button {
   background-color: var(--highlight-color);
-}
+} */
 
 .new-challenge-container .challenge-card button {
   width: -webkit-fill-available;
-  background-color: var(--accent-color);
+  background-color: #f9d38e;
 }
 
 /* Current Challenge Container */

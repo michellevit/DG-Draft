@@ -77,82 +77,86 @@ const NewChallenge: React.FC = () => {
     <div className="new-challenge-container">
       <div className="challenge-list">
         <div className="challenge-card">
-          <form onSubmit={handleSubmit}>
-            <h3>Create New Challenge</h3>
-            <table>
-              <tbody>
-                <tr>
-                  <th>Challenger:</th>
-                  <td>
-                    <b>{user?.username}</b>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Challengee:</th>
-                  <td>
-                    <input
-                      type="text"
-                      value={challengeeUsername}
-                      onChange={(e) => setChallengeeUsername(e.target.value)}
-                      placeholder="Enter challengee's username"
-                      required
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <th>Event:</th>
-                  <td>
-                    <select
-                      value={selectedEventId}
-                      onChange={(e) => setSelectedEventId(e.target.value)}
-                      required
-                    >
-                      {allEvents.map((event) => (
-                        <option key={event.id} value={event.id}>
-                          {`${event.event_name} - ${new Date(
-                            event.event_date_start
-                          ).toLocaleDateString("en-US", {
-                            month: "short",
-                            day: "numeric",
-                          })}`}
+          <div className="form-container">
+            <form onSubmit={handleSubmit}>
+              <h3>Create New Challenge</h3>
+              <table>
+                <tbody>
+                  <tr>
+                    <th>Challenger:</th>
+                    <td>
+                      <b>{user?.username}</b>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Challengee:</th>
+                    <td>
+                      <input
+                        type="text"
+                        value={challengeeUsername}
+                        onChange={(e) => setChallengeeUsername(e.target.value)}
+                        placeholder="Enter challengee's username"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Event:</th>
+                    <td>
+                      <select
+                        value={selectedEventId}
+                        onChange={(e) => setSelectedEventId(e.target.value)}
+                        required
+                      >
+                        {allEvents.map((event) => (
+                          <option key={event.id} value={event.id}>
+                            {`${event.event_name} - ${new Date(
+                              event.event_date_start
+                            ).toLocaleDateString("en-US", {
+                              month: "short",
+                              day: "numeric",
+                            })}`}
+                          </option>
+                        ))}
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Division:</th>
+                    <td>
+                      <select
+                        value={division}
+                        onChange={(e) => setDivision(e.target.value)}
+                      >
+                        <option value="MPO">MPO</option>
+                        <option value="FPO">FPO</option>
+                      </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Who Picks First?</th>
+                    <td>
+                      <select
+                        value={startCondition}
+                        onChange={(e) => setStartCondition(e.target.value)}
+                      >
+                        <option value="challenger">{user?.username}</option>
+                        <option value="challengee">
+                          {challengeeUsername
+                            ? challengeeUsername
+                            : "Challengee"}
                         </option>
-                      ))}
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Division:</th>
-                  <td>
-                    <select
-                      value={division}
-                      onChange={(e) => setDivision(e.target.value)}
-                    >
-                      <option value="MPO">MPO</option>
-                      <option value="FPO">FPO</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <th>Who Picks First?</th>
-                  <td>
-                    <select
-                      value={startCondition}
-                      onChange={(e) => setStartCondition(e.target.value)}
-                    >
-                      <option value="challenger">{user?.username}</option>
-                      <option value="challengee">
-                        {challengeeUsername ? challengeeUsername : "Challengee"}
-                      </option>
-                      <option value="random">Random</option>
-                    </select>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-            <div>
-              <button type="submit">Submit</button>
-            </div>
-          </form>
+                        <option value="random">Random</option>
+                      </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div>
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
     </div>
