@@ -10,6 +10,7 @@
 .dashboard-container form#update-username {
     display: flex;
     flex-direction: row;
+    padding: 0;
 }
 
 
@@ -24,4 +25,14 @@
     display: flex;
     flex-direction: row;
     border-radius: 0 0.25rem 0.25rem 0;
+}
+
+.dashboard-container h2 {
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    width: 100%;
+}
+
+.dashboard-container > * {
+    margin: 1.5rem 0;
 }
