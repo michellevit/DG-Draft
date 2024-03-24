@@ -1,7 +1,6 @@
 import React, { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./Signup.css";
 import "./FormStyles.css";
 import { useUser } from "../contexts/UserContext";
 
