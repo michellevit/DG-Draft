@@ -84,7 +84,7 @@ const NewChallenge: React.FC = () => {
                 <tr>
                   <th>Challenger:</th>
                   <td>
-                    <b>{user?.username}</b> vs
+                    <b>{user?.username}</b>
                   </td>
                 </tr>
                 <tr>
