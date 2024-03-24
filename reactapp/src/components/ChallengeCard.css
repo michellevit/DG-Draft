@@ -4,3 +4,7 @@
     padding: 1rem;
     width: 500px;
 }
+
+.challenge-card h3 {
+    text-align: center;
+}
