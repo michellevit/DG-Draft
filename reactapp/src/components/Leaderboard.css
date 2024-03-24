@@ -26,14 +26,15 @@
 
 .leaderboard-container tr td {
     width: 150px;
+    border-top: 1px solid rgba(141, 185, 214, 0.5);
     border-bottom: 1px solid rgba(141, 185, 214, 0.5);
     padding: 0.5rem;
   }
 
 
-.leaderboard-container tr:last-child td {
+/* .leaderboard-container tr:last-child td {
   border-bottom: none;
-}
+} */
 
 
 .leaderboard-container tr.current-user {
