@@ -6,6 +6,8 @@
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Arial", sans-serif;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--text-color-light);
 }
 
 .leaderboard-container h3 {
@@ -17,14 +19,13 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
-  background-color: var(--secondary-color);
-  border: 1px solid var(--text-color-light);
 }
 
 .leaderboard-container ul li {
   padding: 10px;
   border-bottom: 1px solid var(--text-color-light);
   color: var(--text-color-dark);
+  font-size: 1.5rem;
 }
 
 .leaderboard-container ul li:last-child {
