@@ -11,7 +11,7 @@
 
 .leaderboard-container table {
   margin: auto;
-  padding: 4rem auto;
+  margin: 2rem auto;
 }
 
 .leaderboard-container h3 {
@@ -21,10 +21,6 @@
   padding: 4rem auto;
 }
 
-.leaderboard-container tbody {
-    margin: 2rem auto;
-  }
-  
 
 .leaderboard-container tr {
   padding: 0.5rem 0;
