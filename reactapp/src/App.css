@@ -1,12 +1,12 @@
 :root {
-  --primary-color: #008DDA;
-  --secondary-color: #41C9E2;
+  --primary-color: #4487ac;
+  --secondary-color: #6fb8c5;
   --accent-color: #ACE2E1;
   --text-color-dark: #000;
   --text-color-light: #fff;
   --background-color: #F7EEDD;
   --green-accent: #7DBE8E;
-  --navy-accent: 005D7A;
+  --navy-accent: #005D7A;
 }
 
 
@@ -25,6 +25,8 @@ a {
 a:hover {
   opacity: 0.5;
 }
+
+
 
 * {
   font-family: 'Poppins', sans-serif;
@@ -45,6 +47,7 @@ button {
 
 button:hover {
   background-color: var(--text-color-dark);
+  color: var(--text-color-light);
   border: 1px solid var(--text-color-light);
   padding: 1rem;
   border-radius: 0.25rem;

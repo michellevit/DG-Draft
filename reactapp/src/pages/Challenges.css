@@ -19,6 +19,12 @@
     box-shadow: 0px 5px 5px rgba(128, 128, 128, 0.5);
 }
 
+.challenges-container nav {
+    display: flex;
+    flex-direction: row;
+    column-gap: 2rem;
+    justify-content: center;
+}
 
 /* New Challenge Container */
 
@@ -30,13 +36,13 @@
  /* Current Challenge Container */
 
 .current-challenge-container .challenge-card {
-    background: var(--accent-color);
+    background: var(--accent-accent);
 }
 
 
  /* Past Challenge Container */
 
  .past-challenge-container .challenge-card {
-    background: #163b58;
+    background: var(--navy-accent);
     color: white;
 }
