@@ -9,29 +9,34 @@
   border: 1px solid var(--text-color-light);
 }
 
+.leaderboard-container table {
+    margin: auto;
+  }
+
 .leaderboard-container h3 {
   text-align: center;
   color: var(--text-color-dark);
 }
 
-.leaderboard-container ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.leaderboard-container ul li {
+.leaderboard-container th {
+    padding: 10px;
+    border-bottom: 1px solid var(--text-color-light);
+    color: var(--text-color-dark);
+    font-size: 1.5rem;
+  }
+  
+.leaderboard-container tr {
   padding: 10px;
   border-bottom: 1px solid var(--text-color-light);
   color: var(--text-color-dark);
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
-.leaderboard-container ul li:last-child {
+.leaderboard-container tr li:last-child {
   border-bottom: none;
 }
 
-.leaderboard-container ul li.current-user {
+.leaderboard-container tr.current-user {
   font-weight: bold;
   background-color: var(--accent-color);
   color: var(--text-color-light);
