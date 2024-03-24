@@ -23,14 +23,14 @@
 /* New Challenge Container */
 
 .new-challenge-container .challenge-card {
-    background: #7ecf8c;
+    background: var(--green-accent);
 }
 
 
  /* Current Challenge Container */
 
 .current-challenge-container .challenge-card {
-    background: #92c3eb;
+    background: --var(accent-color);
 }
 
 
