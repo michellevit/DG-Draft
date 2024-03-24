@@ -20,6 +20,10 @@ nav .title {
     padding: 0.2rem;
 }
 
+nav .title:hover {
+    color: var(--text-color-light);
+}
+
 nav ul {
     display: flex;
     padding: 0;
