@@ -104,7 +104,7 @@
 
 /* Navbar */
 
-.challenges-container nav ul {
+.challenges-container nav {
     display: flex;
     padding: 0;
     justify-content: center;
