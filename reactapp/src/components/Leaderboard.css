@@ -10,21 +10,23 @@
 }
 
 .leaderboard-container table {
-    margin: auto;
-  }
+  margin: auto;
+}
 
 .leaderboard-container h3 {
   text-align: center;
   color: var(--text-color-dark);
+  margin: 0;
+  padding: 2rem auto;
 }
 
 .leaderboard-container th {
-    padding: 10px;
-    border-bottom: 1px solid var(--text-color-light);
-    color: var(--text-color-dark);
-    font-size: 1.5rem;
-  }
-  
+  padding: 10px;
+  border-bottom: 1px solid var(--text-color-light);
+  color: var(--text-color-dark);
+  font-size: 1.5rem;
+}
+
 .leaderboard-container tr {
   padding: 10px;
   border-bottom: 1px solid var(--text-color-light);
@@ -32,7 +34,11 @@
   font-size: 1.25rem;
 }
 
-.leaderboard-container tr li:last-child {
+.leaderboard-container tr {
+  text-align: center;
+}
+
+.leaderboard-container tr:last-child {
   border-bottom: none;
 }
 
