@@ -1,7 +1,7 @@
 .leaderboard-container {
   max-width: 500px;
   margin: 50px auto;
-  padding: 20px;
+  padding: 4rem;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: "Arial", sans-serif;
@@ -13,12 +13,12 @@
 .leaderboard-container h3 {
     text-align: center;
     color: var(--text-color-dark);
-    margin: 2rem 0;
+    margin-bottom: 2rem;
   }
   
 
 .leaderboard-container table {
-  margin: 2rem auto 1rem auto;
+  margin: 2rem auto 2rem auto;
 }
 
 
