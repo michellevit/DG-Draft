@@ -32,14 +32,13 @@ button {
   background-color: var(--accent-color);
   color: var(--text-color-dark);
   padding: 1rem;
-  letter-spacing: 0.3em;
+  letter-spacing: 0.125rem;
   border-radius: 0.25rem;
   border: 1px solid var(--text-color-dark);
 }
 
 button:hover {
-  color: var(--text-color-light);
-  background-color: var(--background-color);
+  background-color: var(--primary-color);
   padding: 1rem;
   border-radius: 0.25rem;
   border: 1px solid black;

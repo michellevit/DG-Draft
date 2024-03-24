@@ -2,13 +2,8 @@
 
 .challenge-card h3 {
     text-align: center;
+    font-weight: 700;
 }
-
-
-.challenge-card h1 {
-    text-align: center;
-}
-
 
 .challenge-card {
     padding: 1rem;

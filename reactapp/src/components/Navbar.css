@@ -3,7 +3,7 @@ nav {
     justify-content: space-between;
     align-items:center;
     padding: 1rem;
-    background-color: black;
+    background-color: var(--primary-color);
     position: sticky;
     top: 0;
 }
@@ -13,7 +13,7 @@ nav .title {
     margin: 1rem;
     font-weight: bold;
     text-decoration: none;
-    color: white;
+    color: var(--text-color-light);
     padding: 0.2rem;
 }
 
@@ -29,18 +29,18 @@ nav ul li {
 nav ul li a {
     display: block;
     text-decoration: none;
-    color: white;
+    color: var(--text-color-dark);
     padding: 0.5rem;
     margin: 0 0.5rem;
     border-radius: 0.5rem;
 }
 
 nav ul li a:not(.active):hover {
-    background-color: rgba(128, 0, 128, 0.5);
+    color: var(--secondary-color);
 }
 
 .active {
-    background-color: purple;
+    color: var(--secondary-color);
 }
 
 
