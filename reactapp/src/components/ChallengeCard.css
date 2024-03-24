@@ -1,40 +1,25 @@
-.challenge-card h2 {
-  text-align: center;
-  font-weight: 700;
-}
-
 .challenge-card {
   padding: 2rem auto;
   margin: auto;
   max-width: 500px;
 }
 
-.challenge-card label {
-  width: 100px;
-  margin-right: 1rem;
+.challenge-card h2 {
+  text-align: center;
+  font-weight: 700;
 }
 
-.challenge-card select,
-.challenge-card input {
-  width: 300px;
-}
-
-.new-challenge-container .challenge-card > div,
-.challenge-card p {
-  margin: 1em;
-}
-
-.challenge-card table {
+.challenge-card form table {
   width: 100%;
   margin: 1rem 0;
 }
 
-.challenge-card table tbody {
+.challenge-card form table tbody {
   width: 100%;
 }
 
-.challenge-card table tbody tr th, 
-.challenge-card table tbody tr td {
+.challenge-card form table tbody tr th, 
+.challenge-card form table tbody tr td {
   font-weight: 700;
   text-align: left;
   white-space: nowrap;
