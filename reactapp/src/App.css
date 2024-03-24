@@ -18,6 +18,11 @@ body {
 }
 
 
+h3 {
+  margin: 0;
+}
+
+
 a {
   text-decoration: none;
   color: var(--text-color-white);
@@ -61,3 +66,4 @@ button:hover {
 input:focus {
   outline: none;
 }
+

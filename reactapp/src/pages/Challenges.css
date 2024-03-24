@@ -44,6 +44,11 @@
     background: var(--green-accent);
 }
 
+.new-challenge-container .challenge-card form {
+    margin: 2rem auto;
+}
+
+
 
  /* Current Challenge Container */
 
