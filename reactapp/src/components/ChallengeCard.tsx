@@ -51,13 +51,17 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
 
   return (
     <div className="challenge-card">
-      <h3>{challenge.event.event_name}</h3>
-      <p>Event Date: {displayDate}</p>
-      <p>Divison: {challenge.division}</p>
-      <p>Challenger: {challenge.challenger?.username}</p>
-      <p>Challengee: {challenge.challengee?.username}</p>
-      <p>Who Picks First: {challenge.start_condition}</p>
-      <p>Status: {challenge.status}</p>
+      <table>
+        <tbody>
+          <tr><th>Event Name</th><td>{challenge.event.event_name}</td></tr>
+          <tr><th>Event Date</th><td>{displayDate}</td></tr>
+          <tr><th>Division</th><td>{challenge.division}</td></tr>
+          <tr><th>Challenger</th><td>{challenge.challenger?.username}</td></tr>
+          <tr><th>Challengee</th><td>{challenge.challengee?.username}</td></tr>
+          <tr><th>Who Picks First</th><td>{challenge.start_condition}</td></tr>
+          <tr><th>Status</th><td>{challenge.status}</td></tr>
+        </tbody>
+      </table>
       {challenge.status === "Pending" && challenge.challenger?.id === currentUser.id && (
         <button onClick={handleDelete}>Delete</button>
       )}
