@@ -53,8 +53,8 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
     <div className="challenge-card">
       <table>
         <tbody>
-          <tr><th>Event Name</th><td>{challenge.event.event_name}</td></tr>
-          <tr><th>Event Date</th><td>{displayDate}</td></tr>
+          <tr><th>Event</th><td><b>{challenge.event.event_name}</b></td></tr>
+          <tr><th>Date</th><td>{displayDate}</td></tr>
           <tr><th>Division</th><td>{challenge.division}</td></tr>
           <tr><th>Challenger</th><td>{challenge.challenger?.username}</td></tr>
           <tr><th>Challengee</th><td>{challenge.challengee?.username}</td></tr>
