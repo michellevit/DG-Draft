@@ -4,11 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import UserDashboard from "../components/UserDashboard";
 import "./Profile.css";
+import "./FormStyles.css";
 
 
 const Profile: React.FC = () => {
   const { user, setUser, loading } = useUser();
   const navigate = useNavigate();
+
   useEffect(() => {
     if (!user && !loading) {
       navigate("/signin");
@@ -26,10 +28,11 @@ const Profile: React.FC = () => {
         console.error("Logout error:", error);
       });
   };
-  return <div className="profile-container">
+
+  return <div className="form-container">
     <UserDashboard />
-    <div className="logout"><button onClick={handleLogout}>Logout</button></div>
-  </div>;
+    <button onClick={handleLogout} className="form-button">Logout</button>
+    </div>;
 }
 
 export default Profile;

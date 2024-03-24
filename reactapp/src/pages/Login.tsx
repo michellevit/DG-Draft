@@ -2,6 +2,7 @@ import React, { useState, FormEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useUser } from "../contexts/UserContext";
+import "./FormStyles.css";
 
 
 const Login: React.FC = () => {
@@ -33,7 +34,7 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="form-container">
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
