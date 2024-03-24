@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import "./Navbar.css";
 import { useUser } from "../contexts/UserContext";
+import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
 
 
 const Navbar: React.FC = () => {
