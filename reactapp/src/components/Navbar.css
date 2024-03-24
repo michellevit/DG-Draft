@@ -17,16 +17,16 @@ nav .title {
     padding: 0.2rem;
 }
 
-nav ul {
+nav ul, .challenges-container nav ul {
     display: flex;
     padding: 0;
 }
 
-nav ul li {
+nav ul li, .challenges-container nav ul li {
     list-style: none;
 }
 
-nav ul li a {
+nav ul li a, .challenges-container nav ul li a {
     display: block;
     text-decoration: none;
     color: var(--text-color-dark);
@@ -35,12 +35,12 @@ nav ul li a {
     border-radius: 0.5rem;
 }
 
-nav ul li a:not(.active):hover {
-    color: var(--secondary-color);
+nav ul li a:not(.active):hover, .challenges-container nav ul li a:not(.active):hover {
+    color: var(--text-color-light);
 }
 
-.active {
-    color: var(--secondary-color);
+nav .active,  .challenges-container nav .active {
+    color: var(--text-color-light);
 }
 
 
