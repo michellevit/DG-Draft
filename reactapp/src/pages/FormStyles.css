@@ -55,3 +55,6 @@
     border-color: #ebccd1;
   }
   
+  .form-container form > * {
+    margin: 1rem 0;
+  }
