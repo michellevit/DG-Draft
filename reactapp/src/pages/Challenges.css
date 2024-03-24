@@ -27,6 +27,8 @@
     margin-top: 0;
 }
 
+
+
 .challenges-container nav ul li a{
     letter-spacing:  0.125rem;
 }
@@ -35,6 +37,9 @@
     opacity: 0.5;
 }
 
+.challenges-container .challenge-card table {
+    margin: 2rem auto;
+}
 
 
 
@@ -44,16 +49,19 @@
     background: var(--green-accent);
 }
 
-.new-challenge-container .challenge-card form {
+.past-challenge-container .challenge-card form {
     margin: 2rem auto;
 }
 
 
-
- /* Current Challenge Container */
+/* Current Challenge Container */
 
 .current-challenge-container .challenge-card {
     background: white;
+}
+
+.current-challenge-container .challenge-card table {
+    margin: 2rem auto;
 }
 
 
@@ -61,4 +69,8 @@
 
  .past-challenge-container .challenge-card {
     background: var(--accent-color);
+}
+
+.past-challenge-container .challenge-card table {
+    margin: 2rem auto;
 }
