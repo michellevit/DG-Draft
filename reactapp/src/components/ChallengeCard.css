@@ -12,7 +12,8 @@
 .challenge-card form table {
   width: 100%;
   border-collapse: separate;
-  padding: 1rem;
+  padding: 1rem 0;
+  text-align: left;
 }
 
 .challenge-card form table tbody,
