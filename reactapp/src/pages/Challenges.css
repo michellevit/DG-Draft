@@ -24,6 +24,7 @@
     flex-direction: row;
     column-gap: 2rem;
     justify-content: center;
+    margin-top: 0;
 }
 
 /* New Challenge Container */
@@ -36,7 +37,7 @@
  /* Current Challenge Container */
 
 .current-challenge-container .challenge-card {
-    background: var(--accent-accent);
+    background: var(--accent-color);
 }
 
 
