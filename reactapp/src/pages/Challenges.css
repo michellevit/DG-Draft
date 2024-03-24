@@ -54,9 +54,14 @@
 
 /* Current Challenge Container */
 
-.current-challenge-container .challenge-card {
+.current-challenge-container .challenge-card .mpo {
   background: var(--accent-color);
 }
+
+.current-challenge-container .challenge-card .fpo {
+    background: #F4A5AE;
+  }
+  
 
 .current-challenge-container .challenge-card table {
   margin: 2rem auto;

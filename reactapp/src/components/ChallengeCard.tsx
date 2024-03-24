@@ -21,6 +21,17 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
   const endDate = challenge.event.event_date_end ? formatDate(challenge.event.event_date_end) : 'Date not available';
   const displayDate = `${startDate} - ${endDate}`;
   
+  const isEventOngoingOrFuture = () => {
+    const today = new Date();
+    const endDate = new Date(challenge.event.event_date_end);
+    return today <= endDate;
+  };
+
+  let divisionClass = '';
+  if (isEventOngoingOrFuture()) {
+    divisionClass = challenge.division === 'MPO' ? 'mpo' : challenge.division === 'FPO' ? 'fpo' : '';
+  }
+
   const handleDelete = async () => {
     try {
       const response = await axios.delete(`${process.env.REACT_APP_API_URL}/challenges/${challenge.id}`);
@@ -50,7 +61,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({ challenge }) => {
 
 
   return (
-    <div className="challenge-card">
+    <div className={`challenge-card ${divisionClass}`}>
       <table>
         <tbody>
           <tr><th>Event</th><td><b>{challenge.event.event_name}</b></td></tr>
