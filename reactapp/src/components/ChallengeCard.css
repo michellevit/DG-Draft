@@ -18,6 +18,11 @@
   width: 100%;
 }
 
+.challenge-card form table tbody tr {
+  margin: 10px 0;
+}
+
+
 .challenge-card form table tbody tr th, 
 .challenge-card form table tbody tr td {
   font-weight: 700;
