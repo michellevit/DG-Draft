@@ -21,7 +21,6 @@
 .current-challenge-container .challenge-card table,
 .past-challenge-container .challenge-card table,
 .new-challenge-container .challenge-card form {
-  margin: 2rem auto;
   width: 100%;
   padding: 2rem 0;
 }
