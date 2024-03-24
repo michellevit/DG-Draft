@@ -27,6 +27,7 @@
 
 .challenges-container nav a {
   letter-spacing: 0.125rem;
+  color: var(--text-color-light);
 }
 
 .challenges-container nav a:not(.active):hover,
