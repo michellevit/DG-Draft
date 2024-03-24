@@ -34,7 +34,9 @@
   opacity: 0.5;
 }
 
-.current-challenge-container .challenge-card table, .past-challenge-container .challenge-card table {
+.current-challenge-container .challenge-card table,
+.past-challenge-container .challenge-card table,
+.new-challenge-container .challenge-card form {
   margin: 2rem auto;
 }
 
@@ -48,10 +50,6 @@
 
 .new-challenge-container .challenge-card {
   background: var(--green-accent);
-}
-
-.new-challenge-container .challenge-card form {
-  margin: 2rem auto;
 }
 
 /* Current Challenge Container */
