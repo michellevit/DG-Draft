@@ -53,6 +53,10 @@
   background: #FFFACD;
 }
 
+.new-challenge-container .challenge-card form {
+    width: 100%;
+  }
+
 .new-challenge-container .challenge-card button {
   width: -webkit-fill-available;
   background-color: var(--highlight-color);
