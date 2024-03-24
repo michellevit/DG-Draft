@@ -13,7 +13,7 @@
 .leaderboard-container h3 {
     text-align: center;
     color: var(--text-color-dark);
-    margin-bottom: 2rem;
+    margin: 2rem auto;
   }
   
 

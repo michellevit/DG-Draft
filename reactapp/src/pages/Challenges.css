@@ -73,10 +73,10 @@
   margin: 2rem auto;
 }
 
-.past-challenge-container .challenge-card .won {
+.past-challenge-container .challenge-card .win {
   background: #FF6B6B;
 }
 
-.past-challenge-container .challenge-card .won {
+.past-challenge-container .challenge-card .loss {
   background: #7DBE8E;
 }
