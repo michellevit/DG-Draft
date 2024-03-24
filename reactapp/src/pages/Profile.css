@@ -8,3 +8,12 @@
     background-color: white;
     border: 1px solid black;
 }
+
+
+.profile-container form input {
+    padding: .75rem 1rem;
+}
+
+.profile-container form > * {
+    padding: 1rem;
+}

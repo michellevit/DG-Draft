@@ -27,7 +27,6 @@ const Profile: React.FC = () => {
       });
   };
   return <div className="profile-container">
-    <h2>Profile</h2>
     <UserDashboard />
     <button onClick={handleLogout}>Logout</button>
   </div>;
