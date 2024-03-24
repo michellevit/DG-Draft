@@ -11,14 +11,14 @@
 
 .leaderboard-container table {
   margin: auto;
-  padding: 2rem auto;
+  padding: 4rem auto;
 }
 
 .leaderboard-container h3 {
   text-align: center;
   color: var(--text-color-dark);
   margin: 0;
-  padding: 2rem auto;
+  padding: 4rem auto;
 }
 
 .leaderboard-container th {
