@@ -1,0 +1,10 @@
+.profile-container .challenge-card {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: "Arial", sans-serif;
+    background-color: white;
+    border: 1px solid black;
+}
