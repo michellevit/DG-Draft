@@ -29,7 +29,6 @@ const Leaderboard: React.FC = () => {
 
   return (
     <div className="leaderboard-container">
-      <h2>Leaderboard</h2>
       <ul>
         {leaderboardData.map((leaderboardUser, index) => (
           <li
