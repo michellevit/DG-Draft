@@ -9,6 +9,9 @@ nav {
 }
 
 nav .title {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+    font-style: normal;
     font-size: 1.5rem;
     margin: 1rem;
     font-weight: bold;
