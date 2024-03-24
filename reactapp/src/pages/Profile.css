@@ -18,3 +18,7 @@
     padding: 1rem;
     margin: 1rem;
 }
+
+.profile-container .logout {
+    margin: 2rem auto;
+}
