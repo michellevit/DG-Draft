@@ -11,6 +11,7 @@
 
 .leaderboard-container table {
   margin: auto;
+  padding: 2rem auto;
 }
 
 .leaderboard-container h3 {
@@ -21,14 +22,19 @@
 }
 
 .leaderboard-container th {
-  padding: 10px;
+  padding: 1rem;
   border-bottom: 1px solid var(--text-color-light);
   color: var(--text-color-dark);
   font-size: 1.5rem;
 }
 
+.leaderboard-container tbody {
+    padding: 2rem;
+  }
+  
+
 .leaderboard-container tr {
-  padding: 10px;
+  padding: 1rem;
   border-bottom: 1px solid var(--text-color-light);
   color: var(--text-color-dark);
   font-size: 1.25rem;
