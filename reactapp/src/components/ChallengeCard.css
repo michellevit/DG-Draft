@@ -1,12 +1,4 @@
-.challenge-card {
-    border-radius: 0.25rem;
-    padding: 1rem;
-    width: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+
 
 .challenge-card h3 {
     text-align: center;
@@ -33,4 +25,9 @@
 
 .challenge-card button {
     padding: 0.5rem;
+}
+
+
+.new-challenge-container .challenge-card > div, .challenge-card p {
+    margin: 1em;
 }
