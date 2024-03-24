@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./Leaderboard.css";
 import { useUser } from "../contexts/UserContext";
 
 interface LeaderboardUser {

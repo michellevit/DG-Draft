@@ -27,6 +27,13 @@
     margin-top: 0;
 }
 
+.challenges-container nav ul li a:not(.active):hover, .challenges-container nav .active {
+    opacity: 0.5;
+}
+
+
+
+
 /* New Challenge Container */
 
 .new-challenge-container .challenge-card {
