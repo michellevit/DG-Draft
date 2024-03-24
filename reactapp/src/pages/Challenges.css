@@ -62,7 +62,7 @@
 
 .new-challenge-container .challenge-card button {
   width: -webkit-fill-available;
-  background-color: var(--highlight-color);
+  background-color: var(--accent-color);
 }
 
 /* Current Challenge Container */
