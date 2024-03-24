@@ -12,10 +12,15 @@
 .challenge-card form table {
   width: 100%;
   margin: 1rem 0;
+  display: inline-table;
 }
 
 .challenge-card form table tbody {
   width: 100%;
+}
+
+.challenge-card form table tbody tr {
+  padding: 1rem 0;
 }
 
 
