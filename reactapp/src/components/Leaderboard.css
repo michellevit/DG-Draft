@@ -13,7 +13,7 @@
   font-size: 2em;
 }
 
-.leaderboard-container h3 {
+.leaderboard-container h2 {
     text-align: center;
     color: var(--text-color-dark);
     margin: 2rem auto;
