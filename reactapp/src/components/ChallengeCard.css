@@ -15,28 +15,32 @@
   border-spacing: 0 10px;
 }
 
-.challenge-card form table tbody {
+.challenge-card form table tbody, .challenge-card table tbody {
   width: 100%;
 }
 
-.challenge-card form table tbody tr {
+.challenge-card form table tbody tr, .challenge-card table tbody tr {
   border-spacing: 1rem;
 }
 
 
 .challenge-card form table tbody tr th, 
-.challenge-card form table tbody tr td {
+.challenge-card form table tbody tr td,
+.challenge-card table tbody tr th, 
+.challenge-card table tbody tr td {
   font-weight: 700;
   text-align: left;
   white-space: nowrap;
 }
 
-.challenge-card form table tbody tr td {
+.challenge-card form table tbody tr td,
+.challenge-card table tbody tr td {
   padding: 0.5rem 0;
   display: block;
 }
 
-.challenge-card form table tbody tr th {
+.challenge-card form table tbody tr th,
+.challenge-card table tbody tr th {
   width: fit-content;
 }
 
