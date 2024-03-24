@@ -4,7 +4,6 @@ import { useUser } from "../contexts/UserContext";
 import { Link, Outlet } from "react-router-dom";
 import "./Challenges.css";
 
-
 const Challenges: React.FC = () => {
   const { user, loading } = useUser();
   const navigate = useNavigate();
@@ -18,9 +17,17 @@ const Challenges: React.FC = () => {
   return (
     <div className="challenges-container">
       <nav>
-        <Link to="new">New Challenge</Link>
-        <Link to="current">Current Challenges</Link>
-        <Link to="past">Past Challenges</Link>
+        <ul>
+          <li>
+            <Link to="new">New Challenge</Link>
+          </li>
+          <li>
+            <Link to="current">Current Challenges</Link>
+          </li>
+          <li>
+            <Link to="past">Past Challenges</Link>
+          </li>
+        </ul>
       </nav>
       <Outlet />
     </div>
