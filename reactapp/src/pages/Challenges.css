@@ -35,7 +35,7 @@
   opacity: 0.5;
 }
 
-.challenges-container .challenge-card table {
+.current-challenge-container .challenge-card table, .past-challenge-container .challenge-card table {
   margin: 2rem auto;
 }
 
@@ -51,7 +51,7 @@
   background: var(--green-accent);
 }
 
-.past-challenge-container .challenge-card form {
+.new-challenge-container .challenge-card form {
   margin: 2rem auto;
 }
 
