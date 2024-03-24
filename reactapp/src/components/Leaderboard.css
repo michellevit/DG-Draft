@@ -21,13 +21,6 @@
   padding: 4rem auto;
 }
 
-.leaderboard-container th {
-  padding: 1rem;
-  border-bottom: 1px solid var(--text-color-light);
-  color: var(--text-color-dark);
-  font-size: 1.5rem;
-}
-
 .leaderboard-container tbody {
     padding: 2rem;
   }
