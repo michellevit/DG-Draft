@@ -22,7 +22,7 @@
 .past-challenge-container .challenge-card table,
 .new-challenge-container .challenge-card form {
   width: 100%;
-  padding: 2rem 0;
+  padding: 0 2rem;
 }
 
 .new-challenge-container,
