@@ -19,6 +19,7 @@
 .challenge-card form table tbody,
 .challenge-card table tbody {
   width: 100%;
+  text-align: left;
 }
 
 .challenge-card form table tbody tr,
