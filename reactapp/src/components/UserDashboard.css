@@ -1,3 +1,7 @@
+.dashboard-container {
+    width: 100%;
+}
+
 .dashboard-container form#update-username {
     display: flex;
     flex-direction: row;
