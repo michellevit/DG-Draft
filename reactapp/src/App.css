@@ -42,7 +42,7 @@ a:hover {
 
 button {
   position: relative;
-  letter-spacing:  0.125rem;
+  letter-spacing: 0.125rem;
   line-height: 1.5rem;
   background-color: white;
   color: var(--text-color-dark);
