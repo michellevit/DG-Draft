@@ -35,6 +35,7 @@
 }
 
 .leaderboard-container tr td {
+    width: 100px;
     padding: 1rem 1rem;
   }
 
