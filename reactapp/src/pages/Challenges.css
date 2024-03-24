@@ -20,14 +20,13 @@
 .challenges-container nav {
   display: flex;
   flex-direction: row;
-  column-gap: 2rem;
+  column-gap: 3rem;
   justify-content: center;
   margin-top: 0;
 }
 
 .challenges-container nav a {
   letter-spacing: 0.125rem;
-
 }
 
 .challenges-container nav a:not(.active):hover,
