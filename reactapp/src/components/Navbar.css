@@ -15,7 +15,7 @@ nav a.title {
   font-weight: bold;
   font-style: normal;
   font-size: 1.5rem;
-  margin-left: 1.5rem ;
+  margin-left: 1.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   text-decoration: none;
@@ -127,7 +127,6 @@ nav ul li a.active::after {
     margin-bottom: 0.3rem;
   }
 
-
   nav ul {
     display: none;
     flex-direction: column;
@@ -139,27 +138,27 @@ nav ul li a.active::after {
   }
 
   nav ul.open {
-    display: flex; 
+    display: flex;
     max-height: 20rem;
     opacity: 1;
     transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
-}
+  }
 
-    nav ul li {
-      width: 100%;
-      text-align: center;
-    }
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
 
-    nav ul li a {
-      padding: 0.5rem 0;
-      margin: 0 0.5rem;
-      display: block;
-    }
+  nav ul li a {
+    padding: 0.5rem 0;
+    margin: 0 0.5rem;
+    display: block;
+  }
 
-    nav ul li a:hover,
-    nav ul li a.active,
-    nav ul li a:hover::after {
-        opacity: 0.5; 
-        font-weight: bold;
-    }
+  nav ul li a:hover,
+  nav ul li a.active,
+  nav ul li a:hover::after {
+    opacity: 0.5;
+    font-weight: bold;
+  }
 }
