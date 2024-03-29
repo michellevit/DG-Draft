@@ -1,49 +1,75 @@
 .dashboard-container {
-    margin-top: 3rem;
-    width: 100%;
+  margin-top: 1.5rem;
+  width: 100%;
 }
 
+.dashboard-container > * {
+  margin: 1rem 0;
+}
 
 .dashboard-container #points,
 .dashboard-container form#update-username input,
 .dashboard-container form#update-username button,
 .dashboard-container #logout {
-    display: flex;
-    line-height: 1.5;
+  display: flex;
+  line-height: 1.5;
+  justify-content: center;
 }
 
 .dashboard-container #points {
-    background-color: #7dbe8e;
-    width: -webkit-fill-available;
-    border-radius: 0.25rem;
-    padding: 0.75rem;
-    border: 1px solid black;
+  background-color: #7dbe8e;
+  width: -webkit-fill-available;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  border: 1px solid black;
 }
 
-
 .dashboard-container form#update-username {
-    padding: 0;
-    min-width: 100%;
-    display: flex;
-    flex-direction: row;
-    width: -webkit-fill-available;
-} 
+  min-width: 100%;
+  display: flex;
+  flex-direction: row;
+  width: -webkit-fill-available;
+}
 
 .dashboard-container form#update-username input {
-    border-radius: 0.25rem 0 0 0.25rem;
-    border-right: none;
-    width: 50%;
+  border-radius: 0.25rem 0 0 0.25rem;
+  border-right: none;
+  width: 50%;
 }
 
 .dashboard-container form#update-username button {
-    border-radius: 0 0.25rem 0.25rem 0;
-    min-width: min-content;
-    justify-content: center;
-    width: 50%;
+  border-radius: 0 0.25rem 0.25rem 0;
+  min-width: min-content;
+  justify-content: center;
+  width: 50%;
 }
 
 .dashboard-container #logout {
-    background-color: var(--grey-color);
-    width: -webkit-fill-available;
-    border-radius: 0.25rem;
+  background-color: var(--grey-color);
+  width: -webkit-fill-available;
+  border-radius: 0.25rem;
+}
+
+
+
+@media (max-width: 500px) {
+    .dashboard-container form#update-username {
+        min-width: 100%;
+        display: flex;
+        flex-direction: column;
+        width: -webkit-fill-available;
+      }
+      .dashboard-container form#update-username input {
+        border-radius: 0.25rem 0.25rem 0 0;
+        border-right: none;
+        width: 50%;
+      }
+      
+      .dashboard-container form#update-username button {
+        border-radius: 0 0 0.25rem 0.25rem;
+        min-width: min-content;
+        justify-content: center;
+        width: 50%;
+      }
+    
 }
