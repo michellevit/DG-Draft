@@ -4,7 +4,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   background-color: var(--primary-color);
   position: sticky;
   top: 0;
@@ -15,13 +15,10 @@ nav a.title {
   font-weight: bold;
   font-style: normal;
   font-size: 1.5rem;
-  margin-left: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
   text-decoration: none;
   color: var(--text-color-light);
   letter-spacing: 0.125rem;
-  width: -webkit-fill-available;
+  width: fit-content;
 }
 
 nav a.title:hover {
@@ -95,11 +92,16 @@ nav ul li a.active::after {
     max-height: 0;
     opacity: 0;
     overflow: hidden;
+    visibility: hidden; 
   }
 
   nav ul.open {
-    max-height: 500px; 
+    max-height: 500px;
     opacity: 1;
+    visibility: visible; 
+    transition: opacity 0.5s, max-height 0.5s ease-in-out;
+    margin: 0;
+    padding: 1rem;
   }
 
   nav ul li {
@@ -111,8 +113,8 @@ nav ul li a.active::after {
     cursor: pointer;
     display: block;
     position: absolute;
-    top: 1.75rem;
-    right: 1rem;
+    top: 2.25rem;
+    right: 2rem;
   }
 
   nav .menu span {
@@ -122,10 +124,11 @@ nav ul li a.active::after {
     background-color: white;
     transition: all 0.4s ease-in-out;
     margin-bottom: 0.5rem;
+    border-radius: 0.25rem;
   }
 
   nav .menu.icon-open span:nth-child(1) {
-    transform: rotate(45deg) translate(0.35rem, 0.35rem);
+    transform: rotate(45deg) translate(0.75rem, 0.75rem);
   }
 
   nav .menu.icon-open span:nth-child(2) {
