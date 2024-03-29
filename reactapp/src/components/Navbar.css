@@ -16,6 +16,8 @@ nav a.title {
   font-style: normal;
   font-size: 1.5rem;
   margin-left: 1.5rem ;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   text-decoration: none;
   color: var(--text-color-light);
   letter-spacing: 0.125rem;
