@@ -60,6 +60,11 @@ nav .active {
 /* Hamburger Menu */
 
 @media (max-width: 500px) {
+
+    nav, nav *, nav *::before, nav *::after {
+        box-sizing: content-box;
+      }
+      
     nav .menu {
         display: flex;
         position: absolute;
