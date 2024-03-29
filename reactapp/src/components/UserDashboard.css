@@ -3,26 +3,30 @@
     width: 100%;
 }
 
-.dashboard-container #points {
-    background-color: #7dbe8e;
-    border-radius: 0.25rem;
-    border: 1px solid black;
-}
 
-/* 
-.dashboard-container form#update-username {
+.dashboard-container #points,
+.dashboard-container form#update-username input,
+.dashboard-container form#update-username button,
+.dashboard-container #logout {
     display: flex;
     flex-direction: row;
+    border: 1px solid black;
+
+}
+
+.dashboard-container #points {
+    background-color: #7dbe8e;
+}
+
+
+.dashboard-container form#update-username {
     padding: 0;
     min-width: 100%;
     line-height: 1.5;
     padding: 0.75rem;
-} */
-
+} 
 
 .dashboard-container form#update-username input {
-    display: flex;
-    flex-direction: row;
     border-radius: 0.25rem 0 0 0.25rem;
     border-right: none;
     line-height: 1.5;
@@ -30,8 +34,6 @@
 }
 
 .dashboard-container form#update-username button {
-    display: flex;
-    flex-direction: row;
     border-radius: 0 0.25rem 0.25rem 0;
     min-width: min-content;
     justify-content: center;
@@ -39,3 +41,6 @@
     padding: 0.75rem;
 }
 
+.dashboard-container #logout {
+    background-color: var(--grey-color);
+}
