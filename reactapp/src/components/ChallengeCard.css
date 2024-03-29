@@ -1,7 +1,8 @@
 .challenge-card {
   padding: 2rem auto;
   margin: auto;
-  max-width: 500px;
+  max-width: 90%;
+  min-width: 500px;
 }
 
 .challenge-card h2 {
