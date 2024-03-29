@@ -1,25 +1,18 @@
 .dashboard-container {
-    width: 100%;  
     margin-top: 3rem;
-    font-size: 1rem;
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-    min-width: 100%;
-    row-gap: 1rem;
 }
 
 .dashboard-container #points {
-    border: 1px solid black;
-    border-radius: 0.25rem;
+    /* border: 1px solid black;
     width: 100%;
-    margin: 0;
+    margin: 0; */
     background-color: #7dbe8e;
-    line-height: 1.5;
-    padding: 0.75rem;
+    border-radius: 0.25rem;
+    /* line-height: 1.5;
+    padding: 0.75rem; */
 }
 
-
+/* 
 .dashboard-container form#update-username {
     display: flex;
     flex-direction: row;
@@ -27,7 +20,7 @@
     min-width: 100%;
     line-height: 1.5;
     padding: 0.75rem;
-}
+} */
 
 
 .dashboard-container form#update-username input {

@@ -3,6 +3,8 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import "./UserDashboard.css";
+import "./FormStyles.css";
+
 
 const UserDashboard: React.FC = () => {
   const { user, setUser } = useUser();
@@ -58,6 +60,7 @@ const UserDashboard: React.FC = () => {
 
   return (
     <div className="dashboard-container">
+      <div className="form-container">
       <div id="points">Points {user ? user.points : 0}</div>
       <div id="update-username">
       <form onSubmit={handleSubmit} id="update-username">
@@ -74,6 +77,7 @@ const UserDashboard: React.FC = () => {
       </div>
       <div id="logout">
       <button onClick={handleLogout} className="form-button" id="logout">Logout</button>
+      </div>
       </div>
     </div>
   );
