@@ -17,6 +17,7 @@
 .dashboard-container #points {
     background-color: #7dbe8e;
     width: -webkit-fill-available;
+    border-radius: 0.25rem;
 }
 
 
@@ -44,4 +45,5 @@
 .dashboard-container #logout {
     background-color: var(--grey-color);
     width: -webkit-fill-available;
+    border-radius: 0.25rem;
 }
