@@ -63,6 +63,8 @@
         border-radius: 0.25rem 0.25rem 0 0;
         border-right: none;
         width: 50%;
+        margin-bottom: 0;
+        border-bottom: none;
       }
       
       .dashboard-container form#update-username button {
@@ -70,6 +72,7 @@
         min-width: min-content;
         justify-content: center;
         width: 50%;
+        margin-top: 0;
       }
     
 }
