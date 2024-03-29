@@ -6,18 +6,15 @@ import { useUser } from "../contexts/UserContext";
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { user } = useUser();
-  const handleMenuClick = () => {
-    setMenuOpen(false);
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
   };
   return (
     <nav>
       <Link to="/" className="title">
         DG Draft
       </Link>
-      <div
-        className={"menu" + (menuOpen ? " icon-open" : "")}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
+      <div className={"menu" + (menuOpen ? " icon-open" : "")} onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
@@ -25,28 +22,28 @@ const Navbar: React.FC = () => {
       <ul className={menuOpen ? "open" : ""}>
         {user && (
           <li>
-            <NavLink to="/challenges" onClick={handleMenuClick}>
+            <NavLink to="/challenges" onClick={() => setMenuOpen(false)}>
               Challenges
             </NavLink>
           </li>
         )}
         {user && (
           <li>
-            <NavLink to="/profile" onClick={handleMenuClick}>
+            <NavLink to="/profile" onClick={() => setMenuOpen(false)}>
               Profile
             </NavLink>
           </li>
         )}
         {!user && (
           <li>
-            <NavLink to="/login" onClick={handleMenuClick}>
+            <NavLink to="/login" onClick={() => setMenuOpen(false)}>
               Login
             </NavLink>
           </li>
         )}
         {!user && (
           <li>
-            <NavLink to="/signup" onClick={handleMenuClick}>
+            <NavLink to="/signup" onClick={() => setMenuOpen(false)}>
               Sign Up
             </NavLink>
           </li>
