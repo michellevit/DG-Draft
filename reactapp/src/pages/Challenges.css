@@ -8,7 +8,8 @@
 .challenges-container .challenge-card {
   border-radius: 0.75rem;
   padding: 1rem;
-  width: 500px;
+  min-width: 90%;
+  max-width: 500px;
   display: flex;
   justify-content: center;
   align-items: center;
