@@ -7,7 +7,10 @@ import { useUser } from "../contexts/UserContext";
 
 const Navbar: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const { user } = useUser(); 
+  const { user } = useUser();
+  const handleMenuClick = () => {
+    setMenuOpen(false);
+  };
   return (
     <nav>
       <Link to="/" className="title">DG Draft</Link>
@@ -17,10 +20,10 @@ const Navbar: React.FC = () => {
         <span></span>
       </div>
       <ul className={menuOpen ? "open" : ""}>
-        {user && <li><NavLink to="/challenges">Challenges</NavLink></li>}
-        {user && <li><NavLink to="/profile">Profile</NavLink></li>}
-        {!user && <li><NavLink to="/login">Login</NavLink></li>}
-        {!user && <li><NavLink to="/signup">Sign Up</NavLink></li>}
+        {user && <li><NavLink to="/challenges" onClick={handleMenuClick}>Challenges</NavLink></li>}
+        {user && <li><NavLink to="/profile" onClick={handleMenuClick}>Profile</NavLink></li>}
+        {!user && <li><NavLink to="/login" onClick={handleMenuClick}>Login</NavLink></li>}
+        {!user && <li><NavLink to="/signup" onClick={handleMenuClick}>Sign Up</NavLink></li>}
       </ul>
     </nav>
   )
