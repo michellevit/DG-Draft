@@ -29,7 +29,7 @@
   border-radius: 0.25rem;
   border: 1px solid black;
   width: -webkit-fill-available;
-  line-height: 1;
+  line-height: 1.25;
 }
 
 .form-container button {
