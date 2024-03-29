@@ -12,18 +12,17 @@ nav {
 
 nav a.title {
   font-family: "Kaushan Script", cursive;
-  font-weight: 400;
+  font-weight: bold;
   font-style: normal;
   font-size: 1.5rem;
   margin: 1rem;
-  font-weight: bold;
   text-decoration: none;
   color: var(--text-color-light);
   padding: 0.2rem;
   letter-spacing: 0.125rem;
 }
 
-nav a .title:hover {
+nav a.title:hover {
   color: var(--text-color-light);
 }
 
@@ -38,21 +37,31 @@ nav ul li {
 
 nav ul li a {
   display: block;
+  position: relative; 
   letter-spacing: 0.125rem;
   text-decoration: none;
   color: var(--text-color-light);
-  padding: 0.5rem;
+  padding: 0.5rem 1rem; 
   margin: 0 0.5rem;
   border-radius: 0.5rem;
-  letter-spacing: 0.125rem;
 }
 
-nav ul li a:not(.active):hover {
-  opacity: 0.5;
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 2px;
+  width: 0%;
+  background-color: var(--accent-color); 
+  transition: width 0.3s ease;
 }
 
-nav .active {
-  opacity: 0.5;
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
 }
 
 /* Hamburger Menu */
