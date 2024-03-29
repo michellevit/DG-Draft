@@ -41,8 +41,8 @@ nav ul li a {
   letter-spacing: 0.125rem;
   text-decoration: none;
   color: var(--text-color-light);
-  padding: 0.5rem 1rem; 
-  margin: 0 0.5rem;
+  padding: 0.5rem 0; 
+  margin: 0 1.5rem;
   border-radius: 0.5rem;
 }
 
@@ -55,7 +55,7 @@ nav ul li a::after {
   margin: auto;
   height: 2px;
   width: 0%;
-  background-color: var(--accent-color); 
+  background-color: var(--text-color-light); 
   transition: width 0.3s ease;
 }
 
@@ -140,6 +140,17 @@ nav ul li a.active::after {
   }
 
   nav ul li a {
-    margin: 0.2rem 0.5rem;
+    padding: 0.5rem 0;
+    margin: 0.2rem 0;
+  }
+
+  nav ul li a:hover {
+    opacity: 0.5; 
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover::after {
+    font-weight: bold; 
+    width: 0%; 
   }
 }
