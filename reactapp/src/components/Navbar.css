@@ -138,36 +138,31 @@ nav ul li a.active::after {
   }
 
   nav ul {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 100%;
     margin-bottom: 0.25rem;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease;
     overflow: hidden;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
-    transform: scaleY(0);
-    transform-origin: top;
-    height: 0;
+    max-height: 0; 
     opacity: 0;
   }
 
   nav ul.open {
-    max-height: 500px;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-    padding: 0.5rem 0;
-    margin: 0.2rem 0;
+    display: flex; 
+    opacity: 1;
+    max-height: 500px; 
+    transform: scaleY(1);
+    height: auto; 
   }
 
   nav ul li a:hover {
-    opacity: 0.5; 
+    opacity: 0.5;
   }
 
   nav ul li a.active,
   nav ul li a:hover::after {
-    font-weight: bold; 
+    font-weight: bold;
     width: 0%; 
   }
 }
