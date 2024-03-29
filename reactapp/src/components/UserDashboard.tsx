@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import "./UserDashboard.css";
-import "..pages/FormStyles";
+import "../pages/FormStyles.css";
 
 
 const UserDashboard: React.FC = () => {
