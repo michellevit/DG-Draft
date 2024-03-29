@@ -4,8 +4,10 @@
 
 .dashboard-container > * {
     padding: 0.5rem;
+    margin: 1.5rem 0;
+    line-height: 1.5;
+    font-size: 1rem;
 }
-
 
 .dashboard-container form#update-username {
     display: flex;
@@ -30,13 +32,10 @@
     justify-content: center;
 }
 
-.dashboard-container h2 {
+.dashboard-container #points {
     border: 1px solid black;
     border-radius: 0.25rem;
     width: 100%;
     margin: 0;
-}
-
-.dashboard-container > * {
-    margin: 1.5rem 0;
+    background-color: #7dbe8e;
 }

@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../contexts/UserContext";
 import UserDashboard from "../components/UserDashboard";
@@ -16,21 +15,11 @@ const Profile: React.FC = () => {
     }
   }, [user, loading, navigate]);
   
-  const handleLogout = () => {
-    axios.delete(`${process.env.REACT_APP_API_URL}/logout`, { withCredentials: true })
-      .then(() => {
-        setUser(null); 
-        localStorage.removeItem('sessionToken');
-        navigate("/");         
-      })
-      .catch(error => {
-        console.error("Logout error:", error);
-      });
-  };
+
 
   return <div className="form-container">
+    <h1>Welcome {user ? user.username : ""}!</h1>
     <UserDashboard />
-    <button onClick={handleLogout} className="form-button" id="logout">Logout</button>
     </div>;
 }
 
