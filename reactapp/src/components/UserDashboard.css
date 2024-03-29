@@ -1,15 +1,12 @@
 .dashboard-container {
     margin-top: 3rem;
+    width: 100%;
 }
 
 .dashboard-container #points {
-    /* border: 1px solid black;
-    width: 100%;
-    margin: 0; */
     background-color: #7dbe8e;
     border-radius: 0.25rem;
-    /* line-height: 1.5;
-    padding: 0.75rem; */
+    border: 1px solid black;
 }
 
 /* 
