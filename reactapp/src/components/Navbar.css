@@ -88,7 +88,7 @@ nav ul li a.active::after {
     flex-direction: column;
     width: 100%;
     background-color: var(--primary-color);
-    transition: max-height 0.5s ease-in-out, opacity 0.5s;
+    transition: opacity 0.5s, max-height 0.5s ease-in-out;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -107,6 +107,10 @@ nav ul li a.active::after {
   nav ul li {
     text-align: center;
     width: 100%;
+  }
+
+  nav ul li a {
+    padding: 1rem 0;
   }
 
   nav .menu {
