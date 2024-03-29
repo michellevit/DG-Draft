@@ -24,6 +24,7 @@ nav a.title {
 
 nav a.title:hover {
   color: var(--text-color-light);
+  opacity: 1;
 }
 
 nav ul {
@@ -37,13 +38,27 @@ nav ul li {
 
 nav ul li a {
   display: block;
-  position: relative; 
+  position: relative;
   letter-spacing: 0.125rem;
   text-decoration: none;
   color: var(--text-color-light);
-  padding: 0.5rem 0; 
+  padding: 0.5rem 0;
   margin: 0 1.5rem;
   border-radius: 0.5rem;
+  transition: opacity 0.3s ease; 
+}
+
+nav ul li a:not(.active):hover {
+  opacity: 0.5;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+  opacity: 1; 
+}
+
+nav ul li a.active:hover {
+  opacity: 1; 
 }
 
 nav ul li a::after {
@@ -55,7 +70,7 @@ nav ul li a::after {
   margin: auto;
   height: 2px;
   width: 0%;
-  background-color: var(--text-color-light); 
+  background-color: var(--text-color-light);
   transition: width 0.3s ease;
 }
 
@@ -63,6 +78,8 @@ nav ul li a:hover::after,
 nav ul li a.active::after {
   width: 100%;
 }
+
+
 
 /* Hamburger Menu */
 
