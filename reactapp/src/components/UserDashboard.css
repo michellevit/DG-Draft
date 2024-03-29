@@ -57,18 +57,20 @@
         min-width: 100%;
         display: flex;
         flex-direction: column;
-        width: -webkit-fill-available;
       }
       .dashboard-container form#update-username input {
         border-radius: 0.25rem 0.25rem 0 0;
         margin-bottom: 0;
         border-bottom: none;
+        border-right: 1px solid black;
+        width: -webkit-fill-available;
       }
       
       .dashboard-container form#update-username button {
         border-radius: 0 0 0.25rem 0.25rem;
         justify-content: center;
         margin-top: 0;
+        width: -webkit-fill-available;
       }
     
 }
