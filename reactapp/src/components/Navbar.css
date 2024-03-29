@@ -87,18 +87,18 @@ nav ul li a.active::after {
     right: 0;
     flex-direction: column;
     width: 100%;
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     transition: max-height 0.5s ease-in-out, opacity 0.5s;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
-    visibility: hidden; 
+    visibility: hidden;
   }
 
   nav ul.open {
     max-height: 500px;
     opacity: 1;
-    visibility: visible; 
+    visibility: visible;
     transition: opacity 0.5s, max-height 0.5s ease-in-out;
     margin: 0;
     padding: 1rem;
@@ -137,5 +137,10 @@ nav ul li a.active::after {
 
   nav .menu.icon-open span:nth-child(3) {
     transform: rotate(-45deg) translate(0.3rem, -0.3rem);
+  }
+
+  nav ul li a:hover::after,
+  nav ul li a.active::after {
+    width: 0;
   }
 }
