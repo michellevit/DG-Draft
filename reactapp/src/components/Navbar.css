@@ -84,35 +84,48 @@ nav ul li a.active::after {
 /* Hamburger Menu */
 
 @media (max-width: 500px) {
-  nav,
-  nav *,
-  nav *::before,
-  nav *::after {
-    box-sizing: border-box;
+  nav ul {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--primary-color); 
+    transition: max-height 0.5s ease-in-out, opacity 0.5s;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  nav ul.open {
+    max-height: 500px; 
+    opacity: 1;
+  }
+
+  nav ul li {
+    text-align: center;
+    width: 100%;
   }
 
   nav .menu {
-    display: flex;
+    cursor: pointer;
+    display: block;
     position: absolute;
     top: 1.75rem;
     right: 1rem;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 2rem;
-    height: 1.5rem;
-    margin: 1rem;
   }
 
   nav .menu span {
+    display: block;
     height: 0.25rem;
-    width: 100%;
+    width: 2rem;
     background-color: white;
-    border-radius: 0.2rem;
-    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    margin-bottom: 0.5rem;
   }
 
   nav .menu.icon-open span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(0.35rem, 0.35rem);
   }
 
   nav .menu.icon-open span:nth-child(2) {
@@ -120,45 +133,6 @@ nav ul li a.active::after {
   }
 
   nav .menu.icon-open span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
-  }
-
-  nav .menu span:not(:last-child) {
-    margin-bottom: 0.3rem;
-  }
-
-  nav ul {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    overflow: hidden;
-    transition: all 0.3s ease-out;
-    max-height: 0;
-    opacity: 0;
-  }
-
-  nav ul.open {
-    display: flex;
-    max-height: 20rem;
-    opacity: 1;
-    transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
-  }
-
-  nav ul li {
-    width: 100%;
-    text-align: center;
-  }
-
-  nav ul li a {
-    padding: 0.5rem 0;
-    margin: 0 0.5rem;
-    display: block;
-  }
-
-  nav ul li a:hover,
-  nav ul li a.active,
-  nav ul li a:hover::after {
-    opacity: 0.5;
-    font-weight: bold;
+    transform: rotate(-45deg) translate(0.3rem, -0.3rem);
   }
 }
