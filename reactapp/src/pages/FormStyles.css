@@ -1,6 +1,6 @@
 .form-container {
-  width: 90%;
-  max-width: 500px;
+  width: var(--container-width);
+  max-width: var(--container-max-width);
   margin: 4rem auto;
   padding: 2rem;
   border-radius: 0.5rem;

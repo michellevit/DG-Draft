@@ -6,6 +6,8 @@
   --text-color-light: #fff;
   --background-color: #F7EEDD;
   --grey-color: #adadad;
+  --container-width: 90%;
+  --container-max-width: 500px;
 }
 
 
