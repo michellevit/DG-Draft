@@ -94,11 +94,11 @@ nav ul li a.active::after {
   nav .menu {
     display: flex;
     position: absolute;
-    top: 1rem;
+    top: 1.75rem;
     right: 1rem;
     flex-direction: column;
     justify-content: space-between;
-    width: 2.25rem;
+    width: 2rem;
     height: 1.5rem;
     margin: 1rem;
   }
@@ -108,11 +108,11 @@ nav ul li a.active::after {
     width: 100%;
     background-color: white;
     border-radius: 0.2rem;
-    transition: all 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
   }
 
   nav .menu.icon-open span:nth-child(1) {
-    transform: rotate(45deg) translate(9px, 9px);
+    transform: rotate(45deg) translate(5px, 5px);
   }
 
   nav .menu.icon-open span:nth-child(2) {
@@ -129,7 +129,7 @@ nav ul li a.active::after {
 
 
   nav ul {
-    display: block;
+    display: none;
     flex-direction: column;
     width: 100%;
     overflow: hidden;
@@ -139,8 +139,11 @@ nav ul li a.active::after {
   }
 
   nav ul.open {
+    display: flex; 
     max-height: 20rem;
     opacity: 1;
+    transition: max-height 0.5s ease-in, opacity 0.5s ease-in;
+}
 
     nav ul li {
       width: 100%;
@@ -149,19 +152,14 @@ nav ul li a.active::after {
 
     nav ul li a {
       padding: 0.5rem 0;
-      margin: 0;
+      margin: 0 0.5rem;
       display: block;
     }
 
-    nav ul li a:hover {
-      opacity: 0.5;
-    }
-
+    nav ul li a:hover,
     nav ul li a.active,
     nav ul li a:hover::after {
-      font-weight: bold;
-      opacity: 1;
-      width: 0%;
+        opacity: 0.5; 
+        font-weight: bold;
     }
-  }
 }
