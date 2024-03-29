@@ -61,7 +61,6 @@ const UserDashboard: React.FC = () => {
   return (
     <div className="dashboard-container">
       <div id="points">Points {user ? user.points : 0}</div>
-      <div id="update-username">
       <form onSubmit={handleSubmit} id="update-username">
         <input
           type="text"
@@ -73,7 +72,6 @@ const UserDashboard: React.FC = () => {
         <button type="submit">Update Username</button>
         {errorMessage && <div className="error-message">{errorMessage}</div>}
       </form>
-      </div>
       <div id="logout">
       <button onClick={handleLogout} className="form-button" id="logout">Logout</button>
       </div>
