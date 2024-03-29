@@ -64,6 +64,7 @@
         border-bottom: none;
         border-right: 1px solid black;
         width: -webkit-fill-available;
+        text-align: center;
       }
       
       .dashboard-container form#update-username button {
