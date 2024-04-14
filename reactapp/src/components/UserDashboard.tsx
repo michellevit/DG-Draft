@@ -41,8 +41,8 @@ const UserDashboard: React.FC = () => {
         setNewUsername(""); 
       })
       .catch(error => {
-        console.error("Username update error:", error.response.data.error);
-        setErrorMessage(error.response.data.error)
+        console.error("Username update error:", error);
+        setErrorMessage(error.response?.data?.error || "An unexpected error occurred");
       });
     }
   };

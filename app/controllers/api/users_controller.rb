@@ -10,6 +10,14 @@ module Api
         @current_user = user
       else
         render json: { error: error || 'Invalid token' }, status: :unauthorized
+        return
+      end
+    
+      if params[:username].present?
+        @current_user.update(username: params[:username])
+        render json: { user: { username: @current_user.username } }, status: :ok
+      else
+        render json: { error: "Username is required" }, status: :bad_request
       end
     end
 
