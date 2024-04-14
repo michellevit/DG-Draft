@@ -16,6 +16,7 @@ const UserDashboard: React.FC = () => {
     const value = e.target.value;
     if (value.length <= 25) {
       setNewUsername(value);
+      console.log("NEW USERNAME: ", value);
       setErrorMessage(""); 
     } else {
       setErrorMessage("Username cannot exceed 25 characters"); 
