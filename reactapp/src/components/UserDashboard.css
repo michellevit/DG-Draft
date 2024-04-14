@@ -23,6 +23,7 @@
   border-radius: 0.25rem;
   padding: 0.75rem;
   border: 1px solid black;
+  color: white;
 }
 
 .dashboard-container form#update-username {
