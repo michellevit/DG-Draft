@@ -3,9 +3,9 @@
 ![Ruby Version](https://img.shields.io/badge/Ruby-3.2.3-cc0000.svg)
 ![Rails Version](https://img.shields.io/badge/Rails-7.1.3-cc0000.svg)
 ![React Version](https://img.shields.io/badge/React-18.2.0-61dafb.svg)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-blue.svg)
-![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)
-![Heroku](https://img.shields.io/badge/Platform-Heroku-3B2F63.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.3.3-3178c6.svg)
+![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791.svg)
+![Heroku](https://img.shields.io/badge/Platform-Heroku-6762a6.svg)
 
 This website was created for creating fantasy disc golf leagues.
 
