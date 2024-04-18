@@ -93,6 +93,8 @@ nav ul li a.active::after {
     opacity: 0;
     overflow: hidden;
     visibility: hidden;
+    margin: 0;
+    padding: 1rem;
   }
 
   nav ul.open {
