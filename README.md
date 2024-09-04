@@ -42,7 +42,7 @@ This website was created for creating fantasy disc golf leagues.
 ## How to Deploy Locally<a name="deploy-local"></a>
 - Preliminary checks  
   - Check if the Database Exists:
-    - Open the project folder in a terminal.
+    - Open the project folder in a terminal
     - Run:
       ```bash
       psql -U postgres -h localhost -c "\l"
@@ -84,8 +84,17 @@ This website was created for creating fantasy disc golf leagues.
       rails db:seed
       ```
 - Running the application (locally):
+  - Modify the reactapp/.env file
+    - comment out the Production section
+    - comment in the Development section
+    - Rebuild the reactapp
+      - Open a terminal in the project directory
+        ```bash
+        cd reactapp
+        npm run build
+        ```
   - Start the Rails Server:
-    - Open a terminal in the project directory.
+    - Open a terminal in the project directory
     - Run the command:
       ```bash
       rails s
@@ -113,6 +122,7 @@ This website was created for creating fantasy disc golf leagues.
 ## How to Deploy on Heroku<a name="deploy-heroku"></a>
 - Change the reactapp .env file:
   - Go to reactapp/.env and comment out the "Development" section, and comment in the "Production" section
+  - Make sure to rebuild the reactapp afterwards - run: `.\update-app`
 
 
 ## Basic Usage<a name="basic-usage"></a>
