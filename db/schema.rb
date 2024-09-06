@@ -10,8 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_16_201310) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_06_022259) do
   # These are extensions that must be enabled in order to support this database
+  enable_extension "citext"
   enable_extension "plpgsql"
 
   create_table "challenges", force: :cascade do |t|
@@ -65,10 +66,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_16_201310) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "username", limit: 25
+    t.citext "username"
     t.integer "points", default: 0
     t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
   add_foreign_key "challenges", "events"

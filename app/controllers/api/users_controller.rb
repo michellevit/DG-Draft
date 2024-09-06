@@ -1,23 +1,32 @@
+# users_controller.rb
+
 module Api
   class UsersController < ApplicationController
     include TokenableConcern
     
     def update_username
-      token = request.headers['Authorization']&.split(' ').last
+      token = request.headers['Authorization']&.split(' ')&.last
       user, error = authenticate_token(token) if token
-      
+
       if user
         @current_user = user
       else
         render json: { error: error || 'Invalid token' }, status: :unauthorized
         return
       end
-    
-      if params[:username].present?
-        @current_user.update(username: params[:username])
+
+      new_username = params[:username]
+
+      if new_username.present?
+        if User.where('LOWER(username) = ?', new_username.downcase).where.not(id: @current_user.id).exists?
+          render json: { error: 'Username is already taken' }, status: :conflict
+          return
+        end
+        
+        @current_user.update(username: new_username)
         render json: { user: { username: @current_user.username } }, status: :ok
       else
-        render json: { error: "Username is required" }, status: :bad_request
+        render json: { error: 'Username is required' }, status: :bad_request
       end
     end
 

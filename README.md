@@ -15,6 +15,7 @@ This website was created for creating fantasy disc golf leagues.
 ## Table of Contents
 - [Technologies Used](#technologies-used)
 - [Features](#features)
+- [How to Set Up Locally](#setup-local)
 - [How to Deploy Locally](#deploy-local)
 - [How to Deploy on Heroku](#deploy-heroku)
 - [Basic Usage](#basic-usage)
@@ -39,7 +40,7 @@ This website was created for creating fantasy disc golf leagues.
 - User Authentication
 
 
-## How to Deploy Locally<a name="deploy-local"></a>
+## How to Set Up Locally<a name="setup-local"></a>
 - Preliminary checks  
   - Check if the Database Exists:
     - Open the project folder in a terminal
@@ -83,49 +84,30 @@ This website was created for creating fantasy disc golf leagues.
       ```bash
       rails db:seed
       ```
-- Running the application (locally):
-  - Modify the reactapp/.env file
-    - comment out the Production section
-    - comment in the Development section
-    - Rebuild the reactapp
-      - Open a terminal in the project directory
-        ```bash
-        cd reactapp
-        npm run build
-        ```
-  - Start the Rails Server:
-    - Open a terminal in the project directory
-    - Run the command:
-      ```bash
-      rails s
-      ```
-    - The server will start, and you can access the application in your web browser at `http://localhost:3000`.
-  - Access the Application:
-    - Open your web browser.
-    - Go to `http://localhost:3000` to view and interact with your application.
-  - Stop the Server:
-    - When you are done working on your application, stop the server by returning to the terminal where the server is running and pressing `Ctrl + C`.
-  - Optional - Monitor Logs:
-    - If you need to debug or monitor the server, you can view the logs directly in the terminal where the server is running.
-    - Alternatively, you can use the following command to tail the development logs:
-      ```bash
-      tail -f log/development.log
-      ```
-  - Make Changes and Restart:
-    - After making changes to your code, you may need to restart the server to see the changes.
-    - Stop the server with `Ctrl + C` and restart it with:
-      ```bash
-      rails s
-      ```
+
+## How to Deploy Locally<a name="deploy-local"></a>
+- Start the Rails Server:
+  - Open a terminal in the project directory
+  - Run: `rails s`
+- Access the Application:
+  - Open your web browser.
+  - Go to `http://localhost:3000` 
+- Push changes locally:
+  - Open a terminal in the project directory
+  - Rebuild the reactapp and replace the old build in the public folder:
+    - Run: `.\update-local`
+  - Restart the server
+    - Run: `rails s`
+
 
 
 ## How to Deploy on Heroku<a name="deploy-heroku"></a>
-- Change the reactapp .env file:
-  - Go to reactapp/.env and comment out the "Development" section, and comment in the "Production" section
-  - Make sure to rebuild the reactapp afterwards - run: `.\update-app`
+- Open a terminal in the project directory
+- Run: `.\update-app.bat "Your commit message here"`
 
 
 ## Basic Usage<a name="basic-usage"></a>
+
 
 ### Activate the Virtual Env<a name="virtual-env"></a>
 - Activate the virtual env: 

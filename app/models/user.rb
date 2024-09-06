@@ -8,7 +8,6 @@ class User < ApplicationRecord
     has_many :challenges_as_challenger, class_name: 'Challenge', foreign_key: 'challenger_id', inverse_of: :challenger
     has_many :challenges_as_challengee, class_name: 'Challenge', foreign_key: 'challengee_id', inverse_of: :challengee
     
-    before_validation :set_default_username, on: [:create, :update]
     before_create :set_default_points
   
     private
@@ -16,10 +15,6 @@ class User < ApplicationRecord
     def set_default_points
       self.points ||= 0
     end
-    def set_default_username
-      if email.present? && username.blank?
-        self.username = email.split('@').first
-      end
-    end
+
   end
   

@@ -4,12 +4,11 @@
 }
 
 .dashboard-container > * {
-  margin: 1rem 0;
+  margin: 1.5rem 0;
 }
 
 .dashboard-container #points,
-.dashboard-container form#update-username input,
-.dashboard-container form#update-username button,
+.dashboard-container form#update-username,
 .dashboard-container #logout {
   display: flex;
   line-height: 1.5;
@@ -30,7 +29,9 @@
   min-width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
   width: -webkit-fill-available;
+  margin: 0;
 }
 
 .dashboard-container form#update-username input {
@@ -46,34 +47,42 @@
   width: 50%;
 }
 
+.dashboard-container .error-message {
+  color: red; 
+  margin-top: 0.25rem; 
+  text-align: center;
+}
+
+.dashboard-container .success-message {
+  color: #7dbe8e;
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
 .dashboard-container #logout {
   background-color: var(--grey-color);
   width: -webkit-fill-available;
-  border-radius: 0.25rem;
 }
 
-
-
 @media (max-width: 500px) {
-    .dashboard-container form#update-username {
-        min-width: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-      .dashboard-container form#update-username input {
-        border-radius: 0.25rem 0.25rem 0 0;
-        margin-bottom: 0;
-        border-bottom: none;
-        border-right: 1px solid black;
-        width: -webkit-fill-available;
-        text-align: center;
-      }
-      
-      .dashboard-container form#update-username button {
-        border-radius: 0 0 0.25rem 0.25rem;
-        justify-content: center;
-        margin-top: 0;
-        width: -webkit-fill-available;
-      }
-    
+  .dashboard-container form#update-username {
+    min-width: 100%;
+    flex-direction: column;
+  }
+
+  .dashboard-container form#update-username input {
+    border-radius: 0.25rem 0.25rem 0 0;
+    margin-bottom: 0;
+    border-bottom: none;
+    border-right: 1px solid black;
+    width: -webkit-fill-available;
+    text-align: center;
+  }
+
+  .dashboard-container form#update-username button {
+    border-radius: 0 0 0.25rem 0.25rem;
+    justify-content: center;
+    margin-top: 0;
+    width: -webkit-fill-available;
+  }
 }

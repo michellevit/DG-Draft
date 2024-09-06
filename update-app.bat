@@ -39,8 +39,8 @@ if "%~1"=="" (
 SET basePath=%cd%
 cd "reactapp"
 call npm install
-call npm run build
-
+:: Build React app with production environment
+cross-env NODE_ENV=production npm run build
 
 :: --3. Copy the new reactapp build file contents to the public folder
 :: Check if the public folder exists before attempting to delete its contents

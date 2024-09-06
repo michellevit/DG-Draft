@@ -1,15 +1,3 @@
-1) ChatGPT convo for DG Draft
-
-To automatically detect whether your React app is running in a production or 
-development environment without manually changing the .env file each time, 
-you can utilize the NODE_ENV environment variable, which is commonly used 
-to differentiate between production and development environments. Here's how you can set this up:
-
-2) Username can be updated to an existing username -> this should not be allowed, not sure why it's failing
-
-
-
-
 Challenges:
 -create a challenge vs another user
 -submit
@@ -114,10 +102,6 @@ reactapp
 
 
 
-mic@mic.com 
-hello1
-
-
 bets page: 
   - current bets
   - past bets
@@ -143,9 +127,3 @@ friends page:
 
 public profile page: 
 -see user's past bets
-
-
--free for 1 month
--$5/month
--free for 1 year if you refer a friend + they create a fantasy card
-
