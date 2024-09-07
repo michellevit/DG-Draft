@@ -4,6 +4,30 @@ module Api
   class UsersController < ApplicationController
     include TokenableConcern
     
+    def update_password
+      token = request.headers['Authorization']&.split(' ')&.last
+      user, error = authenticate_token(token) if token
+
+      if user
+        @current_user = user
+      else
+        render json: { error: error || 'Invalid token' }, status: :unauthorized
+        return
+      end
+
+      @user = @current_user
+
+      if @user.authenticate(params[:current_password])
+        if @user.update(password: params[:new_password])
+          render json: { message: 'Password successfully updated' }, status: :ok
+        else
+          render json: { error: 'Unable to update password' }, status: :unprocessable_entity
+        end
+      else
+        render json: { error: 'Current password is incorrect' }, status: :unauthorized
+      end
+    end
+
     def update_username
       token = request.headers['Authorization']&.split(' ')&.last
       user, error = authenticate_token(token) if token

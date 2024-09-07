@@ -18,3 +18,5 @@ end
 group :development do
 end
 
+
+gem "webpacker", "~> 5.4"

@@ -8,6 +8,8 @@ import "../pages/FormStyles.css";
 const UserDashboard: React.FC = () => {
   const { user, setUser } = useUser();
   const [newUsername, setNewUsername] = useState<string>("");
+  const [currentPassword, setCurrentPassword] = useState<string>("");
+  const [newPassword, setNewPassword] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [successMessage, setSuccessMessage] = useState<string>("");
   const navigate = useNavigate();
@@ -24,7 +26,16 @@ const UserDashboard: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    if (name === "currentPassword") {
+      setCurrentPassword(value);
+    } else if (name === "newPassword") {
+      setNewPassword(value);
+    }
+  };
+
+  const handleUsernameSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (errorMessage) {
       return;
@@ -45,15 +56,46 @@ const UserDashboard: React.FC = () => {
         .then((response) => {
           setUser({ ...user, username: response.data.user.username });
           setNewUsername("");
-          setSuccessMessage("Username successfully updated!"); // Set success message
-          setErrorMessage(""); // Clear any existing error message
+          setSuccessMessage("Username successfully updated!");
+          setErrorMessage("");
         })
         .catch((error) => {
           console.error("Username update error:", error);
           setErrorMessage(
             error.response?.data?.error || "An unexpected error occurred"
           );
-          setSuccessMessage(""); // Clear success message on error
+          setSuccessMessage("");
+        });
+    }
+  };
+
+  const handlePasswordSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (user && currentPassword && newPassword) {
+      const token = localStorage.getItem("sessionToken");
+      axios
+        .patch(
+          `${process.env.REACT_APP_API_URL}/users/${user.id}/update_password`,
+          { current_password: currentPassword, new_password: newPassword },
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+            withCredentials: true,
+          }
+        )
+        .then(() => {
+          setCurrentPassword("");
+          setNewPassword("");
+          setSuccessMessage("Password successfully updated!");
+          setErrorMessage("");
+        })
+        .catch((error) => {
+          console.error("Password update error:", error);
+          setErrorMessage(
+            error.response?.data?.error || "An unexpected error occurred"
+          );
+          setSuccessMessage("");
         });
     }
   };
@@ -76,8 +118,9 @@ const UserDashboard: React.FC = () => {
   return (
     <div className="dashboard-container">
       <div id="points">Points {user ? user.points : 0}</div>
+      
       <div id="update-username">
-        <form onSubmit={handleSubmit} id="update-username">
+        <form onSubmit={handleUsernameSubmit} id="update-username">
           <input
             type="text"
             value={newUsername}
@@ -90,6 +133,33 @@ const UserDashboard: React.FC = () => {
         {errorMessage && <div className="error-message">{errorMessage}</div>}
         {successMessage && <div className="success-message">{successMessage}</div>}
       </div>
+
+      <div id="update-password">
+        <form onSubmit={handlePasswordSubmit} id="update-password">
+          <input
+            type="password"
+            name="currentPassword"
+            value={currentPassword}
+            onChange={handlePasswordChange}
+            placeholder="Current password"
+            id="current"
+            required
+          />
+          <input
+            type="password"
+            name="newPassword"
+            value={newPassword}
+            onChange={handlePasswordChange}
+            placeholder="New password"
+            id="new"
+            required
+          />
+          <button type="submit" id="password">Update Password</button>
+        </form>
+        {errorMessage && <div className="error-message">{errorMessage}</div>}
+        {successMessage && <div className="success-message">{successMessage}</div>}
+      </div>
+      
       <div id="logout">
         <button onClick={handleLogout} className="form-button" id="logout">
           Logout

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     post '/sessions', to: 'sessions#attempt_login'
     delete :logout, to: "sessions#logout"
     get :authenticate_user, to: "sessions#authenticate_user"
+    patch '/users/:id/update_password', to: 'users#update_password'
     post '/registrations', to: 'registrations#create_user'
     resources :events, only: [:index]
     resources :users do

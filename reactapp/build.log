@@ -1,0 +1,59 @@
+
+> reactapp@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled with warnings.
+
+[eslint] 
+src\pages\Home.tsx
+  Line 4:10:  'useUser' is defined but never used  @typescript-eslint/no-unused-vars
+
+src\pages\NewChallenge.tsx
+  Line 34:6:   React Hook useEffect has a missing dependency: 'selectedEventId'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
+  Line 57:13:  'response' is assigned a value but never used                                                                       @typescript-eslint/no-unused-vars
+
+src\pages\Profile.tsx
+  Line 9:17:  'setUser' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+Search for the keywords to learn more about each warning.
+To ignore, add // eslint-disable-next-line to the line before.
+
+File sizes after gzip:
+
+  72.03 kB  build\static\js\main.4be569b3.js
+  2.34 kB   build\static\css\main.043e39af.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
+NPM build completed
+Deleting contents of C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\public\
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\asset-manifest.json
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\favicon.ico
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\index.html
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\logo192.png
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\logo512.png
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\manifest.json
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\robots.txt
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\static\css\main.043e39af.css
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\static\css\main.043e39af.css.map
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\static\js\main.4be569b3.js
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\static\js\main.4be569b3.js.LICENSE.txt
+C:\Users\Michelle\Documents\Coding_Projects\DG-Draft\reactapp\build\static\js\main.4be569b3.js.map
+12 File(s) copied
+Files copied successfully
+update-local.bat completed successfully.
+Press any key to continue . . . 
+Terminate batch job (Y/N)? Terminate batch job (Y/N)? 
+^C

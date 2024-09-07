@@ -115,8 +115,9 @@ This website was created for creating fantasy disc golf leagues.
   - Run `.\venv\Scripts\activate`
 
 ### Test Data <a name="test-data"></a>
-- User: mic@mic.com
-- Password: test123
+- User: mic@mic.com | Password: pass123
+- User: tom@tom.com | Password: pass123
+
 
 ### Common PostgreSQL Queries<a name="postgres-queries"></a>
 - Start the Rails Console:

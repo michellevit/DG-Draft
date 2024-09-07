@@ -9,6 +9,7 @@
 
 .dashboard-container #points,
 .dashboard-container form#update-username,
+.dashboard-container form#update-password,
 .dashboard-container #logout {
   display: flex;
   line-height: 1.5;
@@ -47,6 +48,37 @@
   width: 50%;
 }
 
+.dashboard-container form#update-password {
+  border-radius: 0 0 0.25rem 0.25rem;
+  justify-content: center;
+  margin-top: 0;
+  width: -webkit-fill-available;
+}
+
+.dashboard-container form#update-password input#current {
+  border-radius: 0.25rem 0.25rem 0 0;
+  border-bottom: none;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+
+.dashboard-container form#update-password input#new {
+  border-radius: 0;
+  border-bottom: none;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+
+.dashboard-container form#update-password button {
+  border-radius: 0 0 0.25rem 0.25rem;
+  min-width: min-content;
+  justify-content: center;
+  margin: 0;
+  width: 100%;
+}
+
 .dashboard-container .error-message {
   color: red; 
   margin-top: 0.25rem; 
@@ -65,12 +97,13 @@
 }
 
 @media (max-width: 500px) {
-  .dashboard-container form#update-username {
-    min-width: 100%;
+  .dashboard-container form#update-username,
+  .dashboard-container form#update-password {
     flex-direction: column;
   }
 
-  .dashboard-container form#update-username input {
+  .dashboard-container form#update-username input,
+  .dashboard-container form#update-password input {
     border-radius: 0.25rem 0.25rem 0 0;
     margin-bottom: 0;
     border-bottom: none;
@@ -79,7 +112,8 @@
     text-align: center;
   }
 
-  .dashboard-container form#update-username button {
+  .dashboard-container form#update-username button,
+  .dashboard-container form#update-password button {
     border-radius: 0 0 0.25rem 0.25rem;
     justify-content: center;
     margin-top: 0;
