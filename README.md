@@ -9,8 +9,9 @@
 
 This website was created for creating fantasy disc golf leagues.
 
+<!--
 <a href="https://dgdraft.com" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a>
-
+-->
 
 ## Table of Contents
 - [Technologies Used](#technologies-used)
