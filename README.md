@@ -7,8 +7,7 @@
 ![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-336791.svg)
 ![Heroku](https://img.shields.io/badge/Platform-Heroku-6762a6.svg)
 
-This website was created for creating fantasy disc golf leagues.
-
+An app which allows users to build fantasy disc golf leagues, draft players, and track their standings.
 <!--
 <a href="https://dgdraft.com" target="_blank"><img src="https://img.shields.io/badge/Website-red?style=for-the-badge&logo=ruby"></a>
 -->
