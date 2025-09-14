@@ -31,8 +31,7 @@ This website was created for creating fantasy disc golf leagues.
 
 
 ## Technologies Used<a name="technologies-used"></a>
-- Ruby
-- Rails
+- Ruby on Rails
 - React
 - Typescript
   
